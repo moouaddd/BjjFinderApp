@@ -1,0 +1,550 @@
+name,city,country,lat,lng,phone,email,website,address,rating,rating_count,completeness_score,source
+Graiño Team,A Coruña,ES,43.3508774,-8.4159677,,,,,,,0.0,atlas_bjj
+Fight4Life Home,Alboraia / Alboraya,ES,39.5010119,-0.3499577,,,,,,,0.0,atlas_bjj
+Centro Deportivo Altea,Alcalá De Guadaira,ES,37.3317095,-5.8327204,,,,"Av. Santa Lucía, 59, 41500 Alcalá de Guadaíra, Sevilla, Spain",3.6,13,0.2,atlas_bjj
+Complutum Fight Center,Alcalá De Henares,ES,40.4744161,-3.3831863,,,,,,,0.0,atlas_bjj
+Cobrinha Brazilian Jiu-Jitsu Madrid,Alcobendas,ES,40.5408099,-3.6303899,,,,,,,0.0,atlas_bjj
+Somos Jiu Jitsu,Alcobendas,ES,40.4615222,-3.6912834,628 09 30 57,,https://somosjiujitsu.com/,"P.º de la Castellana, 161, Tetuán, 28046 Madrid, Spain",5.0,83,0.8,atlas_bjj
+CIMA Jiu Jitsu,Alcorcón,ES,40.3498648,-3.8941489,,,https://cimajiujitsu.com/,"Av. Quitapesares, 44, 28670 Villaviciosa de Odón, Madrid, Spain",5.0,69,0.6,atlas_bjj
+Custom Fighter,Alcorcón,ES,40.3372001,-3.8143405,911 27 46 71,,http://www.customfighter.es/,"C. Geológicas, 29, 28923 Alcorcón, Madrid, Spain",4.6,241,0.8,atlas_bjj
+Dojo Shihan Zaza Alcorcon,Alcorcón,ES,40.3452353,-3.8290533,910 57 92 57,,,"C. Virgen de Icíar, 20 POST, 28921 Alcorcón, Madrid, Spain",3.8,17,0.6,atlas_bjj
+Emporio Barceló,Alcorcón,ES,40.3907446,-3.8366141,915 99 41 66,,http://www.grupoemporio.es/,"C. Colada de Pozuelo, 7, 28925 Alcorcón, Madrid, Spain",4.6,90,0.8,atlas_bjj
+Escuela Deportiva DK Team,Alcorcón,ES,40.3362254,-3.814623,676 59 93 97,,,"Pol Industrial Urtinsa, C. Minas, 20, 28923 Alcorcón, Madrid, Spain",4.9,100,0.6,atlas_bjj
+Jiujitsu Móstoles (StealthBJJ),Alcorcón,ES,40.3487504,-3.8327626,,,,,,,0.0,atlas_bjj
+"MARMAT. Entrenamiento de fuerza funcional e híbrido, entrenamiento personal, Hyrox & salud integral",Alcorcón,ES,40.3368121,-3.8149512,654 34 47 46,,https://marmatacademy.es/,"C. Minas, 72, 28923 Alcorcón, Madrid, Spain",5.0,116,0.8,atlas_bjj
+Martial arts club 78,Alcorcón,ES,40.3552274,-3.8188243,,,,,,,0.0,atlas_bjj
+Monchai Academy Golden Lion,Alcorcón,ES,40.3499596,-3.7996264,722 35 63 76,,https://gym-spotlight-vibes.lovable.app/,"C. del Uranio, 14, 28918 Leganés, Madrid, Spain",4.9,95,0.8,atlas_bjj
+ROU SHI DO Madrid,Alcorcón,ES,40.3547822,-3.8203161,670 01 22 60,,,"C. Sahagún, 20 posterior, local club78, 28925 Alcorcón, Madrid, Spain",2.0,1,0.4,atlas_bjj
+Wing Chun Alcorcón,Alcorcón,ES,40.3490629,-3.81759,,,,,,,0.0,atlas_bjj
+Cai Club,Algeciras,ES,43.5016403,-8.1559231,,,,,,,0.0,atlas_bjj
+AC Jiu Jitsu Academy,Alicante,ES,38.414664,-0.443948,,,,,,,0.0,atlas_bjj
+Climent Club Sukata Alicante,Alicante,ES,38.2444491,-0.520817,,,,,,,0.0,atlas_bjj
+Climent Club | Jiu Jitsu | MMA | Boxeo,Alicante,ES,38.3639339,-0.4749204,640 58 62 65,,http://www.climentclub.es/,"C. Burgos, 8, 03015 Alicante (Alacant), Alicante, Spain",4.7,195,0.8,atlas_bjj
+Corpo E Mente International,Alicante,ES,38.351765,-0.4955006,,,,,,,0.0,atlas_bjj
+Gracie Barra Alicante Brazilian Jiu-jitsu,Alicante,ES,38.389505,-0.5119257,693 90 67 71,,https://www.facebook.com/Gracie-Barra-Alicante-536968723076955/,"C. del Zinc, 3, 03690 San Vicente del Raspeig, Alicante, Spain",4.9,70,0.8,atlas_bjj
+Gracie Barra Elche Brazilian Jiu Jitsu,Alicante,ES,38.2806626,-0.7229927,640 21 64 10,,https://www.brazilianjiujitsuelche.com/,"C. Monóvar, 56, A3, 03206 Elche, Alicante, Spain",4.9,46,0.6,atlas_bjj
+Gracie Barra Playa San Juan,Alicante,ES,38.3627367,-0.4284646,687 58 21 69,,,"Avinguda Goleta, 7, local 3.2, 03540 Alacant, Alicante, Spain",5.0,92,0.4,atlas_bjj
+KC Jiu-Jitsu,Alicante,ES,38.403193,-0.5362292,692 26 94 05,,https://www.instagram.com/kcjiujitsu_/,"KC Jiu-Jitsu, C. del Yunque, 10, Nave 16, 03690 San Vicente del Raspeig, Alicante, Spain",5.0,84,0.8,atlas_bjj
+La Florida Brazilian Jiu Jitsu,Alicante,ES,38.3472546,-0.5161306,,,https://www.instagram.com/floridajiujitsu/,"C. Víctor de la Serna, 19, 03006 Alicante (Alacant), Alicante, Spain",5.0,29,0.6,atlas_bjj
+"Nexus Academy, Jiu Jitsu and Muay Thai",Alicante,ES,38.3970159,-0.4363298,697 20 65 69,,https://alicantebjj.com/,"PI:00 Pt:L2, C. Navarregui, 6, 03550 Sant Joan d'Alacant, Alicante, Spain",4.9,93,0.8,atlas_bjj
+Mmalmeria Fight-club,Almeria,ES,36.8430379,-2.4360041,,,,,,,0.0,atlas_bjj
+Fortaleza Jiu Jitsu Almeria,Almería,ES,36.8414197,-2.4628135,,,,,,,0.0,atlas_bjj
+Mma Mk Team,Alquerias,ES,38.0114394,-1.0409194,,,,,,,0.0,atlas_bjj
+Rom Jiu-Jitsu Team,Alzira,ES,39.151212,-0.4346556,,,,,,,0.0,atlas_bjj
+Fear The Fighter,Antequera,ES,36.8580871,-5.6586495,,,,,,,0.0,atlas_bjj
+Lotus Club,Arbucies,ES,41.8160629,2.5141453,,,,,,,0.0,atlas_bjj
+Finalbudo Archena - Murcia,Archena,ES,38.1176099,-1.3067955,629 92 29 51,,,"C. Rodrigo López de Mendoza, 14, 30600 Archena, Murcia, Spain",3.0,2,0.4,atlas_bjj
+BJJ Aborigen - Jiu-Jitsu y Grappling,Arona,ES,28.0607086,-16.7334896,,,,,,,0.0,atlas_bjj
+Cobrinha Tenerife,Arona,ES,28.080662,-16.7222563,649 20 13 27,,,"C. Paises Bajos, 240, B, 38660 Costa Adeje, Santa Cruz de Tenerife, Spain",5.0,35,0.6,atlas_bjj
+Gracie Barra Granadilla Jiu Jitsu & Defensa Personal,Arona,ES,28.0733635,-16.5574835,666 58 77 23,,http://www.graciebarratenerife.com/,"de Abona, C. Hermano Pedro, No. 38, 38611 San Isidro, Santa Cruz de Tenerife, Spain",4.9,105,0.8,atlas_bjj
+Surfightclub,Arona,ES,28.0996248,-16.6809103,,,,,,,0.0,atlas_bjj
+Furia Fighters Academy Bjj,Arrecife,ES,28.9639681,-13.5499014,,,,,,,0.0,atlas_bjj
+Spartvn Mma Academy,Arrecife,ES,28.9690408,-13.5491115,,,,,,,0.0,atlas_bjj
+Los Caballeros De Oc,"Arroyo De La Encomienda, Valladolid",ES,41.3652379957723,1.24824739073492,,,,,,,0.0,atlas_bjj
+Academy of Sports Activities Óscar Fernández,Avilés,ES,43.5579674,-5.9263049,,,,,,,0.0,atlas_bjj
+Avilés MMA Nuevo Milenium,Avilés,ES,43.5519063,-5.9184168,,,,,,,0.0,atlas_bjj
+Brazilian Jiu Jitsu Oviedo (BJJ O),Avilés,ES,43.5554436,-5.9222466,,,,,,,0.0,atlas_bjj
+Club Kárate Corvera,Avilés,ES,43.5345229,-5.898529,,,,"C. Miguel Ángel Blanco, s/n, 33404, Asturias, Spain",4.8,41,0.4,atlas_bjj
+Gimnasio Seo,Avilés,ES,43.5491506,-5.9177624,,,,,,,0.0,atlas_bjj
+Lo Kura Salinas,Avilés,ES,43.3750737,-5.9576057,,,,,,,0.0,atlas_bjj
+Fractal Azuqueca David Saavedra,Azuqueca De Henares,ES,40.5686397,-3.2621822,630 61 85 17,,,"C. Cam. de la Barca, 27, 19200 Azuqueca de Henares, Guadalajara, Spain",5.0,16,0.4,atlas_bjj
+Shock Fitness Center,Badajoz,ES,38.8884942,-6.9810766,623 03 98 37,,http://www.shockcenter.es/,"Portalegre, 14, 06007 Badajoz, Spain",4.9,102,0.8,atlas_bjj
+La Casa del Brasilian Jiujitsu Badalona Club. BJJBFIT BADALONA,Badalona,ES,41.4470511,2.2300807,,,,,,,0.0,atlas_bjj
+10th Planet Jiu Jitsu Barcelona,Barcelona,ES,41.3997873,2.1569072,611 03 48 52,,https://www.10thplanetbarcelona.com/,"Carrer de Sant Pere Màrtir, 37, Gràcia, 08012 Barcelona, Spain",5.0,196,0.8,atlas_bjj
+AA Jiu Jitsu,Barcelona,ES,41.4278708,2.2009722,,,,,,,0.0,atlas_bjj
+Acadèmia Badalona Jiujitsu,Barcelona,ES,41.443134,2.22311,,,https://badalonajiujitsu.com/,"Carrer de Juan Valera, 178, 08914 Santa Coloma de Gramenet, Barcelona, Spain",5.0,66,0.6,atlas_bjj
+Acadèmia Barcelona Jiu-Jitsu,Barcelona,ES,41.3917192,2.1896502,629 54 69 78,,http://www.barcelonajiujitsu.com/,"Carrer de Llull, 16, Sant Martí, 08005 Barcelona, Spain",4.9,160,0.8,atlas_bjj
+Anaconda Brazilian Jiu-jitsu,Barcelona,ES,41.4070538,2.1671452,653 19 97 15,,http://www.anacondajiujitsu.com/,"Calle, Travessera de Gràcia, 294, local 2 - 08025, Gràcia, 08025 Barcelona, Spain",4.6,168,0.8,atlas_bjj
+Anaconda Fight Club,Barcelona,ES,41.3825802,2.177073,,,,,,,0.0,atlas_bjj
+Aranha BJJ Barcelona,Barcelona,ES,41.4132968,2.1343348,,,,,,,0.0,atlas_bjj
+Aranha Barcelona - Brazilian jiu jitsu - self defense,Barcelona,ES,41.3822648,2.1393904,647 52 82 92,,https://www.aranhabarcelona.com/,"Carrer de Robrenyo, 63, Sants-Montjuïc, 08014 Barcelona, Spain",4.9,170,0.8,atlas_bjj
+"Aranha Hospitalet I Jiu Jitsu, MMA y Muay Thai",Barcelona,ES,41.368441,2.132115,698 53 58 28,,http://www.instagram.com/aranha_hospitalet,"Carrer de la Constitució, 169, Sants-Montjuïc, 08014 Barcelona, Spain",5.0,32,0.8,atlas_bjj
+Arts Marcials - Warriors Barcelona,Barcelona,ES,41.66667,2.0,,,,,,,0.0,atlas_bjj
+Arts Marcials Barcelona - Mugendo Guinardó,Barcelona,ES,41.4175794,2.1760343,609 43 63 75,,http://mugendosantpau.cat/,"Carrer de Villar, 87-89, Horta-Guinardó, 08041 Barcelona, Spain",4.9,263,0.8,atlas_bjj
+Atos,Barcelona,ES,41.3809361,2.1493325,,,,,,,0.0,atlas_bjj
+Atos Jiu-Jitsu Barcelona,Barcelona,ES,41.3798081,2.150338,,,http://www.atosjiujitsubcn.es/,"Carrer d'Entença, 114, Eixample, 08015 Barcelona, Spain",4.9,87,0.6,atlas_bjj
+BJJ Grappling WODS,Barcelona,ES,41.3597461,2.1066,,,https://wods.es/bjj,"Carrer Saurí, 39, 1a planta, 08901 L'Hospitalet de Llobregat, Barcelona, Spain",5.0,18,0.6,atlas_bjj
+Barcelona Jiu-Jitsu Haubert Team,Barcelona,ES,41.3961644,2.196623,,,,,,,0.0,atlas_bjj
+Brazilian Jiu Jitsu Barcelona,Barcelona,ES,41.4002392,2.1981268,934 85 22 01,,http://bcnma.com/,"Carrer de Roc Boronat, 66, Sant Martí, 08005 Barcelona, Spain",5.0,9,0.8,atlas_bjj
+Btt Barcelona - Brazilian Top Team,Barcelona,ES,41.396072,2.1225567,932 05 08 69,,http://www.barcelonajiujitsu.wordpress.com/,"Carrer dels Caponata, 3, Sarrià-Sant Gervasi, 08034 Barcelona, Spain",5.0,1,0.8,atlas_bjj
+Circle Academy,Barcelona,ES,41.3984427,2.1591274,657 44 07 56,,https://www.circleacademy.es/,"Carrer de Ferrer de Blanes, 5, Gràcia, 08012 Barcelona, Spain",5.0,180,0.8,atlas_bjj
+Coragem Jiu-Jitsu,Barcelona,ES,41.3834007,2.1357013,935 06 36 22,,https://www.coragemjiujitsu.com/,"Carrer dels Comtes de Bell-Lloc, 190, Les Corts, 08014 Barcelona, Spain",5.0,24,0.8,atlas_bjj
+El Club De La Lucha Barcelona,Barcelona,ES,41.3977206,2.1836169,688 41 44 89,,http://www.elclubdelaluchabarcelona.com/,"Carrer de Casp, 147, Eixample, 08013 Barcelona, Spain",4.9,1466,0.8,atlas_bjj
+FLEX FIGHTING ACADEMY,Barcelona,ES,41.3865295,2.1420197,,,,,,,0.0,atlas_bjj
+Furian Fighters Mma Barcelona,Barcelona,ES,41.4103749,2.1882748,,,,,,,0.0,atlas_bjj
+Gracie Barra Barcelona,Barcelona,ES,41.3826505,2.1520695,635 11 92 89,,http://www.graciebarrabarcelona.com/,"Carrer d'Aragó, 109, Eixample, 08015 Barcelona, Spain",4.9,76,0.8,atlas_bjj
+Gracie Jiu Jitsu Barcelona,Barcelona,ES,41.4054747,2.1477216,627 58 18 95,,https://www.graciebarcelonaacademy.com/,"Carrer de Septimània, 29, Sarrià-Sant Gervasi, 08006 Barcelona, Spain",5.0,14,0.8,atlas_bjj
+Gullo Jiu-Jitsu,Barcelona,ES,41.3825802,2.177073,,,,,,,0.0,atlas_bjj
+Gullo Jiu-Jitsu Barcelona,Barcelona,ES,41.3790973,2.1582806,,,,,,,0.0,atlas_bjj
+METHOD BCN - Jiu Jitsu & Grappling,Barcelona,ES,41.410543,2.1717213,663 15 04 67,,https://instagram.com/method_bcn?igshid=ZDdkNTZiNTM=,"Travessera de Gràcia, 419, Horta-Guinardó, 08025 Barcelona, Spain",5.0,172,0.8,atlas_bjj
+MMA Barcelona - Aranha Bjj,Barcelona,ES,41.3760752,2.1438531,,,,,,,0.0,atlas_bjj
+Mugendo Gràcia,Barcelona,ES,41.3992742,2.1549136,,,,,,,0.0,atlas_bjj
+Mugendo Vallcarca,Barcelona,ES,41.4128453,2.141708,626 33 38 59,,https://vallcarca.mugendo.es/,"Carrer d'Esteve Terradas, 17, Gràcia, 08023 Barcelona, Spain",4.8,143,0.8,atlas_bjj
+Nagare Jiujitsu,Barcelona,ES,41.4148349,2.1624051,650 27 02 70,,https://nagarejiujitsu.com/,"Carrer de Vallseca, 20, Horta-Guinardó, 08024 Barcelona, Spain",4.9,10,0.8,atlas_bjj
+OLDSKULL JIU-JITSU BARCELONA,Barcelona,ES,41.4096204,2.1827157,678 40 73 73,,https://www.oldskulljiujitsu.com/,"Carrer de Xifré, 46, Sant Martí, 08026 Barcelona, Spain",4.9,98,0.8,atlas_bjj
+Puro Impacto,Barcelona,ES,41.4232821,2.1815382,,,https://puroimpacto.com/,"Carrer de Puerto Príncipe, 26 - 40, Sant Andreu, 08027 Barcelona, Spain",4.8,361,0.6,atlas_bjj
+Puro Impacto,Barcelona,ES,41.3825802,2.177073,,,,,,,0.0,atlas_bjj
+Reinaldo Ribeiro Team Barcelona Jiu-Jitsu,Barcelona,ES,41.3732977,2.1583587,600 65 13 75,,http://reinaldoribeiroteam.com/,"Carrer de la Bòbila, 6, Sants-Montjuïc, 08004 Barcelona, Spain",5.0,91,0.8,atlas_bjj
+Royce Gracie Barcelona,Barcelona,ES,41.6493481,-0.9110883,,,,,,,0.0,atlas_bjj
+Sparta Bcn Fight Team,Barcelona,ES,41.443571,2.1882603,935 35 76 77,,https://spartabcn.com/,"Carrer Gran de Sant Andreu, 505, Sant Andreu, 08030 Barcelona, Spain",4.3,35,0.8,atlas_bjj
+Sport Center Les Corts | Gimnasio,Barcelona,ES,41.3846234,2.1311239,618 55 71 97,,http://www.lescorts235.com/,"Travessera de les Corts, 235, Les Corts, 08028 Barcelona, Spain",4.9,204,0.8,atlas_bjj
+Team Victor Nuñez,Barcelona,ES,41.4252134,2.2014237,,,,,,,0.0,atlas_bjj
+The Warriors Martial Arts Club,Barcelona,ES,41.3736864,2.1221556,935 11 69 30,,http://www.warriorsmartialarts.com/,"Carrer del Doctor Martí Julià, 58, 08903 L'Hospitalet de Llobregat, Barcelona, Spain",4.9,155,0.8,atlas_bjj
+sampera 2,Barcelona,ES,41.3825802,2.177073,,,,,,,0.0,atlas_bjj
+Centro de Lucha de Alto Rendimiento,Benaguasil,ES,39.5942907,-0.588849,,,,,,,0.0,atlas_bjj
+ANACONDA BRAZILIAN JIU JITSU LA NUCIA,Benidorm,ES,38.5406255,-0.1290929,,,,,,,0.0,atlas_bjj
+Gracie Barra Benidorm,Benidorm,ES,38.5436218,-0.1343218,654 38 22 90,,,"P.º de las Acacias, 09, 03502 Benidorm, Alicante, Spain",5.0,77,0.6,atlas_bjj
+Bastos Academy,Bilbao,ES,43.26271,-2.92528,,,,,,,0.0,atlas_bjj
+Bilbao Combat Center,Bilbao,ES,43.2503462,-2.9300072,666 20 84 88,,http://www.bilbaocombatcenter.com/,"Ángel Ortiz Alfau Kalea, 4, Ibaiondo, 48003 Bilbao, Bizkaia, Spain",4.9,57,0.8,atlas_bjj
+Blakz Fight Club,Bilbao,ES,43.2630018,-2.9350039,,,,,,,0.0,atlas_bjj
+Dojo Samurai,Bilbao,ES,43.2569093,-2.9351097,944 43 46 71,,http://www.judobilbao.com/,"C. Pedro Martínez Artola kalea, 4, Errekalde, 48012 Bilbao, Vizcaya, Spain",4.9,27,0.8,atlas_bjj
+Escuela de Artes Marciales y Defensa Personal Mugendo Bilbao,Bilbao,ES,43.2661787,-2.9314757,944 23 05 20,,http://www.mugenkai.es/,"Cosme Echevarrieta Kalea, 4, Abando, 48009 Bilbao, Bizkaia, Spain",5.0,28,0.8,atlas_bjj
+SA Fight Company,Bilbao,ES,43.2702616,-2.9581869,602 65 33 84,,,"Calle Morgan 83, C. Rafaela Ybarra, 4B, galerías, Deusto, 48014 Bilbao, Vizcaya, Spain",5.0,151,0.6,atlas_bjj
+Finalbudo Mallorca - Baleares,"Binissalem, Mallorca",ES,39.681779,2.834414,,,,,,,0.0,atlas_bjj
+Mma Taldea Bermeo,Bizkaia,ES,43.4236854,-2.7345798,,,,,,,0.0,atlas_bjj
+Riders Fight Club,Bizkaia,ES,43.238482,-2.8516316,,,,,,,0.0,atlas_bjj
+Artes Marciales en Majadahonda KAMAE DO,Boadilla Del Monte,ES,40.4053485,-3.8764663,,,,,,,0.0,atlas_bjj
+Espacio Mentema,Boadilla Del Monte,ES,40.4496972,-3.8971375,916 33 14 46,,http://www.mentema.es/,"C. Playa de Mojácar, 35 Bis, 28660 Boadilla del Monte, Madrid, Spain",4.2,740,0.8,atlas_bjj
+Clube De Loita Do Morrazo,Bueu,ES,42.3255876,-8.803608,,,,,,,0.0,atlas_bjj
+Peposo Team Crossfit Burgos,Burgos,ES,42.3551525,-3.6623962,,,,,,,0.0,atlas_bjj
+Gracie Barra Burjassot,Burjassot,ES,39.5145069,-0.4112989,623 43 94 89,,,"Carrer de Lauri Volpi, 2B, 46100 Burjasot, Valencia, Spain",5.0,9,0.6,atlas_bjj
+TEAM KO BUÑOL,Buñol,ES,39.4189582,-0.7909637,627 27 49 94,,,"Avenida Doctor, Av. Beltrán Báguena, 8, 46360 Buñol, Valencia, Spain",5.0,1,0.4,atlas_bjj
+Sutemi Fight Academy Cadiz,Cadiz,ES,36.5297438,-6.2928976,,,,,,,0.0,atlas_bjj
+The Wingrevolution - Wing Bjj,Cadiz,ES,36.5135032,-6.2769634,,,,,,,0.0,atlas_bjj
+L.G. Guerreros,Calafell,ES,41.2014639,1.5680321,,,,,,,0.0,atlas_bjj
+Mallorca BJJ,Calvia,ES,39.489539,2.4809475,654 42 02 11,,https://www.mallorcabjj.com/,"Carrer Gran Via, 24, 07180 El Toro, Illes Balears, Spain",5.0,14,0.8,atlas_bjj
+Asturkon Team,Candas,ES,43.5870638,-5.7698125,,,,,,,0.0,atlas_bjj
+Club Boxeo Valles,Canovelles,ES,41.6170971,2.2741769,,,,,,,0.0,atlas_bjj
+Finalbudo Caravaca De La Cruz - Murcia,Caravaca De La Cruz,ES,38.1105694,-1.8655635,,,,,,,0.0,atlas_bjj
+Werdum Combat Team,Cartagena,ES,37.6185981,-0.9985953,,,,,,,0.0,atlas_bjj
+Nebari Jiu-Jitsu,Castelldefels,ES,41.2861022,1.9824173,603 20 35 81,,https://nebarijiujitsu.com/,"Av. de la Constitució, 56, 08860 Castelldefels, Barcelona, Spain",5.0,69,0.8,atlas_bjj
+Team Louzan,Cee,ES,42.9526355,-9.1915445,628 33 04 06,,http://www.teamlouzan.com/,"Edificio Agra Da Xunquiera, Praza dos Xuncos, Bajo 3, 15270 Cee, A Coruña, Spain",5.0,19,0.8,atlas_bjj
+Aranha BJJ Cerdanyola - Cerdanyola Fight Club,Cerdanyola Del Valles,ES,41.4910324,2.1374969,,,,,,,0.0,atlas_bjj
+130 jiu jitsu club (brazilian jiu jitsu Chiclana),Chiclana De La Frontera,ES,36.4191096,-6.1460683,,,,,,,0.0,atlas_bjj
+"Club deportivo KM-Boxing - Kick K1, BJJ, KRAV MAGA",Chiclana De La Frontera,ES,36.4100087,-6.1399278,692 14 09 60,,https://www.facebook.com/luis.gomezdelgado.75,"C. los Tapizadores, 5, entreplanta, 11130 Chiclana de la Frontera, Cádiz, Spain",5.0,53,0.8,atlas_bjj
+Galindo Jiu Jitsu,Chiclana De La Frontera,ES,36.4058514,-6.1602329,603 13 56 54,,https://www.instagram.com/galindo_jiu_jitsu/?hl=es,"Cjón. del Águila, 11130 Chiclana de la Frontera, Cádiz, Spain",4.9,27,0.8,atlas_bjj
+Ali Dinar Jiu Jitsu,Churriana De La Vega,ES,37.1438776,-3.6371002,,,,,,,0.0,atlas_bjj
+Ali Dinar Jiu Jitsu,Churriana De La Vega,ES,37.1478086,-3.646255,,,,,,,0.0,atlas_bjj
+"AMM Ciudad Real | MMA, BJJ, Grappling, Kick Boxing-K1 ,Muay Thai, Boxeo, Capoeira",Ciudad Real,ES,38.9848439,-3.9315934,623 54 60 57,,,"C. Alamillo Alto, 3, 13002 Ciudad Real, Spain",4.9,116,0.6,atlas_bjj
+Club Deportivo Bunkai,Ciudad Real,ES,38.9857494,-3.9240509,,,,,,,0.0,atlas_bjj
+Club Gimnasio Shotokan,Ciudad Real,ES,38.9597348,-3.8828744,,,,,,,0.0,atlas_bjj
+Gimnasio Shaolin,Ciudad Real,ES,38.6431322,-4.0148939,,,,,,,0.0,atlas_bjj
+Nagare Dojo,Ciudad Real,ES,38.6415731,-4.0135518,,,,,,,0.0,atlas_bjj
+Mazevedo Brazilian jiujitsu,Colindres,ES,43.3949637,-3.449786,,,,,,,0.0,atlas_bjj
+R O J EUROPE,Collado Villalba - Madrid,ES,40.6270277,-4.0203996,918 51 28 07,,https://www.instagram.com/roj_europe,"C. Azuela, 20, 28400 Collado Villalba, Madrid, Spain",5.0,3,0.8,atlas_bjj
+Level Up Europe,Collaldo Villalba,ES,40.6274406,-4.0203872,,,,,,,0.0,atlas_bjj
+Club Gladius Defensa Constanti,Constantí,ES,41.1543111,1.2072135,661 32 72 65,,,"Calle Reus nº 14 Bjos, 43120 Constantí, Tarragona, Spain",5.0,49,0.6,atlas_bjj
+Gimnasio Hermes,Cordoba,ES,37.8992527,-4.7786379,,,,,,,0.0,atlas_bjj
+Gimnasio Sandow Anaconda Jiu Jitsu,Cornella De Llobregat,ES,41.3653356,2.0775645,,,,,,,0.0,atlas_bjj
+Union Mma,Cornella De Llobregat,ES,41.3627526,2.0827669,,,,,,,0.0,atlas_bjj
+Noithai Factory Bjj,Corralejo,ES,28.741545,-13.8681525,,,,,,,0.0,atlas_bjj
+Guillen Fight Team,Coslada,ES,40.4251413,-3.553907,,,,,,,0.0,atlas_bjj
+PlayJitsu Academy,Coslada,ES,40.423802,-3.5552882,,,,,,,0.0,atlas_bjj
+Club Deportivo Peso Libre,Cuenca,ES,40.0771648,-2.1379347,,,,,,,0.0,atlas_bjj
+Gimnasio Vitae,Cuenca,ES,40.0699286,-2.1493922,,,,,,,0.0,atlas_bjj
+Wu Tao,Cuenca,ES,40.0661031,-2.1313528,,,,,,,0.0,atlas_bjj
+Gimnasio Zen,Cáceres,ES,39.4734825,-6.3795473,927 03 99 36,,,"Pl. de Albatros, Oeste, 10001 Cáceres, Spain",4.3,31,0.6,atlas_bjj
+Ronin Fight Club,Cáceres,ES,39.5034949,-6.3655185,,,,"C. Nicolás Copérnico, 25, Norte, 10004 Cáceres, Spain",5.0,13,0.2,atlas_bjj
+Megalodón BJJ,Cádiz,ES,36.5117624,-6.2751155,,,,,,,0.0,atlas_bjj
+Origen Academy,Cádiz,ES,36.4934264,-6.2652108,670 82 20 58,,https://gimnasioorigencadiz.com/,"C. Chiclana, 11011 Cádiz, Spain",5.0,18,0.8,atlas_bjj
+Club Deportivo Keikami,Córdoba,ES,37.6044178,-4.7408534,,,,,,,0.0,atlas_bjj
+Darkor Academy,Córdoba,ES,37.8824592,-4.7903618,,,,,,,0.0,atlas_bjj
+Karasu Brazilian Jiujitsu Lab,Córdoba,ES,37.89155,-4.77275,,,,,,,0.0,atlas_bjj
+keikami 2.0,Córdoba,ES,37.5869956,-4.6304885,,,,,,,0.0,atlas_bjj
+BRAZILIAN JIU-JITSU ACADEMY PROF CARLOS TOTA,Donostia,ES,43.3173468,-1.9491165,657 89 92 49,,http://www.carlostotabrazilianjiu-jitsu.es/,"Julimasene Kalea, 1, 20015 Donostia / San Sebastián, Gipuzkoa, Spain",4.0,50,0.8,atlas_bjj
+Gracie Barra Donostia,Donostia,ES,43.300733,-2.0170749,,,,,,,0.0,atlas_bjj
+Brazilian Jiu-Jitsu Profesor Carlos Tota,Donostia / San Sebastián,ES,43.3224219,-1.9838889,,,,,,,0.0,atlas_bjj
+Gustavo Henrique (gracie Barra),Donostia San Sebastian,ES,43.3230919,-1.9696999,,,,,,,0.0,atlas_bjj
+Stealth BJJ San Sebastián,Donostia-San Sebastián,ES,43.3030292,-2.0227874,673 47 37 08,,https://www.stealthbjjsansebastian.com/,"C. Iribar, 6, C-14, 20018 Donostia / San Sebastián, Guipúzcoa, Spain",5.0,123,0.8,atlas_bjj
+28 FIGHTCLUB,Dos Hermanas,ES,37.2964459,-5.911791,,,https://www.instagram.com/28fightclub.es/,"Sierra de Calvitero, 34, 41704 Dos Hermanas, Sevilla, Spain",5.0,13,0.6,atlas_bjj
+BITE ACADEMY,Dos Hermanas,ES,37.3402936,-5.9275052,,,,,,,0.0,atlas_bjj
+Baekho Doyang,Dos Hermanas,ES,37.2937945,-5.9397108,,,,,,,0.0,atlas_bjj
+Crazy Team Sevilla,Dos Hermanas,ES,37.283689,-5.9226718,,,,,,,0.0,atlas_bjj
+Fight Klub,Dos Hermanas,ES,37.2698234,-5.9219496,,,,,,,0.0,atlas_bjj
+Team Monster Brazilian Jiu-Jitsu,Dos Hermanas,ES,37.2895185,-5.9313322,,,,,,,0.0,atlas_bjj
+EjiDo Fight,El Ejido,ES,36.7735731,-2.8157764,624 00 85 07,,https://www.instagram.com/ejidofight/,"C. Capitán Cortés, 24, 04700 El Ejido, Almería, Spain",5.0,22,0.8,atlas_bjj
+Redzone Mma Team,El Entrego,ES,43.28727,-5.6446912,,,,,,,0.0,atlas_bjj
+Arts Marcials Prat de Llobregat - Mugendo,El Prat De Llobregat,ES,41.3237698,2.0930019,,,,,,,0.0,atlas_bjj
+Club Jj,El Puerto De Santa María,ES,36.6125365,-6.2103149,,,,"C. Carpintería, 9, 11500 El Puerto de Sta María, Cádiz, Spain",5.0,3,0.2,atlas_bjj
+"JV Concept - Entrenamiento, Salud, Dolor articular y Readaptación de Lesiones",Elda,ES,38.4789671,-0.7956759,,,,,,,0.0,atlas_bjj
+Socram brasilian jiu jitsu grappling y MMA,Elx / Elche,ES,38.2653307,-0.6988391,,,,,,,0.0,atlas_bjj
+Titan Academy,Estepona,ES,36.4316175,-5.1712005,54093397,,http://titanacademy.eu/,"C. Gaudí, 11, 29680 Estepona, Málaga, Spain",5.0,1,0.6,atlas_bjj
+Victory Gym,Fene,ES,43.4727886,-8.1713252,649 93 12 06,,http://www.instagram.com/VICTORYGYMGIMNASIO/?l=es,"Av. Marqués de Figueroa, 54, 15500 Fene, La Coruña, Spain",4.9,56,0.8,atlas_bjj
+Club Deportivo Renbu-Kan,Ferrol,ES,43.4823214,-8.2404656,981 35 57 23,,http://www.renbukan.es/,"R. Sol, 230, 15401 Ferrol, A Coruña, Spain",4.7,52,0.8,atlas_bjj
+Gimnasio Bunkai Sport,Ferrol,ES,43.4794964,-8.2067339,981 32 85 51,,http://www.bunkaisport.com/,"Av. do Mar, 15406 Ferrol, La Coruña, Spain",4.6,33,0.8,atlas_bjj
+Graiño Team Galicia,Ferrol,ES,43.3460655,-8.4103999,626 44 25 98,,https://www.wengchun.es/graino-team-galicia-grappling/mma,"Rúa do Pintor Luis Mosquera, 15008 A Coruña, Spain",5.0,111,0.8,atlas_bjj
+Bushi jiu-jitsu Fuengirola,Fuengirola,ES,36.5472898,-4.6225813,640 62 90 77,,http://www.bushijiu-jitsu.com/,"C. Romería del Rocío, 2, Local 8, 29640 Fuengirola, Málaga, Spain",5.0,4,0.8,atlas_bjj
+Gaijin Academy of Jiu-Jitsu,Fuengirola,ES,36.5371221,-4.6229991,,,http://bjjfuengirola.com/,"C. Medina, 3, 29640 Fuengirola, Málaga, Spain",,,0.2,atlas_bjj
+Newaza Jiujitsu Academy,Fuengirola,ES,36.5388398,-4.6233974,,,,,,,0.0,atlas_bjj
+Shorei-Kan,Fuengirola,ES,36.5404466,-4.6281486,,,,,,,0.0,atlas_bjj
+Ultimatum fight school,Fuengirola,ES,36.5753442,-4.6055917,,,,,,,0.0,atlas_bjj
+Narcisio Villaça BJJ,Gijon,ES,43.5449422,-5.66275,,,,,,,0.0,atlas_bjj
+Gfteam Spain,Girona,ES,41.9694197,2.821417,,,,,,,0.0,atlas_bjj
+Nova Guard BJJ,Girona,ES,41.9677222,2.8101411,,,,,,,0.0,atlas_bjj
+RYU CENTRE GIRONA,Girona,ES,41.9855209,2.818106,,,,,,,0.0,atlas_bjj
+T.M.C,Girona,ES,41.9661995,2.8044874,695 37 66 95,,http://www.somostmc.com/,"Carrer Can Pau Birol, 12, 1ª planta, 17005 Girona, Spain",5.0,65,0.8,atlas_bjj
+Companhia Paulista Espanha,Granada,ES,37.1802943,-3.6017957,,,,,,,0.0,atlas_bjj
+Jiu Jitsu Granada,Granada,ES,37.1652507,-3.6012375,858 99 16 93,,,"C. Rey Abu Said, 2, Ronda, 18006 Granada, Spain",4.9,56,0.6,atlas_bjj
+"TAOWS Academy Granada (Wing Chun, BJJ, Defensa Personal Infantil).",Granada,ES,37.1804224,-3.6153907,678 11 30 39,,https://www.taowsacademygranada.com/,"C. Santo Tomás de Villanueva, 22, Ronda, 18004 Granada, Spain",4.9,54,0.8,atlas_bjj
+Warrior Soul School(Muay Thai) y (Brazilian Jiu jitsu),Granada,ES,36.7440891,-3.5294294,,,,,,,0.0,atlas_bjj
+Crossfighter Nago Academy Mma,Granada Maracena,ES,37.2076275,-3.633024,687 47 38 74,,https://www.facebook.com/crossfighternago,"C. Vista Nevada, 9, 18200 Maracena, Granada, Spain",4.9,14,0.8,atlas_bjj
+Blood Brothers Granollers Brazilian Jiu-Jitsu & Grappling,Granollers,ES,41.596696,2.2794141,627 36 79 59,,http://www.bloodbrothersgranollers.com/,"Carrer Londres, 11, 08401 Granollers, Barcelona, Spain",5.0,30,0.8,atlas_bjj
+Granollers Jiu-jitsu Brasiler - YokaiBjj - MMA - Krav Maga,Granollers,ES,41.6175854,2.2978589,690 91 77 38,,http://www.granollersbjj.com/,"Carrer de l'Alzina, 08521 Bellavista, Barcelona, Spain",5.0,43,0.8,atlas_bjj
+Samperatest,Granollers,ES,41.6079555,2.2876008,,,,,,,0.0,atlas_bjj
+Fractal Guadalajara,Guadalajara,ES,41.661426,-0.860919,,,,,,,0.0,atlas_bjj
+Club Edgarsport,Hospitalet,ES,39.6169381,-3.3401451,,,,,,,0.0,atlas_bjj
+Daithon Gym,Hospitalet De Llobregat,ES,41.3631097,2.1007122,933 38 70 15,,,"Carrer Bruc, 20, 08901 L'Hospitalet de Llobregat, Barcelona, Spain",4.8,76,0.6,atlas_bjj
+FIVE ELEMENTS JIU JITSU HUELVA.,Huelva,ES,37.2651817,-6.9550973,627 85 30 37,,https://www.brazilianjiujitsuhuelva.es/,"C. Teide, 6, 21002 Huelva, Spain",4.9,177,0.8,atlas_bjj
+Silva Fight Team,Huelva,ES,37.2549436,-6.9523701,,,,,,,0.0,atlas_bjj
+Tokuido Bjj Team,Huelva,ES,37.2562251,-6.9514857,,,,,,,0.0,atlas_bjj
+Chapko HFC,Huesca,ES,42.1360615,-0.0298027,,,,,,,0.0,atlas_bjj
+AZ GYM & JIU JITSU ACADEMY,Ibiza,ES,38.9716269,1.3318483,,,,,,,0.0,atlas_bjj
+Art of Flow Bjj Brazilian jiujitsu Ibiza Academy,Ibiza,ES,38.9743901,1.4197463,,,,,,,0.0,atlas_bjj
+Club de lucha Dosys San Antonio,Ibiza,ES,38.9828361,1.3041716,,,,,,,0.0,atlas_bjj
+Core Combat Unlimited Spain - Artes Marciales en Ibiza,Ibiza,ES,38.9917844,1.5470067,,,,,,,0.0,atlas_bjj
+Fight System Ibiza,Ibiza,ES,38.9127737,1.4284936,651 45 54 91,,https://instagram.com/fightsystem_ibiza?igshid=YmMyMTA2M2Y=,"Carrer de Fra Vicent Nicolau, 28, 07800 Eivissa, Illes Balears, Spain",4.9,51,0.8,atlas_bjj
+Grappling Ibiza,Ibiza,ES,38.9224887,1.4273834,602 45 35 35,,http://grapplingibiza.com/,"Poliesportiu, Carrer Raspallàs, s/n, 07800 sa Blancadona, Illes Balears, Spain",5.0,3,0.6,atlas_bjj
+Ibiza Fight Center,Ibiza,ES,38.9046004,1.4151469,663 98 27 95,,,"Carrer del Músic Fermí Marí, 22, 07800 Eivissa, Illes Balears, Spain",4.8,32,0.6,atlas_bjj
+Ibiza Top Team,Ibiza,ES,38.9262356,1.4320892,677 07 65 62,,http://oscarcofradecombattrainer.com/,"Carrer Mare de Déu del Pilar, 5, 07800 Puig d'en Valls, Illes Balears, Spain",5.0,42,0.8,atlas_bjj
+Nova Uniao BJJ Ibiza,Ibiza,ES,38.996494,1.4294542,,,,,,,0.0,atlas_bjj
+Proart Jiu-Jitsu,Ibiza,ES,38.9046004,1.4151469,,,,,,,0.0,atlas_bjj
+Gracie Barra Irun,Irun,ES,43.3354294,-1.8154093,696 01 80 32,,http://www.graciebarrairun.com/,"Letxumborro Hiribidea, 96, 20305 Irun, Gipuzkoa, Spain",4.9,61,0.8,atlas_bjj
+Climent Club Jaén,Jaén,ES,37.7066063,-3.9693758,,,,,,,0.0,atlas_bjj
+Gimnasio Imagen,Jaén,ES,37.8008125,-3.7426181,,,,,,,0.0,atlas_bjj
+Next Warrior Jaén,Jaén,ES,37.7768632,-3.7950654,603 73 75 55,,http://www.nextwarrior.es/,"C. de Sefarad, 7, 23005 Jaén, Spain",5.0,134,0.8,atlas_bjj
+Sugar Ray,Jaén,ES,37.9553976,-3.4937431,,,,,,,0.0,atlas_bjj
+Sugar Ray Jaén,Jaén,ES,37.7691609,-3.7835238,627 96 65 76,,https://www.sugarrayjaen.es/,"Cam. de las Cruces, 3, 23003 Jaén, Spain",4.8,63,0.8,atlas_bjj
+ACADEMIA DE ARTES MARCIALES Y DEPORTES DE CONTACTO,Jerez De La Frontera,ES,36.6816936,-6.1377402,,,,,,,0.0,atlas_bjj
+Asociación Deportiva Kyu Dan,Jerez De La Frontera,ES,36.7046525,-6.1282057,646 62 96 38,,https://asociaciondeportivakyudan.jimdofree.com/,"C. Sierra del Aljibe, 4, 11407 Jerez de la Frontera, Cádiz, Spain",4.9,31,0.8,atlas_bjj
+Brazilian Jiu-jitsu / Jiu-jitsu Brasileño,Jerez De La Frontera,ES,36.691075,-6.1067137,660 18 37 17,,http://rafaelpousada.com/,"Calle Esla, 13, 11405 Jerez de la Frontera, Cádiz, Spain",5.0,103,0.8,atlas_bjj
+C.d. Kodokan Sambo & Bjj Taz Jerez,Jerez De La Frontera,ES,36.6752992,-6.1100554,,,,,,,0.0,atlas_bjj
+Club Sensei Jerez,Jerez De La Frontera,ES,36.6887221,-6.1242933,639 21 00 56,,https://instagram.com/clubsenseijerez,"C. Bruselas, 11405 Jerez de la Frontera, Cádiz, Spain",4.9,14,0.8,atlas_bjj
+Jiu Jitsu & Grappling Jerez,Jerez De La Frontera,ES,36.6874358,-6.1318175,956 34 67 41,,https://www.instagram.com/bjj_jerez/?hl=es,"C. Pajarete, 6T, 11402 Jerez de la Frontera, Cádiz, Spain",5.0,49,0.8,atlas_bjj
+Fight Brothers Competition Team,"Jerez De La Frontera, Y  Puerto Santa Maria.",ES,36.5797422,-6.2166413,,,,,,,0.0,atlas_bjj
+Team Oscar Luque,La Cuesta,ES,28.4857715,-16.3159422,,,,,,,0.0,atlas_bjj
+Gimnasio Viana,La Laguna,ES,40.0635765,-3.5970377,,,,,,,0.0,atlas_bjj
+Club Linense Deportivo Body Kwon,La Línea De La Concepción,ES,36.1664871,-5.3461869,956 17 16 36,,,"C. Isaac Peral, 2, 11300 La Línea de la Concepción, Cádiz, Spain",3.4,8,0.4,atlas_bjj
+Anaconda Jiu Jitsu La Nucia,La Nucia,ES,38.5889064,-0.1265681,,,,,,,0.0,atlas_bjj
+Checkmat Fightzone Costablanca,La Nucia,ES,38.5721164,-0.1329009,657 43 14 23,,http://www.fightzonecostablanca.es/,"Carrer Uruguay, 15, 03530 La Nucia, Alicante, Spain",4.9,153,0.8,atlas_bjj
+La Vila Joiosa Brazilian Jiu Jitsu,La Vila Joiosa / Villajoyosa,ES,38.5100778,-0.2296202,,,,,,,0.0,atlas_bjj
+Riders Fight Club,Las Arenas - Getxo,ES,43.3332161,-3.0051789,648 62 92 65,,http://www.ridersfightclub.com/,"Villa de Plentzia Kalea, 14, 48930 Areeta / Las Arenas, Bizkaia, Spain",4.8,73,0.8,atlas_bjj
+Bravo Escuela de Jiu Jitsu,Las Palmas,ES,28.09973,-15.41343,,,,,,,0.0,atlas_bjj
+Club Deportivo Ramon Diaz,Las Palmas,ES,28.1379704,-15.432728,669 27 52 25,,,"C. Uruguay, 30, 35007 Las Palmas de Gran Canaria, Las Palmas, Spain",4.9,139,0.6,atlas_bjj
+Club Felipe Marden - Brazilian Jiu Jitsu,Las Palmas,ES,28.12932715,-15.44589991,685 44 73 05,,https://felipemarden.club/,"C. Secretario Padilla, 176, 35010 Las Palmas de Gran Canaria, Las Palmas, Spain",5.0,9,0.8,atlas_bjj
+Daniel Ladero Academy,Las Palmas,ES,28.6942732,-13.891494,,,,,,,0.0,atlas_bjj
+EJJB La Cúpula - Escuela de Jiu-jitsu,Las Palmas,ES,28.1160347,-15.42525685,,,,,,,0.0,atlas_bjj
+Gil Catarino,Las Palmas,ES,28.0945059,-15.4516891,,,,"C. Menorca, 3, 35013 Las Palmas de Gran Canaria, Las Palmas, Spain",5.0,8,0.4,atlas_bjj
+Jiu Jitsu japonés-Defensa personal Escaleritas,Las Palmas,ES,27.9100469,-15.4067982,,,,,,,0.0,atlas_bjj
+Primal Brazilian jiu jitsu,Las Palmas,ES,27.8482271,-15.4454247,,,,"C. Famara, 5, 35110 Vecindario, Las Palmas, Spain",5.0,19,0.4,atlas_bjj
+Silat Tao Martial Art by Claudio Conti,Las Palmas,ES,28.13218155,-15.43358696,,,https://www.facebook.com/silattaoclaudioconti,"C. Víctor Hugo, 50, 35006 Las Palmas de Gran Canaria, Las Palmas, Spain",5.0,39,0.4,atlas_bjj
+THE ZEN CLUB ESCUELA DE BJJ,Las Palmas,ES,28.9694111,-13.5454517,,,,,,,0.0,atlas_bjj
+Team Romero BJJ,Las Palmas,ES,28.0973599,-15.45050879,,,,,,,0.0,atlas_bjj
+Ookami Senshi Dojo Artes Marciales,Las Rozas De Madrid,ES,40.5007584,-3.8906657,,,,,,,0.0,atlas_bjj
+AAM-Academia de Artes Marciales,Leganés,ES,40.3386222,-3.7474687,,,,,,,0.0,atlas_bjj
+CLUB VICTOR PRADERA,Leganés,ES,40.3114926,-3.7922338,,,,,,,0.0,atlas_bjj
+Escuela de Artes Marciales AM Leganés,Leganés,ES,40.3116803,-3.7838179,,,,,,,0.0,atlas_bjj
+INGUZ Centro Wellness Leganés,Leganés,ES,40.3445531,-3.7740089,611 86 19 94,,https://inguz.es/leganes/,"C. Anita Martínez, 7, 28918 Leganés, Madrid, Spain",5.0,89,0.8,atlas_bjj
+INGUZ Leganés - Entrenamiento Funcional y Personal,Leganés,ES,40.343873,-3.7782639,,,,,,,0.0,atlas_bjj
+Kyusho Dim Mak D.K.I.,Leganés,ES,40.3420325,-3.7682885,676 07 31 45,,http://kyushodki.com/,"C. de Paraguay, Nº 9, C.P:, 28918 Leganés, Madrid, Spain",5.0,9,0.8,atlas_bjj
+Voodoo Gym,Leganés,ES,40.3281942,-3.76527,,,,,,,0.0,atlas_bjj
+Cleyton Bastos Team,Leioa,ES,43.3271048,-2.9846079,,,,,,,0.0,atlas_bjj
+Gimnasio León Fight Club,León,ES,42.6003948,-5.5798335,646 65 14 04,,https://leonfightclub.com/,"C. Sampiro, 12, 24001 León, Spain",4.9,130,0.8,atlas_bjj
+Muzenza León,León,ES,42.6000131,-5.5805347,646 65 14 04,,http://www.muzenzaleon.com/,"C. Juan de Badajoz, 9, 24001 León, Spain",4.9,32,0.8,atlas_bjj
+Victoria Sport Club & Spa,León,ES,42.5978985,-5.5784254,987 23 88 47,,http://www.centrovictoria.com/,"C. Cardenal Lorenzana, 4, 24001 León, Spain",4.6,492,0.8,atlas_bjj
+Victoria fight club,León,ES,42.6006954,-5.5809323,987 23 88 47,,https://www.centrovictoria.com/fightclub-victoria-leon.php,"C. Sampiro, 22, 24001 León, Spain",5.0,5,0.6,atlas_bjj
+Finalbudo Club Murcia,Llano De Brujas,ES,37.9928539,-1.0788616,,,,,,,0.0,atlas_bjj
+Brazilian Jiu-Jitsu Academy,Lleida,ES,41.6072285,0.6451897,669 11 10 05,,https://brazilianjiujitsulleida.com/,"Carrer Palauet, 58, 25001 Lleida, Spain",5.0,102,0.8,atlas_bjj
+Panther Team Brazilian Jiu Jitsu,Lleida,ES,41.6145247,0.6341752,630 66 69 78,,https://www.instagram.com/pantherteambjj?igsh=eWp0dWoxNjc1a2k5&utm_source=qr,"Carrer Santa Cecília, 4-6, 25001 Lleida, Spain",5.0,197,0.8,atlas_bjj
+TEAM SERGIO MIR,Lleida,ES,41.6147605,0.6267842,,,,,,,0.0,atlas_bjj
+Judo Nova Unio,Lloret De Mar,ES,41.7031614,2.8393239,,,,,,,0.0,atlas_bjj
+FIGHTER ACADEMY. TEAM MARIN,Logroño,ES,42.4746381,-2.4628365,642 17 85 86,,,"C. Blanco Lac, 10, 26005 Logroño, La Rioja, Spain",4.9,26,0.6,atlas_bjj
+Gimnasio Samurai,Logroño,ES,42.4662243,-2.4356508,665 05 37 37,,http://www.gimnasiosamurai.es/,"Pl. Fermín Gurbindo, 9, 26004 Logroño, La Rioja, Spain",4.8,46,0.8,atlas_bjj
+Itaca Jiu Jitsu,Logroño,ES,42.4661196,-2.4396676,,,,,,,0.0,atlas_bjj
+Club Deportivo Tiaki Jiu Jitsu,Lorca,ES,37.6778103,-1.6970245,,,https://tiakiacademy.blogspot.com/,"Pl. Saavedra, 2, 30800 Lorca, Murcia, Spain",5.0,17,0.6,atlas_bjj
+Dojo Eduardo Alcaraz - Club Kyokushinkai Lorca,Lorca,ES,37.6628514,-1.7057357,627 54 11 29,,http://fb.me/dojoeduardoalcaraz,"Av. de la Salud, 4, 30800 Lorca, Murcia, Spain",4.5,17,0.8,atlas_bjj
+Alpha Wolf Pack - Jiu Jitsu y MMA Lugo,Lugo,ES,43.0070109,-7.5510443,651 04 04 97,,http://www.wolfpack.es/,"Rúa Catasol, 17, 27002 Lugo, Spain",4.8,73,0.8,atlas_bjj
+Gracie Barra Lucus,Lugo,ES,43.0071983,-7.5504585,,,,,,,0.0,atlas_bjj
+Junior Team Lugo - Brazilian Jiu Jitsu (BJJ) y Grappling (Nogi),Lugo,ES,43.0396042,-7.4566072,,,,,,,0.0,atlas_bjj
+Academia Deibe De Artes Marciales,Madrid,ES,40.4505003,-3.8160012,,,,,,,0.0,atlas_bjj
+Academia Mario Padilla,Madrid,ES,40.4046924,-3.6785125,,,https://academiamariopadilla.com/,"C. de Granada, 19, Retiro, 28007 Retiro, Madrid, Spain",4.7,97,0.6,atlas_bjj
+Atenea Brazilian Jiu Jitsu Team,Madrid,ES,40.4401526,-3.6512939,634 25 41 79,,https://www.ateneabjjteam.com/,"C. del Canal de Panamá, 3, Cdad. Lineal, 28027 Madrid, Spain",5.0,106,0.8,atlas_bjj
+BJJ MADRID - LOTUS CLUB,Madrid,ES,40.4482319,-3.7127027,,,,,,,0.0,atlas_bjj
+BJJ Madrid Academy,Madrid,ES,40.4703855,-3.6858076,634 46 72 96,,http://www.bjjmadrid.com/,"C. de Agustín de Foxá, 25, Bajo C, Chamartín, 28036 Madrid, Spain",5.0,73,0.8,atlas_bjj
+Boxeo El Rayo,Madrid,ES,40.3902877,-3.6602035,,,,,,,0.0,atlas_bjj
+Boxeo el Rayo,Madrid,ES,40.416782,-3.703507,,,,,,,0.0,atlas_bjj
+Brazilian Jiu Jitsu Malasaña,Madrid,ES,40.4276445,-3.7007794,,,,,,,0.0,atlas_bjj
+Checkmat Madrid BJJ,Madrid,ES,40.43192,-3.63973,660 19 70 56,,http://checkmatmadrid.com/,"Calle Esteban Collantes, 32, Cdad. Lineal, 28017 Madrid, Spain",4.9,111,0.8,atlas_bjj
+"Clube da Luta – Clases de MMA, Grappling, BJJ, Muay Thai, Brazilian Luta Livre",Madrid,ES,40.5498752,-3.6319303,910 22 44 18,,https://clubedalutasanse.com/,"C. de San Nicolás, 11, 28701 San Sebastián de los Reyes, Madrid, Spain",4.9,186,0.8,atlas_bjj
+Cobrinha Brazilian Jiu-Jitsu Madrid,Madrid,ES,40.4782087,-3.7158,642 61 70 44,,https://www.cobrinhabjjmadrid.com/,"Pl. de Puerto de la Cruz, 2, Fuencarral-El Pardo, 28029 Madrid, Spain",5.0,55,0.6,atlas_bjj
+Crazy Team Madrid,Madrid,ES,40.3908051,-3.6911406,,,,,,,0.0,atlas_bjj
+Círculo de Jiu Jitsu,Madrid,ES,40.4274823,-3.6761227,681 10 58 68,,https://circulodejiujitsu.com/,"Cl. de Ayala, 71, Salamanca, 28001 Madrid, Spain",5.0,118,0.8,atlas_bjj
+Dojo Bushikan,Madrid,ES,40.3812378,-3.6727735,,,,,,,0.0,atlas_bjj
+Escuela Artes Marciales Deibe,Madrid,ES,40.3980309,-3.7041485,,,,,,,0.0,atlas_bjj
+Escuela Deportiva Rio,Madrid,ES,40.4552736,-3.6814511,,,,,,,0.0,atlas_bjj
+Escuela de Jiujitsu Brasileño Puerta del Angel.,Madrid,ES,40.4103076,-3.7334289,604 95 24 80,,,"C. de Cabello Lapiedra, 4, Latina, 28011 Madrid, Spain",5.0,97,0.6,atlas_bjj
+Estudio 47 MMA,Madrid,ES,40.4719558,-3.6376209,,,,,,,0.0,atlas_bjj
+Gimnasio Arian,Madrid,ES,40.4182283,-3.7077465,,,,,,,0.0,atlas_bjj
+Gimnasio Club Deportivo José Valenciano,Madrid,ES,40.4326219,-3.7148718,910 13 98 33,,http://www.clubdeportivojosevalenciano.com/,"C. de Andrés Mellado, 21, Chamberí, 28015 Madrid, Spain",4.7,545,0.8,atlas_bjj
+Gimnasio Escuela Usera Fight Club,Madrid,ES,40.3868346,-3.7040135,635 27 15 40,,https://thefightclub.es/,"C. del Amor Hermoso, 13, Usera, 28026 Madrid, Spain",4.9,172,0.8,atlas_bjj
+Gimnasio Feijoo,Madrid,ES,40.44337255,-3.70130282,914 48 76 42,,http://www.gimnasiofeijoo.com/,"C. de Cristóbal Bordiú, 11, Chamberí, 28003 Madrid, Spain",4.6,56,0.8,atlas_bjj
+Gimnasio Fundadores,Madrid,ES,40.4246718,-3.6654459,,,,,,,0.0,atlas_bjj
+Gracie Barra Madrid - Bjj,Madrid,ES,40.42526,-3.69063,,,,,,,0.0,atlas_bjj
+"IAM, INSTITUTO DE ARTES MARCIALES",Madrid,ES,40.4029662,-3.7480336,687 06 78 45,,http://www.institutodeartesmarciales.com/,"C. de Pradales, 39, Latina, 28047 Madrid, Spain",4.9,169,0.8,atlas_bjj
+Izumi Club,Madrid,ES,40.4347209,-3.7044349,,,,,,,0.0,atlas_bjj
+JC FIGHT TEAM,Madrid,ES,40.3944582,-3.7125583,602 42 16 69,,http://www.jcfightteam.com/,"C. del Conde de Vistahermosa, 11, Carabanchel, 28019 Madrid, Spain",4.9,108,0.8,atlas_bjj
+Jiu jitsu brasileño - s.f team - Madrid -,Madrid,ES,40.3663771,-3.62083979,,,,,,,0.0,atlas_bjj
+Julio Cesar Alves,Madrid,ES,40.7471384,-3.5205207,,,,,,,0.0,atlas_bjj
+"KARURA RIO muay thai,boxeo,jeet kune do,jiu jitsu japones,etc..",Madrid,ES,40.3969667,-3.6996101,679 59 29 01,,,"C. Fernando Poo, 23, Arganzuela, 28045 Madrid, Spain",4.8,112,0.6,atlas_bjj
+Lucharama Gym,Madrid,ES,40.416577,-3.6731044,,,,,,,0.0,atlas_bjj
+MADSPORT ACADEMY,Madrid,ES,40.4358288,-3.6227021,722 75 39 92,,https://madsportacademy.es/?utm_source=Google&utm_medium=Maps&utm_campaign=My%20business,"C. de Miguel Yuste, 43, San Blas-Canillejas, 28037 Madrid, Spain",4.8,112,0.8,atlas_bjj
+Martial Spirit Academy,Madrid,ES,40.4536051,-3.7054571,674 41 39 50,,http://martialspirit.es/,"C. de Navarra, 35, Tetuán, 28039 Madrid, Spain",4.9,157,0.8,atlas_bjj
+Mathias Ribeiro Team,Madrid,ES,40.4644371,-3.6348562,640 97 17 77,,https://mathiasribeiroteam.com/,"C. de Mota del Cuervo, 10, Hortaleza, 28043 Madrid, Spain",5.0,104,0.8,atlas_bjj
+RCJJ Madrid,Madrid,ES,40.48264,-3.7146239,,,,,,,0.0,atlas_bjj
+Raúl Cantero Jiujitsu,Madrid,ES,40.4815769,-3.7105289,,,,,,,0.0,atlas_bjj
+Raúl Cantero Jiujitsu,Madrid,ES,40.385397,-3.6510963,,,,,,,0.0,atlas_bjj
+Somos Jiu Jitsu Kids,Madrid,ES,40.4614076,-3.6911835,628 09 30 57,,https://somosjiujitsu.com/,"P.º de la Castellana, 161, Tetuán, 28046 Madrid, Spain",5.0,83,0.8,atlas_bjj
+Splinters Jiu-jitsu & MMA,Madrid,ES,40.4485846,-3.6990551,622 21 23 69,,https://splintersmma.com/,"Cl. de Don Quijote, 28, Tetuán, 28020 Madrid, Spain",5.0,117,0.8,atlas_bjj
+Stealth BJJ Madrid Aluche,Madrid,ES,40.3787476,-3.7796275,602 57 26 31,,http://www.stealthbjjmadrid.com/,"C. de Oliva de Plasencia, 1, Latina, 28044 Madrid, Spain",5.0,29,0.8,atlas_bjj
+Tatamisfera,Madrid,ES,40.3939086,-3.710295,910 34 62 20,,https://www.tatamisfera.com/,"C. del Padre Oltra, 54, Carabanchel, 28019 Madrid, Spain",4.8,147,0.8,atlas_bjj
+Timing Self Defense Club,Madrid,ES,40.4237276,-3.6899043,,,,,,,0.0,atlas_bjj
+BJL Team,Malaga,ES,36.5077283,-4.6709248,,,,,,,0.0,atlas_bjj
+Club De La Lluita Bjj,Malgrat De Mar,ES,41.649181,2.746732,,,,,,,0.0,atlas_bjj
+Mma Bcn Pretorians / Top King Training Center,Malgrat De Mar,ES,41.6446533,2.7374351,,,,"Carrer Germanes Torrell, 11, 08380 Malgrat de Mar, Barcelona, Spain",4.8,39,0.2,atlas_bjj
+Mugendo Manresa,Manresa,ES,41.7342293,1.8231046,676 68 00 73,,https://manresa.mugendo.es/,"Carrer de Barcelona, 27, 08242 Manresa, Barcelona, Spain",4.8,31,0.8,atlas_bjj
+Bittan Academy San Pedro Marbella,Marbella,ES,36.4877036,-4.9927562,951 48 25 64,,http://www.patrickbittan.es/,"Bittan Academy, Dentro la Plaza, C. Chambel, 3, 29670 San Pedro Alcántara, Málaga, Spain",4.8,47,0.8,atlas_bjj
+Escuela Dragón Zen,Marbella,ES,36.502753,-4.9844115,,,,,,,0.0,atlas_bjj
+Leo Galati Team Jiu Jitsu & MMA,Marbella,ES,36.5020299,-4.9799632,692 21 32 06,,https://www.leogalatijiujitsu.com/es,"Av. Valle Inclán, 40, Nueva Andalucía, 29660 Marbella, Málaga, Spain",5.0,58,0.8,atlas_bjj
+Pura Vida BJJ Studio (CVBJJ),Marbella,ES,36.4858257,-4.987917,675 13 99 89,,,"C. Extremadura, 6, 29670 San Pedro Alcántara, Málaga, Spain",4.2,5,0.4,atlas_bjj
+The Flow Academy,Marbella,ES,36.4912724,-4.9712664,664 10 25 32,,,"C. Río Volga, 29660 Marbella, Málaga, Spain",4.8,31,0.6,atlas_bjj
+Octogon Sport Center,Martorell,ES,41.4770166,1.9189459,937 75 52 00,,http://www.octogonsportcenter.com/,"Av. Germans Martí, 1, 08760 Martorell, Barcelona, Spain",5.0,34,0.8,atlas_bjj
+Atlas Mataro ( Mma Barcelona Seccion Mataro),Mataro,ES,41.5433991,2.4269741,,,,,,,0.0,atlas_bjj
+Gracie Mataro,Mataro,ES,40.9320523,-4.0956116,,,,,,,0.0,atlas_bjj
+"Maestro Esteban Houdini Bonaveri MMA, jiu-jitsu, boxeo, kick boxing",Mataró,ES,41.5319823,2.4393235,651 65 61 86,,https://www.facebook.com/HoudiniBonaveri/,"Carrer Méndez Núñez, 12, 08302 Mataró, Barcelona, Spain",5.0,23,0.8,atlas_bjj
+Mataró Jiu-Jitsu,Mataró,ES,41.5420453,2.4286874,640 16 19 46,,http://matarojiujitsu.com/index.html,"Carrer Sant Jordi, 34, 08303 Mataró, Barcelona, Spain",5.0,85,0.8,atlas_bjj
+Team B.Mislata,Mislata,ES,39.4751444,-0.4179125,,,,,,,0.0,atlas_bjj
+Finalbudo Molina Del Segura - Murcia,Molina Del Segura,ES,38.0572339,-1.2095298,,,,,,,0.0,atlas_bjj
+CLUB ARES ARENA,Mollet,ES,41.5465699,2.2170383,687 24 00 45,,http://aresarena.com/,"Carrer de Can Flequer, 6-8, 1º 1ª, 08100 Mollet del Vallès, Barcelona, Spain",4.8,23,0.8,atlas_bjj
+Jiu Jitsu Granollers - MMA - MG Team Barcelona,Mollet,ES,41.5393484,2.2130934,,,,,,,0.0,atlas_bjj
+G360MMA,Murcia,ES,37.9355804,-1.1619469,,,,,,,0.0,atlas_bjj
+Gracie Barra_ Jiu Jitsu _Grapling( NO GI) MMA,Murcia,ES,37.9771219,-1.1266369,626 90 60 08,,,"C. Arcipreste Mariano Aroca, 7, bajo, 30011 Murcia, Spain",5.0,34,0.6,atlas_bjj
+Gym365,Murcia,ES,37.991775,-1.1128287,,,,,,,0.0,atlas_bjj
+Werdum Combat Team,Murcia,ES,37.833892,-0.7902428,,,,,,,0.0,atlas_bjj
+Atitude BJJ Málaga,Málaga,ES,36.7126838,-4.4738025,,,,"C. Brasilia, 25, Cruz de Humilladero, 29006 Málaga, Spain",5.0,114,0.4,atlas_bjj
+Club Deportivo Nagare,Málaga,ES,36.7049485,-4.4523684,624 05 27 48,,https://www.nagareclub.com/,"Cmo de S. Rafael, 91, D, Carretera de Cádiz, 29006 Málaga, Spain",4.8,49,0.8,atlas_bjj
+Dojo Yoshinkai,Málaga,ES,36.6939319,-4.4486932,,,,,,,0.0,atlas_bjj
+Gimnasio Corpore Sano,Málaga,ES,36.7323089,-4.4182299,,,,,,,0.0,atlas_bjj
+KOARENA Jiu Jitsu Club,Málaga,ES,36.7214915,-4.3596335,,,https://www.koarena.club/,"C. Valparaíso, 31, Málaga-Este, 29017 Málaga, Spain",5.0,5,0.4,atlas_bjj
+MLK Academy Brazilian Jiu-jitsu,Málaga,ES,36.723112,-4.489685,605 91 59 74,,http://brazilianjiujitsu.es/,"C. Jose Maria Gonzalez Ruiz, 7, Puerto de la Torre, 29010 Málaga, Spain",4.6,36,0.8,atlas_bjj
+Roger Gracie Malaga,Málaga,ES,36.68696,-4.4472137,665 98 88 98,,https://rogergraciemalaga.com/,"C. Polifemo, 3, Carretera de Cádiz, 29004 Málaga, Spain",4.9,69,0.8,atlas_bjj
+Scramble Academy Spain,Málaga,ES,36.6126052,-4.5147693,603 71 60 05,,https://www.scrambleacademy.es/,"Poligono el Pinillo, C. Antonio Alcaide Sánchez, 3, 29620 Torremolinos, Málaga, Spain",4.9,70,0.8,atlas_bjj
+Zendo Ryu Ju Jutsu,Málaga,ES,36.734453,-4.4149864,952 25 06 10,,http://zendoryujujutsu.com/,"C. Periodista Juanito Cortés, 16, Distrito Centro, 29013 Málaga, Spain",4.9,32,0.8,atlas_bjj
+Traning Club,Málaga/Málaga,ES,36.6902711,-4.4640698,,,,,,,0.0,atlas_bjj
+Revolution Fitness Center,Naron,ES,43.5003636,-8.1897001,,,,,,,0.0,atlas_bjj
+Bandog Fight Club - Navia,Navia,ES,43.5435908,-6.7199169,,,,,,,0.0,atlas_bjj
+Artes Marciales BMF Orihuela Costa,Orihuela,ES,38.0856891,-0.9448805,,,,,,,0.0,atlas_bjj
+Entrena Tu Salud,Orihuela,ES,38.0806747,-0.9422062,674 70 37 17,,,"C. Carmelitas, 1, 03300 Orihuela, Alicante, Spain",5.0,47,0.6,atlas_bjj
+Savage Martial Arts Orihuela Costa,Orihuela,ES,37.9139357,-0.7405547,,,,,,,0.0,atlas_bjj
+Alpha Wolf Pack - Jiu Jitsu & MMA Orense,Ourense,ES,42.3198298,-7.8807999,651 04 04 97,,http://www.wolfpack.es/,"Rua Garrida, 32002 Ourense, Spain",5.0,15,0.8,atlas_bjj
+"Artai ""O Vinteun""",Ourense,ES,42.3522044,-7.866883,988 61 97 66,,http://www.artai.eu/,"Rúa Río Arenteiro, 7, 32001 Ourense, Spain",4.8,36,0.8,atlas_bjj
+Asturkón,Oviedo,ES,43.3692382,-5.835976,,,,,,,0.0,atlas_bjj
+Brazilian Jiu Jitsu Oviedo (BJJ O),Oviedo,ES,43.3651617,-5.8432494,,,,,,,0.0,atlas_bjj
+Oviedo Sport,Oviedo,ES,43.3707044,-5.8538574,985 29 38 86,,http://www.oviedosport.com/,"C. Augusto Junquera, 10, 33012 Oviedo, Asturias, Spain",4.8,206,0.8,atlas_bjj
+WARRIORS OVIEDO,Oviedo,ES,43.3664428,-5.8697771,652 16 47 72,,https://es-es.facebook.com/pages/category/Martial-Arts-School/Wing-Fight-Asturias-124786430936975/,"C. Bermudo I el Diácono, 5 33012, 33012 Oviedo, Asturias, Spain",5.0,28,0.6,atlas_bjj
+AU BJJ Valencia,Paiporta,ES,39.4279722,-0.4184254,608 98 19 76,,https://www.aurumbjjvalencia.es/,"Carrer Sant Antoni, 7, 46200 Paiporta, Valencia, Spain",5.0,66,0.6,atlas_bjj
+GFF PALMA --Brazilian Jiu Jitsu - Grappling - BJJ--,Palma,ES,39.5919876,2.6578733,675 37 81 80,,https://instagram.com/groundfightfamily?igshid=YmMyMTA2M2Y=,"Carrer de Carles Riba, 27, Nord, 07004 Palma, Illes Balears, Spain",5.0,112,0.8,atlas_bjj
+Gff/crazy Team Mallorca,Palma,ES,39.6034989,2.6646493,,,,,,,0.0,atlas_bjj
+Maestro Jiu Jitsu Miquel Crespí,Palma,ES,39.5891108,2.6800568,,,,,,,0.0,atlas_bjj
+Mallorca BJJ,Palma,ES,39.5750365,2.6387867,654 42 02 11,,http://www.mallorcabjj.com/,"Carrer d'Alòs, 20, Ponent, 07011 Palma, Illes Balears, Spain",4.9,84,0.8,atlas_bjj
+Mallorca BJJ Palma North,Palma,ES,39.6099218,2.6669803,695 60 54 52,,https://www.mallorcabjj.com/palma-north,"Carrer Gremi de Forners, 8, Nord, 07009 Palma, Illes Balears, Spain",4.9,54,0.8,atlas_bjj
+Neofight MMA Mallorca,Palma,ES,39.5933412,2.619572,600 54 17 01,,https://neofightmma.com/,"Camí de la Vileta, 139, Bajos, Ponent, 07011 Palma, Illes Balears, Spain",4.9,76,0.8,atlas_bjj
+Tatami Palma BJJ,Palma,ES,39.5839687,2.6338262,,,http://www.bjjpalma.com/,"Carrer de Salvador Dalí, 42, local bj, Ponent, 07011 Palma, Illes Balears, Spain",5.0,84,0.6,atlas_bjj
+Budo Clan Spain,Palma Mallorca,ES,39.5695818,2.6500745,,,,,,,0.0,atlas_bjj
+Z Fight Academy,Palmera,ES,38.9417448,-0.1537426,639 82 97 65,,https://zfightacademy.com/,"Carrer Beniteixir, 16, 46714 Palmera, Valencia, Spain",5.0,91,0.8,atlas_bjj
+Gimnasio León - Tu Gimnasio en Pamplona,Pamplona,ES,42.8213391,-1.6522397,948 38 47 61,,https://www.gimnasioleon.com/,"C. del Río Arga, 10, 31014 Pamplona, Navarra, Spain",4.3,92,0.8,atlas_bjj
+Gracie Barra Antiguo,Pamplona,ES,42.81687,-1.64323,,,,,,,0.0,atlas_bjj
+Gracie Barra Pamplona,Pamplona,ES,42.8122162,-1.6868073,,,,,,,0.0,atlas_bjj
+Kanku Gym,Pamplona / Iruña,ES,42.8181992,-1.6440089,,,,,,,0.0,atlas_bjj
+Escuela De Artes Marciales - Bushi Ryu,Parla,ES,40.2362246,-3.755579,647 91 46 49,,,"C. Turín, 15, 28983 Parla, Madrid, Spain",4.7,38,0.6,atlas_bjj
+Escuela de Artes Marciales JITTSU CLUB Parla,Parla,ES,40.2422488,-3.7584346,624 43 57 11,,http://www.jittsuclubparla.com/,"C. Picasso, 3, Planta 1, 28982 Parla, Madrid, Spain",5.0,5,0.8,atlas_bjj
+Gimnasio Kaizen,Parla,ES,40.2254261,-3.7578821,661 75 65 91,,https://gimnasiokaizen.es/,"C. del Planeta Saturno, 9, posterior, 28983 Parla, Madrid, Spain",4.5,22,0.8,atlas_bjj
+Hegemony Club,Parla,ES,40.24079,-3.7733278,692 20 09 55,,,"C. San Blas, 31, 28981 Parla, Madrid, Spain",,,0.2,atlas_bjj
+Bushidokan Dojo,Peñarroya - Pueblonuevo,ES,38.3095366,-5.2854223,,,,,,,0.0,atlas_bjj
+Bushido Jiu Jitsu / Mma,Pineda De Mar,ES,41.6248741,2.6927619,,,,,,,0.0,atlas_bjj
+Tatami Brothers,Playa Blanca (Yaiza),ES,28.863722,-13.8479751,,,,,,,0.0,atlas_bjj
+Club Tai-jitsu Llanera,Pola De Siero,ES,43.3879615,-5.6649428,,,,,,,0.0,atlas_bjj
+Gimnasio Eloy,Pola De Siero,ES,43.3929017,-5.665664,985 72 21 97,,https://www.facebook.com/Gimnasio-Eloy-316006095514434/,"C. Asturias, 4, bajo, 33510 Pola de Siero, Asturias, Spain",5.0,80,0.8,atlas_bjj
+Mamba Fight Club,Ponferrada,ES,42.5454124,-6.5938719,,,,,,,0.0,atlas_bjj
+Arte Suave Jiu Jitsu BJJ Vigo,Pontevedra,ES,42.2258477,-8.7529728,602 50 28 28,,,"Rúa de Eduardo Cabello, 9, 36208 Vigo, Pontevedra, Spain",5.0,123,0.6,atlas_bjj
+Cobrinha Bjj Galicia,Pontevedra,ES,42.4366746,-8.6416884,,,,,,,0.0,atlas_bjj
+Dojo Berserker BJJ y Capoeira,Pontevedra,ES,42.601889,-8.7615292,633 80 99 89,,http://instagram.com/dojo.berserkers,"Rúa Escardia, 7, 36600 Vilagarcía de Arousa, Pontevedra, Spain",5.0,34,0.8,atlas_bjj
+Loyalt Spain Jiu Jitsu Moaña,Pontevedra,ES,42.4318876,-8.6431592,,,,,,,0.0,atlas_bjj
+Loyalty spain jiu jitsu Vigo,Pontevedra,ES,42.2374253,-8.7170673,986 22 18 23,,,"Rúa do Roupeiro, 4, Santiago de Vigo, 36201 Vigo, Pontevedra, Spain",4.9,68,0.6,atlas_bjj
+SUAS MOVEMENTO // Entrenamiento Mujer,Pontevedra,ES,42.4298418,-8.6444109,698 92 78 86,,https://suasmovemento.com/,"Rúa García Camba, 12 bis, bajo, 36001 Pontevedra, Spain",5.0,22,0.8,atlas_bjj
+Gn Sport Center,Pozuelo De Alarcón,ES,40.4411972,-3.8078794,,,,,,,0.0,atlas_bjj
+R O J EUROPE,Pozuelo De Alarcón,ES,40.4363067,-3.8103192,,,,,,,0.0,atlas_bjj
+JA Jiu Jitsu,Puente Tocinos,ES,37.997505,-1.0856722,,,,,,,0.0,atlas_bjj
+Leo Galati Bjj&mma,"Puerto Banús, Marbella",ES,36.4887874,-4.9542533,,,,,,,0.0,atlas_bjj
+Club De Lucha Ares,Puerto De Sagunto,ES,39.668055,-0.2269063,,,,,,,0.0,atlas_bjj
+Associacion Fight Brothers Competition Team,Puerto Real,ES,36.5286856,-6.1902161,,,,,,,0.0,atlas_bjj
+Club Cóndor,Renterria,ES,43.3110887,-1.8928066,,,,,,,0.0,atlas_bjj
+Tiburón Jiu-Jitsu Reus,Reus,ES,41.1473734,1.1315376,613 10 59 91,,https://www.instagram.com/tiburonfitreus/,"Carrer de Nicaragua, 20, 43204 Reus, Tarragona, Spain",5.0,33,0.8,atlas_bjj
+Underground Rincon de la Victoria,Rincón De La Victoria,ES,36.726187,-4.2755774,951 90 00 60,,https://search.app/iy1krZASkqxTrTNm9,"Cortijo el Maimón, 29730 Rincón de la Victoria, Málaga, Spain",4.9,67,0.8,atlas_bjj
+Wing Tsun Málaga WTI International,Rincón De La Victoria,ES,36.7144854,-4.2740134,651 37 87 84,,https://www.tawt-malaga.es/,"C. el Higueral, 25, 29730 Rincón de la Victoria, Málaga, Spain",,,0.6,atlas_bjj
+Fighter's Gym,Roda De Barà,ES,41.1725207,1.4840025,,,,,,,0.0,atlas_bjj
+EROSIÓN BJJ (JIU-JITSU),Roquetas De Mar,ES,36.8170194,-2.5809045,,,,"Av. Pedro Muñoz Seca, 72, 04720 Roquetas de Mar, Almería, Spain",4.8,15,0.4,atlas_bjj
+Konecta Academy,Roquetas De Mar,ES,36.7229684,-2.6286367,,,,,,,0.0,atlas_bjj
+Academia Sabadell Jiu-Jitsu,Sabadell,ES,41.5598162,2.104521,,,,,,,0.0,atlas_bjj
+Berilo Junior Bjj,Sabadell,ES,41.5421013,2.1138977,,,,,,,0.0,atlas_bjj
+Vallès Jiujitsu,Sabadell,ES,41.5314932,2.0821777,686 35 55 88,,http://www.vallesjiujitsu.com/,"Carrer Nou, 38, 08192 Sant Quirze del Vallès, Barcelona, Spain",4.9,104,0.8,atlas_bjj
+Club Condor,Salamanca,ES,40.9704874,-5.6557941,,,,,,,0.0,atlas_bjj
+Dojo Kodokai,Salamanca,ES,40.959642,-5.6498497,623 17 87 38,,http://www.kodokai.es/,"C. Abraham Zacut, 25, 37003 Salamanca, Spain",4.9,68,0.8,atlas_bjj
+Eduardo Mario Team,Salamanca,ES,40.9738141,-5.6482027,,,,,,,0.0,atlas_bjj
+"Escuela Luo Fu Shan - Kung Fu, Artes Marciales, Qigong. Gimnasio Salamanca",Salamanca,ES,40.9724947,-5.6556624,661 82 51 87,,https://escuelakungfu.com/,"C. Cabeza de Vaca, 22, 37004 Salamanca, Spain",5.0,38,0.8,atlas_bjj
+Jiu Jitsu Studio Salamanca,Salamanca,ES,40.9466654,-5.6562973,,,,"Av. Carbajosa de la Sagrada, 27, 37188 Carbajosa de la Sagrada, Salamanca, Spain",5.0,79,0.2,atlas_bjj
+kaj,Salamanca,ES,40.9695671,-5.6424658,,,,,,,0.0,atlas_bjj
+Escuela Mencey bjj,San Bartolomé,ES,29.0019375,-13.6102782,,,,,,,0.0,atlas_bjj
+Gimnasio La Playa - Club Bjj Wolves Squad,San Bartolomé,ES,29.0019375,-13.6102782,,,,,,,0.0,atlas_bjj
+Artes Marciales Sant Boi - Mugendo,San Baudilio De Llobregat,ES,41.341353,2.044722,936 30 72 87,,https://santboi.mugendo.es/,"Carrer de Sant Joan Bosco, 33, 08830 Sant Boi de Llobregat, Barcelona, Spain",4.9,154,0.8,atlas_bjj
+Gimnàs Escola Ryu San Do,San Baudilio De Llobregat,ES,41.355551,2.0343916,,,,,,,0.0,atlas_bjj
+INSTITUTO ARTES MARCIALES,San Baudilio De Llobregat,ES,41.339019,2.0427669,,,,,,,0.0,atlas_bjj
+JKDBARCELONA,San Baudilio De Llobregat,ES,41.3459033,2.0413673,,,,,,,0.0,atlas_bjj
+Ken Ryu,San Baudilio De Llobregat,ES,41.3346083,2.0362883,675 24 27 67,,,"Avinguda de la Torre de la Vila, 27, 08830 Sant Boi de Llobregat, Barcelona, Spain",4.5,17,0.4,atlas_bjj
+Okaeri Viladecans,San Baudilio De Llobregat,ES,41.3174399,2.0270305,931 47 35 44,,http://www.okaeriviladecans.com/,"Carrer de Joan Fiveller, 49, 08840 Viladecans, Barcelona, Spain",5.0,83,0.8,atlas_bjj
+Sant Boi Fightclub,San Baudilio De Llobregat,ES,41.3476077,2.030047,623 19 10 08,,https://www.stbfightclub.es/,"Carrer Providència, 5, 08830 Sant Boi de Llobregat, Barcelona, Spain",5.0,24,0.8,atlas_bjj
+ARTS MARCIALS MAC SANT CUGAT,San Cugat Del Vallés,ES,41.474966,2.094957,659 70 93 56,,http://artesmarcialesmac.com/,"Avinguda de Cerdanyola, 88, 08173 Sant Cugat del Vallès, Barcelona, Spain",4.9,93,0.8,atlas_bjj
+Aranha Sant Cugat,San Cugat Del Vallés,ES,41.4719662,2.0800554,613 55 96 39,,https://www.instagram.com/aranha_santcugat/profilecard/?igsh=d3FiNzUwcW1kbWRn,"Carrer de Cristòfor Colom, 22, 08172 Sant Cugat del Vallès, Barcelona, Spain",5.0,32,0.8,atlas_bjj
+Artes Marciales Sant Cugat - Mugendo,San Cugat Del Vallés,ES,41.473885,2.0709865,608 72 45 32,,http://santcugat.mugendo.es/,"Carrer de Manel Farrés, 95, 08173 Sant Cugat del Vallès, Barcelona, Spain",5.0,74,0.8,atlas_bjj
+BJJ RUBI ACADEMY / FIGHT CLUB RUBI,San Cugat Del Vallés,ES,41.4713686,2.0506652,,,,,,,0.0,atlas_bjj
+Club Jiu-jitsu Sant Cugat,San Cugat Del Vallés,ES,41.4728432,2.0817809,680 22 74 37,,https://www.jiujitsusantcugat.com/,"Passatge de cobertí, s/n, 08195 Sant Cugat del Vallès, Barcelona, Spain",5.0,23,0.8,atlas_bjj
+Lynx Martial Arts,San Cugat Del Vallés,ES,41.4794752,2.0919271,692 10 36 98,,https://lynxmartialarts.es/,"Carrer de Francesc Vila, 17, 08173 Sant Cugat del Vallès, Barcelona, Spain",5.0,17,0.8,atlas_bjj
+"Club de Lucha San Fernando, Bjj, Jiujitsu Brasileño y Grappling",San Fernando,ES,36.4646672,-6.1983492,636 66 35 06,,https://bjjsanfernando.wodbuster.com/,"pabellon municipal almirante laulhe, 11100 San Fernando, Cádiz, Spain",5.0,92,0.8,atlas_bjj
+Escuela De Artes Marciales,San Fernando,ES,36.4727466,-6.1947296,,,,,,,0.0,atlas_bjj
+Submission Labs SL,San Roque,ES,36.2100586,-5.3868293,,,,,,,0.0,atlas_bjj
+Escuela Lamakai,San Sebastián De Los Reyes,ES,40.552271,-3.6286075,,,,,,,0.0,atlas_bjj
+Fight Team Crespo,San Vicente Del Raspeig,ES,38.4010658,-0.5221605,966 29 42 09,,,"Calle Dr. Fleming, 95, 03690 San Vicente del Raspeig, Alicante, Spain",5.0,19,0.6,atlas_bjj
+ON JIU JITSU,San Vicente Del Raspeig,ES,38.386717,-0.495309,640 51 31 75,,https://onjiujitsuacademy.com/,"C. Alfarería, 5, 03690, Alicante, Spain",5.0,65,0.8,atlas_bjj
+Jiu jitsu brasileño fusión Sanlúcar,Sanlúcar De Barrameda,ES,36.7717621,-6.3560126,,,,,,,0.0,atlas_bjj
+Team Velázquez,Sanlúcar De Barrameda,ES,36.7748446,-6.3479555,633 20 98 50,,,"C. Paloma, 5, 11540 Sanlúcar de Barrameda, Cádiz, Spain",5.0,29,0.6,atlas_bjj
+Art Of Fighting ( Aofribes ),Sant Pere De Ribes,ES,41.2597649,1.7774776,627 47 36 67,,http://www.aofribes.com/,"Carrer Ildefons Cerdà, 58, Bajos, 08810 Sant Pere de Ribes, Barcelona, Spain",5.0,144,0.8,atlas_bjj
+Gracie Costa Brava,Santa Cristina D Aro,ES,41.8056202,2.9820229,,,,,,,0.0,atlas_bjj
+"Academia artes marciales Juan Pacheco, jiu jitsu brasileño,bjj, brazilian jiu jitsu.,",Santa Cruz,ES,28.3788173,-16.5643847,,,,,,,0.0,atlas_bjj
+Bujinkan Tenerife Hannya Dojo,Santa Cruz,ES,28.4682422,-16.2612475,,,,,,,0.0,atlas_bjj
+Club Mugendo Artes Marciales,Santa Cruz,ES,28.4685482,-16.2534906,922 28 35 20,,http://artesmarcialesmugendo.es/,"C. San Clemente, 25, 38003 Santa Cruz de Tenerife, Spain",4.7,61,0.8,atlas_bjj
+Cobrinha Tenerife,Santa Cruz,ES,28.0815729,-16.7264704,649 20 13 27,,,"C. Paises Bajos, 240, B, 38660 Costa Adeje, Santa Cruz de Tenerife, Spain",5.0,35,0.6,atlas_bjj
+Mugendo Artes Marciales Santa Cruz,Santa Cruz,ES,28.4703719,-16.2538975,922 28 35 20,,http://artesmarcialesmugendo.es/,"C. San Clemente, 25, 38003 Santa Cruz de Tenerife, Spain",4.7,61,0.8,atlas_bjj
+Surfightclub,Santa Cruz,ES,43.46189,-5.9311,,,,,,,0.0,atlas_bjj
+Praxis Fight Academy,Santa Cruz De Bezana,ES,43.4429407,-3.9049243,665 45 36 88,,https://praxis.wodbuster.com/,"C. Respuela, 4F, 39100 Santa Cruz de Bezana, Cantabria, Spain",4.8,38,0.8,atlas_bjj
+Special Training,Santa Cruz De Tenerife,ES,28.4751103,-16.2983429,,,,,,,0.0,atlas_bjj
+Lotus Club Segovia,Segovia,ES,40.9438289,-4.1768339,,,,,,,0.0,atlas_bjj
+R O J EUROPE,Segovia,ES,40.9540633,-4.0334985,,,,,,,0.0,atlas_bjj
+Budokan Sevilla - David Vallejo's Academy,Sevilla,ES,37.4022937,-5.9870496,,,,,,,0.0,atlas_bjj
+Club Deportivo Crossfight,Sevilla,ES,37.3781367,-6.0045015,954 45 87 06,,https://www.facebook.com/CD-Crossfight-363113817229961/?fref=ts,"C. Virgen de Fátima, 12, 41010 Sevilla, Spain",5.0,304,0.8,atlas_bjj
+Club Satori · Defensa Personal · Yawara Jitsu,Sevilla,ES,37.3596677,-5.9767977,681 98 17 79,,http://www.clubsatori.es/,"Calle Castillo de Utrera, 25, 41013 Sevilla, Spain",5.0,18,0.8,atlas_bjj
+Crazy Team Sevilla,Sevilla,ES,37.38283,-5.97317,,,,,,,0.0,atlas_bjj
+Gracie Barra Sevilla,Sevilla,ES,37.37738,-5.99955,677 30 54 80,,http://graciebarrasevilla.com/,"C. Virgen de Begoña, 6, 41011 Sevilla, Spain",5.0,72,0.8,atlas_bjj
+Hon Ken Martial Arts,Sevilla,ES,37.3854854,-6.0132468,670 87 32 84,,https://www.facebook.com/HONKEN.JOSEHERRERA.ARTESMARCIALES/,"C. Manuel Arellano, 3, 41010 Sevilla, Spain",4.9,48,0.8,atlas_bjj
+International Martial Arts Academy,Sevilla,ES,37.3903979,-5.9822129,695 43 60 38,,https://www.rogergraciesevilla.com/,"C. Lope de Vega, 6, 41003 Sevilla, Spain",4.9,150,0.8,atlas_bjj
+Jaramillo Academy,Sevilla,ES,37.397405,-5.9837823,639 34 77 77,,http://www.borangymjaramillo.es/,"Sta. Lucía, 37, local 2, Casco Antiguo, 41003 Sevilla, Spain",4.8,71,0.8,atlas_bjj
+Montero MMA Team,Sevilla,ES,37.3404619,-5.938521,650 15 31 63,,https://www.facebook.com/Montero-BJJ-Team-1300489503425660,"C. Numa, 25, 41089 Dos Hermanas, Sevilla, Spain",4.9,33,0.8,atlas_bjj
+Roger Gracie Sevilla,Sevilla,ES,37.3915173,-5.9815209,695 43 60 38,,http://www.rogergraciesevilla.com/,"C. Lope de Vega, 6, 41003 Sevilla, Spain",4.7,26,0.8,atlas_bjj
+Sevilla Fight Center,Sevilla,ES,37.3931869,-5.9566714,,,,"C. Mastín, 23, 41007 Sevilla, Spain",5.0,6,0.4,atlas_bjj
+Sutemi MMA,Sevilla,ES,37.3886303,-5.9953403,,,,,,,0.0,atlas_bjj
+Budo-senshi,Sevilla Olivares,ES,37.4183303,-6.1507823,,,,,,,0.0,atlas_bjj
+Yuzenkai Combat Arts,Sierra Engarcerán,ES,40.2518568,-0.0615052,,,,,,,0.0,atlas_bjj
+Gracie Barra Pitbull,Solares,ES,43.3979943,-3.7340605,,,,,,,0.0,atlas_bjj
+AR Team,Tarragona,ES,41.0717584,1.1471775,655 93 22 89,,https://arteambjj.com/,"Passatge del Dr. Pigem, 43840 Salou, Tarragona, Spain",5.0,18,0.8,atlas_bjj
+Club Tai Jitsu Tarragona,Tarragona,ES,41.1129893,1.2466136,667 74 48 71,,https://www.instagram.com/taijitsutarragona/,"Carrer Doctor Zamenhoff, 7, 43001 Tarragona, Spain",5.0,2,0.8,atlas_bjj
+FREE FIGHT CLUB SALOU,Tarragona,ES,41.078976,1.1348746,,,,,,,0.0,atlas_bjj
+GRACIE BARRA VILA-SECA,Tarragona,ES,41.1100294,1.1532928,722 37 66 65,,https://www.graciebarravilaseca.com/,"Carrer de Galceran de Pinós, 12, 43480 Vila-seca, Tarragona, Spain",4.8,46,0.8,atlas_bjj
+Guerreros de Fe Club de artes marciales,Tarragona,ES,41.1137843,1.2195887,,,,,,,0.0,atlas_bjj
+Martial Team Tarragona - Escuela de artes Marciales,Tarragona,ES,41.1600353,1.1278917,,,,,,,0.0,atlas_bjj
+Mushin Espai / Mushin Team,Tarragona,ES,41.1362225,1.2501062,619 13 53 02,,https://www.mushintarragona.com/es,"Avinguda dels Països Catalans, 39-41, 43007 Tarragona, Spain",5.0,50,0.8,atlas_bjj
+Pitbull brothers,Tarragona,ES,41.1519961,1.1092575,,,,,,,0.0,atlas_bjj
+Reus Team,Tarragona,ES,41.1172364,1.2546057,,,,,,,0.0,atlas_bjj
+Tarraco Warriors,Tarragona,ES,41.1181327,1.2386692,638 42 90 23,,http://www.tarracowarriors.com/,"Av. de Roma, 19, ESQUINERO, 43005 Tarragona, Spain",4.6,44,0.8,atlas_bjj
+ATR Team Caraballo - Vecindario,Telde,ES,28.0079689,-15.3778903,,,,,,,0.0,atlas_bjj
+Atr Team Piranha,Telde,ES,27.9943374,-15.414656,645 20 36 46,,,"C. Santiago Ascanio Montemayor, 11, 35210 Telde, Las Palmas, Spain",5.0,18,0.6,atlas_bjj
+Club Deportivo Ramon Diaz,Telde,ES,27.9974168,-15.4289751,,,,,,,0.0,atlas_bjj
+Escuela de Artes Marciales GODAN DOJO,Telde,ES,28.0987112,-15.4670405,,,,,,,0.0,atlas_bjj
+Fighter 360 canarias,Telde,ES,27.9943417,-15.3906914,,,,,,,0.0,atlas_bjj
+Jiu Jitsu japonés-Defensa personal Escaleritas,Telde,ES,28.0151357,-15.3927712,,,,,,,0.0,atlas_bjj
+Primal Brazilian jiu jitsu,Telde,ES,28.0002672,-15.4249721,,,,,,,0.0,atlas_bjj
+Shihan Dojo,Telde,ES,27.990003,-15.4203868,,,,,,,0.0,atlas_bjj
+THE ZEN CLUB ESCUELA DE JIU JITSU,Telde,ES,27.9905333,-15.4460379,,,,,,,0.0,atlas_bjj
+Tatami 211,Telde,ES,28.00955,-15.3909328,,,,,,,0.0,atlas_bjj
+Victory Gloves,Telde,ES,27.9950758,-15.41705,928 69 74 24,,https://www.victorygloves.es/,"C. Juan Diego de la Fuente, 23, 35200 Telde, Las Palmas, Spain",4.6,61,0.8,atlas_bjj
+Free Time,Teruel,ES,40.3455027,-1.1066179,,,,,,,0.0,atlas_bjj
+Dojo Toletvm,Toledo,ES,39.8758143,-4.0325338,636 55 24 68,,http://karate-toletvm.com/,"C. Agen, 9, Local 5, 45005 Toledo, Spain",4.9,36,0.8,atlas_bjj
+SPARTA M.M.A,Toledo,ES,39.8558913,-4.024265,,,,,,,0.0,atlas_bjj
+Sparta MMA - MIXED MARTIAL ARTS ACADEMY,Toledo,ES,39.8730039,-4.0368604,,,,,,,0.0,atlas_bjj
+Centro de tecnificación de artes marciales Torrejón de Ardoz,Torrejón De Ardoz,ES,40.4497192,-3.4624568,,,,,,,0.0,atlas_bjj
+Chao Yue Kung Fu Torrejon - Artes marciales y defensa personal,Torrejón De Ardoz,ES,40.4527093,-3.4626547,,,,,,,0.0,atlas_bjj
+Club Deportivo Garden,Torrejón De Ardoz,ES,40.4551729,-3.4588808,613 03 93 11,,http://www.gardentc.com/,"C. Azufre, 8, 28850 Torrejón de Ardoz, Madrid, Spain",4.8,131,0.8,atlas_bjj
+KAIMUAY FREEFIGHTERS,Torrejón De Ardoz,ES,40.4547412,-3.4877151,,,,,,,0.0,atlas_bjj
+kajukenbo mura,Torrejón De Ardoz,ES,40.453712,-3.4542517,618 86 73 55,,,"C. Pino, 2, 28850 Torrejón de Ardoz, Madrid, Spain",4.6,71,0.6,atlas_bjj
+Praxis Fight Academy,Torrelavega,ES,43.3487303,-4.0515082,,,,,,,0.0,atlas_bjj
+Academia Ikigai,Torremolinos,ES,36.6242841,-4.4995448,,,,,,,0.0,atlas_bjj
+Arte Suave / Rilion Gracie Malaga,Torremolinos,ES,36.6353661,-4.4904914,,,,,,,0.0,atlas_bjj
+AURUM BJJ VALENCIA,Torrente,ES,39.4286399,-0.422589,608 98 19 76,,https://www.aurumbjjvalencia.es/,"Carrer Sant Antoni, 7, 46200 Paiporta, Valencia, Spain",5.0,66,0.6,atlas_bjj
+Elite Brazilian Jiu Jitsu Torrent,Torrente,ES,39.4429007,-0.458247,611 56 25 44,,https://elitebrazilianjiujitsu.com/inscripciones/,"C. de Mineta, 7, 46900 Torrent, Valencia, Spain",5.0,101,0.8,atlas_bjj
+Club Artes Marciales Saito Dojo,Torrevieja,ES,37.9809314,-0.6683906,607 11 99 20,,https://karatesaitodojo.es/,"C. Fragata, 50, 03182 Torrevieja, Alicante, Spain",5.0,79,0.8,atlas_bjj
+Mano a mano,Torrevieja,ES,37.9771666,-0.6764399,633 27 66 44,,https://manoamano.club/,"Calle Moriones, 17, 03182 Torrevieja, Alicante, Spain",5.0,130,0.8,atlas_bjj
+The Ring Torrevieja,Torrevieja,ES,37.9884797,-0.6786993,604 26 16 02,,,"C. Escultores Hermanos Blanco, 20, 03183 Torrevieja, Alicante, Spain",4.7,30,0.6,atlas_bjj
+Gracie Barra Bormujos,Utrera,ES,37.3716054,-6.0797008,614 16 50 43,,https://graciebarrabormujos.com/,"Av. Almenilla, 90, 41930 Bormujos, Sevilla, Spain",5.0,48,0.8,atlas_bjj
+Obushi Fight Club,Utrera,ES,37.1988355,-5.7942981,667 07 15 03,,,"C. Alfareros, 8, 41710 Utrera, Sevilla, Spain",4.8,35,0.6,atlas_bjj
+Fractal,Valdeavero,ES,40.6242313,-3.3453453,,,,,,,0.0,atlas_bjj
+Gimnasio Valdemoro,Valdemoro,ES,40.1890481,-3.6771957,,,,,,,0.0,atlas_bjj
+Ingenia Sport Centro Deportivo,Valdemoro,ES,40.2108268,-3.6853706,910 59 61 46,,https://www.ingeniasport.com/,"C. París, 7, 28342 Valdemoro, Madrid, Spain",4.4,40,0.8,atlas_bjj
+Supera Sports Centre,Valdemoro,ES,40.186393,-3.6929337,,,,,,,0.0,atlas_bjj
+Valdemoro V3,Valdemoro,ES,40.1886844,-3.6705725,,,,,,,0.0,atlas_bjj
+A.D.O.G Gym,Valencia,ES,39.4846968,-0.4476947,961 29 84 97,,,"Carrer Roger de Flor, 9, 46930 Quart de Poblet, Valencia, Spain",4.4,72,0.6,atlas_bjj
+Ases Jiu-Jitsu Valencia,Valencia,ES,39.4452365,-0.3920593,670 37 87 82,,https://www.asesbjj.info/,"C. del Músic Cabanilles, 46, Jesús, 46017 València, Valencia, Spain",4.9,83,0.8,atlas_bjj
+Baransu Jiu-Jitsu Academy,Valencia,ES,39.4586403,-0.385682,722 20 43 67,,https://www.instagram.com/baransu.jiujitsu/,"Carrer de Móra de Rubiols, 16, Jesús, 46007 València, Valencia, Spain",5.0,29,0.8,atlas_bjj
+Brazilian Jiu Jitsu Valencia,Valencia,ES,39.4835336,-0.4457062,655 23 49 18,,,"C/ Dr. Desiderio Gallego Moya, 13, 46930 València, Valencia, Spain",5.0,191,0.6,atlas_bjj
+Chute Boxe,Valencia,ES,39.4717183,-0.391265,,,,,,,0.0,atlas_bjj
+Cicero Costha Valencia,Valencia,ES,39.4586462,-0.3401625,698 52 89 54,,https://instagram.com/cicerocosthavalencia,"C/ de Joan Verdeguer, 2, Poblados Marítimos, 46024 València, Valencia, Spain",5.0,74,0.8,atlas_bjj
+Club Deportivo Duato,Valencia,ES,39.4686267,-0.3294487,963 71 13 98,,https://www.deportivoduato.com/,"C/ de la Barraca, 127, Bajo, Poblados Marítimos, 46011 València, Valencia, Spain",5.0,168,0.8,atlas_bjj
+Club de lucha Flow’n Roll Valencia,Valencia,ES,39.5450388,-0.3261588,,,,,,,0.0,atlas_bjj
+Crazyguard Jiu-jitsu Academy,Valencia,ES,39.4826564,-0.3991125,627 81 04 02,,https://www.instagram.com/crazyguard_jiujitsu_academy?igsh=MTkwbXc1NHBpbmRuYg==,"C. del Mestre Bagant, 19, Bajo, Campanar, 46015 València, Valencia, Spain",5.0,86,0.8,atlas_bjj
+Cross Fight Valencia,Valencia,ES,39.4823786,-0.4382303,,,,,,,0.0,atlas_bjj
+Dream Art Valencia,Valencia,ES,39.4723783,-0.3473072,674 48 34 33,,http://www.jiujitsuvalencia.es/,"C/ de l'Explorador Andrés, 7, Algirós, 46022 València, Valencia, Spain",5.0,245,0.8,atlas_bjj
+Gracie Barra Camins al Grau,Valencia,ES,39.4631921,-0.3427089,613 23 59 86,,http://www.graciebarravalenciagrau.com/,"Carrer del Mestre Valls, 3, Camins al Grau, 46021 València, Valencia, Spain",4.8,84,0.8,atlas_bjj
+Gracie Barra Extramurs,Valencia,ES,39.4739188,-0.3878906,604 15 91 59,,,"Gran Via de Ferran el Catòlic, 49, Extramurs, 46008 València, Valencia, Spain",5.0,43,0.6,atlas_bjj
+Life Style Club,Valencia,ES,39.5,-0.75,,,,,,,0.0,atlas_bjj
+M-1 Selection Spain,Valencia,ES,37.9128214,-0.7408378,,,,,,,0.0,atlas_bjj
+MICHAL ADAMCZAK BJJ ACADEMY,Valencia,ES,39.490217,-0.3927297,657 30 89 29,,http://michaladamczakbjj.com/,"C. del Bon Recés, 10, Benicalap, 46035 València, Valencia, Spain",5.0,68,0.8,atlas_bjj
+Musashi - Muga Ryu Jiu-Jitsu,Valencia,ES,39.4588541,-0.3687383,652 39 83 13,,https://sites.google.com/view/muga-ryu-jiu-jitsu/inicio,"Carrer de Lluís Oliag, Quatre Carreres, 46006 València, Valencia, Spain",4.8,19,0.8,atlas_bjj
+S.H.O.O.T. MMA València,Valencia,ES,39.4663441,-0.3581914,,,http://www.shootmma.com/,"Carrer de l'Antiga Senda d'En Senent, 3, bajo, El Pla del Real, 46023 València, Valencia, Spain",4.7,206,0.6,atlas_bjj
+Sambo Valencia,Valencia,ES,39.4459978,-0.3896486,651 97 35 80,,http://www.sambovalencia.com/,"C/ de l'Enginyer José Sirera, 29, Jesús, 46017 València, Valencia, Spain",4.9,142,0.8,atlas_bjj
+kudo valencia,Valencia,ES,40.0294695,-0.0832712,,,,,,,0.0,atlas_bjj
+Gracie Barra Esgueva Valladolid,Valladolid,ES,41.6503748,-4.7025569,633 42 81 97,,https://graciebarravalladolid.es/valladolid,"C. Picapinos, 1, 47011 Valladolid, Spain",4.9,46,0.8,atlas_bjj
+CLU DE LUCHA VICENTE RIVERO,Valsequillo,ES,38.4049294,-5.3517078,,,,,,,0.0,atlas_bjj
+American Top Team Spain,València,ES,39.4697065,-0.3763353,,,,,,,0.0,atlas_bjj
+Dojo Hikari Valencia,València,ES,39.48541,-0.399987,961 13 91 09,,http://www.hikarivalencia.es/,"Carrer del Puerto de Santa María, 8, Campanar, 46015 València, Valencia, Spain",4.9,147,0.8,atlas_bjj
+Centro Deportivo Monte Chico M&c Fitness,Vera,ES,37.24477,-1.8637385,,,,,,,0.0,atlas_bjj
+Club Independiente,Vigo,ES,42.2469908,-8.6924737,,,,,,,0.0,atlas_bjj
+Loyalty Jiu Jitsu Vila Seca,Vila-Seca,ES,41.1105124,1.1463589,643 40 74 18,,,"Carrer de Sant Josep, 45, LOCAL 3, 43480 Vila-seca, Tarragona, Spain",4.9,22,0.4,atlas_bjj
+Thiago Souza / GF Team,Vilablareix,ES,41.9570855,2.7999818,,,,,,,0.0,atlas_bjj
+Municipal Villaluenga,Villaluenga (Toledo),ES,40.0271733,-3.9109482,,,,,,,0.0,atlas_bjj
+Jarota De Artes Marciales (Check Mat),Villanueva De Cordoba,ES,38.3230235,-4.6279655,,,,,,,0.0,atlas_bjj
+Barceló Warriors,Villanueva Y Geltrú,ES,41.2265505,1.7416643,,,,,,,0.0,atlas_bjj
+DYM Vilanova,Villanueva Y Geltrú,ES,41.2214465,1.7248696,630 58 95 43,,https://vilanova.centrosdym.com/,"Carrer de l'Havana, 17, 08800 Vilanova i la Geltrú, Barcelona, Spain",4.9,126,0.8,atlas_bjj
+Mugendo Vilanova,Villanueva Y Geltrú,ES,41.222863,1.7297365,640 70 99 75,,https://vilanova.mugendo.es/,"Avinguda del Garraf, 28, 08800 Vilanova i la Geltrú, Barcelona, Spain",5.0,106,0.8,atlas_bjj
+Zen Garraf,Villanueva Y Geltrú,ES,41.2241992,1.7256327,,,,,,,0.0,atlas_bjj
+Academia Acai,Vistabella (La Laguna),ES,28.4663183,-16.2830505,670 61 07 50,,https://facebook.com/ACADEMIA-A%C3%87A%C3%8D-217282448336435,"C. Virgen de Salette, 1, 38320 La Laguna, Santa Cruz de Tenerife, Spain",4.8,29,0.8,atlas_bjj
+Gimnasio K2,Vitoria,ES,41.6498908,-0.8768794,,,,,,,0.0,atlas_bjj
+Wilker Pulpos,Vitoria Gasteiz,ES,42.8593861,-2.6600566,,,,,,,0.0,atlas_bjj
+Club De Lucha Caesar Augusta,Zaragoza,ES,41.6454129,-0.9027559,,,,,,,0.0,atlas_bjj
+Club Karate - Kan,Zaragoza,ES,41.6473489,-0.8930074,976 35 56 60,,http://www.karatekan.es/,"C. de San Antonio María Claret, 36, 38, 50005 Zaragoza, Spain",4.7,94,0.8,atlas_bjj
+Dojo Dento-Ryu. Escuela de Artes Marciales,Zaragoza,ES,41.649067,-0.914932,651 99 22 11,,http://www.dojodentoryu.com/,"C. de Ntra. Sra. del Salz, 22, Delicias, 50017 Zaragoza, Spain",4.9,82,0.8,atlas_bjj
+EIAMM,Zaragoza,ES,41.6151704,-0.8720773,651 62 75 52,,https://www.eiamm.com/,"C. Andrea Palladio, 12, 50021 Zaragoza, Spain",4.8,149,0.8,atlas_bjj
+FUSIÓN BJJ_ZARAGOZA,Zaragoza,ES,41.6558124,-0.9036143,611 03 92 42,,https://www.fusionbjj.es/,"C. de Sta. Orosia, 19, 50010 Zaragoza, Spain",5.0,60,0.8,atlas_bjj
+Flow Rolling,Zaragoza,ES,41.7486447,-1.1922289,,,,,,,0.0,atlas_bjj
+Gimnasio Shuriyama,Zaragoza,ES,41.6352404,-0.880706,680 19 72 62,,http://www.shuriyamagym.blogspot.com/,"C. de Juan José Gárate, 3, San José, 50007 Zaragoza, Spain",4.9,65,0.8,atlas_bjj
+Mma Zaragoza - Gym Apolo,Zaragoza,ES,41.66145,-0.862932,,,,,,,0.0,atlas_bjj
+Team Alves,Zaragoza,ES,41.667192,-0.872785,,,,,,,0.0,atlas_bjj
+Waikru,Zaragoza,ES,41.6388194,-0.8854057,,,,,,,0.0,atlas_bjj
+Werdum Team Zaragoza,Zaragoza,ES,41.637865,-0.89373,671 10 09 92,,http://www.werdumtrainingcenter.com/,"C. de Manuel Lasala, 24, 50006 Zaragoza, Spain",4.5,41,0.8,atlas_bjj
+gimnasio almozara,Zaragoza,ES,41.65606,-0.87734,,,,,,,0.0,atlas_bjj
+Equipo David Rodrigues,Águilas,ES,37.4099628,-1.5804922,,,,,,,0.0,atlas_bjj
+Shotokan Tora,Ávila,ES,40.6593075,-4.687584,630 93 45 88,,,"C. Virgen de la Vega, 25, 05005 Ávila, Spain",4.8,24,0.6,atlas_bjj

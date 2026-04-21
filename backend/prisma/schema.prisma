@@ -1,0 +1,125 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model CommunityEvent {
+  id               String   @id @default(cuid())
+  type             String   // "openmat" | "seminario" | "campamento"
+  title            String
+  organizer        String
+  organizerContact String
+  organizerId      String?  // linked User (optional)
+  gym              String
+  address          String
+  city             String
+  date             String
+  time             String
+  duration         String
+  price            Float    @default(0)
+  category         String
+  modality         String
+  description      String
+  spotsTotal       Int?
+  spotsLeft        Int?
+  instructor       String?
+  instructorBelt   String?
+  tags             String   @default("[]")
+  createdAt        DateTime @default(now())
+}
+
+model Instructor {
+  id              String   @id @default(cuid())
+  name            String
+  belt            String
+  stripes         Int      @default(0)
+  team            String
+  city            String
+  gym             String?
+  bio             String
+  specialties     String   @default("[]")
+  modalities      String   @default("[]")
+  pricePerHour    Float
+  pricePerSession Float?
+  online          Boolean  @default(false)
+  inPerson        Boolean  @default(true)
+  instagram       String?
+  contact         String
+  experience      String   @default("")
+  languages       String   @default("[]")
+  availability    String
+  createdAt       DateTime @default(now())
+}
+
+model User {
+  id                 String               @id @default(cuid())
+  email              String               @unique
+  passwordHash       String
+  name               String
+  role               String               @default("user") // user | organizer | gym_owner | admin
+  createdAt          DateTime             @default(now())
+  claims             GymClaim[]
+  profiles           GymProfile[]
+  organizerRequests  OrganizerRequest[]
+}
+
+model OrganizerRequest {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  message   String?
+  status    String   @default("pending") // pending | approved | rejected
+  createdAt DateTime @default(now())
+}
+
+model GymClaim {
+  id        String   @id @default(cuid())
+  gymId     String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  status    String   @default("pending")
+  message   String?
+  createdAt DateTime @default(now())
+}
+
+model GymProfile {
+  id              String   @id @default(cuid())
+  gymId           String   @unique
+  ownerId         String?
+  owner           User?    @relation(fields: [ownerId], references: [id])
+
+  // Open mat
+  openMatFriday        Boolean @default(false)
+  openMatFridayTime    String? // "19:00"
+  openMatFridayDuration String? // "2h"
+  openMatSaturday       Boolean @default(false)
+  openMatSaturdayTime   String? // "12:00"
+  openMatSaturdayDuration String? // "2h"
+  openMatNotes          String?
+
+  // Weekly schedule (JSON: { lunes: ["19:00-20:30"], ... })
+  scheduleJson  String?
+
+  // Contact override (owner-provided, replaces CSV)
+  phoneOverride   String?
+  emailOverride   String?
+  websiteOverride String?
+
+  // Pricing
+  pricePerClass Float?  // null = consultar
+  monthlyFee    Float?  // null = consultar
+
+  // Description
+  description String?
+
+  // Status
+  isVerified     Boolean @default(false)
+  claimedByOwner Boolean @default(false)
+  hidden         Boolean @default(false)
+
+  updatedAt DateTime @updatedAt
+}

@@ -1,0 +1,746 @@
+export interface DaySchedule {
+  horarios: string[];
+}
+
+export interface WeekSchedule {
+  lunes?: DaySchedule;
+  martes?: DaySchedule;
+  miercoles?: DaySchedule;
+  jueves?: DaySchedule;
+  viernes?: DaySchedule;
+  sabado?: DaySchedule;
+  domingo?: DaySchedule;
+}
+
+export interface OpenMat {
+  dia: 'viernes' | 'sabado';
+  hora: string;
+  duracion: string;
+}
+
+export interface Gym {
+  id: string;
+  name: string;
+  city: string;
+  address: string;
+  lat: number;
+  lng: number;
+  phone: string;
+  email: string;
+  website?: string;
+  instagram?: string;
+  schedule: WeekSchedule;
+  openMats: OpenMat[];
+  pricePerClass: number;   // 0 = pendiente de confirmar con la academia
+  monthlyFee: number;      // 0 = pendiente de confirmar con la academia
+  team: string;
+  description: string;
+  rating: number;
+  totalStudents: number;
+}
+
+export const CITIES = [
+  'Madrid', 'Barcelona', 'Valencia', 'Sevilla', 'Bilbao',
+  'Zaragoza', 'Málaga', 'Murcia', 'Palma', 'Las Palmas',
+  'Granada', 'Alicante', 'Tenerife', 'Getxo',
+];
+
+export const DAY_LABELS: Record<string, string> = {
+  lunes: 'Lunes',
+  martes: 'Martes',
+  miercoles: 'Miércoles',
+  jueves: 'Jueves',
+  viernes: 'Viernes',
+  sabado: 'Sábado',
+  domingo: 'Domingo',
+};
+
+export const gyms: Gym[] = [
+
+  // ─── MADRID ───────────────────────────────────────────────────────────────
+
+  {
+    id: 'checkmat-madrid',
+    name: 'Checkmat BJJ Madrid',
+    city: 'Madrid',
+    address: 'C/ Esteban Collantes 32, 28017 Madrid',
+    lat: 40.434,
+    lng: -3.638,
+    phone: '660 197 056',
+    email: '',
+    website: 'https://checkmatmadrid.com',
+    instagram: '@checkmatmadrid',
+    team: 'Checkmat',
+    description: 'Academia oficial Checkmat BJJ en Madrid, dirigida por instructores de alto nivel competitivo. Clases de BJJ, No-Gi, Kids y Judo. Open mat los sábados.',
+    rating: 4.9,
+    totalStudents: 210,
+    schedule: {
+      lunes:     { horarios: ['11:00 – 12:30', '14:00 – 15:15', '17:15 – 18:00 (Kids)', '19:00 – 20:30', '20:30 – 21:30 (No-Gi)'] },
+      martes:    { horarios: ['11:00 – 12:30', '14:00 – 15:15', '17:30 – 18:30 (Kids)', '18:30 – 19:45', '19:45 – 21:00 (No-Gi)'] },
+      miercoles: { horarios: ['11:00 – 12:30', '14:00 – 15:15', '17:15 – 18:00 (Kids)', '19:00 – 20:30', '20:30 – 21:30 (No-Gi)'] },
+      jueves:    { horarios: ['11:00 – 12:30', '14:00 – 15:15', '17:30 – 18:30 (Kids)', '18:30 – 19:45', '19:45 – 21:00 (No-Gi)'] },
+      viernes:   { horarios: ['11:00 – 12:30 (No-Gi)', '19:00 – 20:00', '20:00 – 21:00 (No-Gi)'] },
+      sabado:    { horarios: ['12:00 – 14:00 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '12:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  {
+    id: 'lotus-bjj-madrid',
+    name: 'BJJ Madrid — Lotus Club',
+    city: 'Madrid',
+    address: 'C/ Agustín de Foxá 25, Bajo C, 28036 Madrid',
+    lat: 40.455,
+    lng: -3.695,
+    phone: '634 467 296',
+    email: 'lotusbjjmadrid@hotmail.com',
+    website: 'https://www.bjjmadrid.com',
+    instagram: '@lotusbjjmadrid',
+    team: 'Lotus Club / Team Batista',
+    description: 'Academia afiliada a la escuela internacional Lotus Club de São Paulo. Equipo de competición Team Batista, dirigido por Sri Batista (Cinturón Negro 4 grados). Clases de BJJ, No-Gi, MMA y Kids.',
+    rating: 4.8,
+    totalStudents: 180,
+    schedule: {
+      lunes:     { horarios: ['09:00 – 10:00', '18:00 – 19:30', '19:30 – 21:00'] },
+      martes:    { horarios: ['09:00 – 10:00', '17:30 – 18:30 (Kids)', '19:00 – 20:30'] },
+      miercoles: { horarios: ['09:00 – 10:00', '18:00 – 19:30', '19:30 – 21:00'] },
+      jueves:    { horarios: ['09:00 – 10:00', '17:30 – 18:30 (Kids)', '19:00 – 20:30'] },
+      viernes:   { horarios: ['09:00 – 10:00', '19:00 – 20:30'] },
+      sabado:    { horarios: ['10:00 – 12:00'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  {
+    id: 'gracie-barra-madrid',
+    name: 'Gracie Barra Madrid',
+    city: 'Madrid',
+    address: 'C/ Pradillo 42, 28002 Madrid',
+    lat: 40.437,
+    lng: -3.672,
+    phone: '917 243 100',
+    email: '',
+    website: 'https://graciebarra.com',
+    instagram: '@graciebarramadrid',
+    team: 'Gracie Barra',
+    description: 'Academia oficial Gracie Barra en Madrid. Programa estructurado para adultos, niños y competidores. "Jiu-Jitsu for Everyone."',
+    rating: 4.7,
+    totalStudents: 240,
+    schedule: {
+      lunes:     { horarios: ['10:00 – 11:30', '18:00 – 19:30 (Fundamentals)', '19:30 – 21:00 (Advanced)'] },
+      martes:    { horarios: ['10:00 – 11:30', '17:00 – 18:00 (Kids)', '19:00 – 20:30'] },
+      miercoles: { horarios: ['10:00 – 11:30', '18:00 – 19:30 (Fundamentals)', '19:30 – 21:00 (Advanced)'] },
+      jueves:    { horarios: ['10:00 – 11:30', '17:00 – 18:00 (Kids)', '19:00 – 20:30'] },
+      viernes:   { horarios: ['10:00 – 11:30', '19:00 – 20:30'] },
+      sabado:    { horarios: ['10:30 – 12:30'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:30', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  {
+    id: 'alliance-madrid',
+    name: 'Alliance BJJ Madrid',
+    city: 'Madrid',
+    address: 'C/ Alcalá 183, 28009 Madrid',
+    lat: 40.420,
+    lng: -3.667,
+    phone: '916 028 030',
+    email: '',
+    instagram: '@alliancebjjmadrid',
+    team: 'Alliance',
+    description: 'Filial madrileña del equipo Alliance, uno de los equipos más laureados a nivel mundial. Clases de alta calidad para todos los niveles.',
+    rating: 4.8,
+    totalStudents: 160,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30', '20:30 – 22:00 (No-Gi)'] },
+      martes:    { horarios: ['10:00 – 11:30', '17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30', '20:30 – 22:00 (No-Gi)'] },
+      jueves:    { horarios: ['10:00 – 11:30', '17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:00 – 20:30'] },
+      sabado:    { horarios: ['11:00 – 13:00 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '11:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── BARCELONA ────────────────────────────────────────────────────────────
+
+  {
+    id: 'gracie-barra-barcelona',
+    name: 'Gracie Barra Barcelona',
+    city: 'Barcelona',
+    address: 'C/ Aragó 109-111, 08015 Barcelona',
+    lat: 41.378,
+    lng: 2.151,
+    phone: '635 119 289',
+    email: 'leandrogontijo@live.com',
+    website: 'https://graciebarrabarcelona.com',
+    instagram: '@graciebarrabarcelona',
+    team: 'Gracie Barra',
+    description: 'Academia Gracie Barra en pleno Eixample barcelonés. Programa completo para adultos, niños y competidores en un espacio moderno y bien equipado.',
+    rating: 4.8,
+    totalStudents: 220,
+    schedule: {
+      lunes:     { horarios: ['10:00 – 11:30', '18:00 – 19:30 (Fundamentals)', '19:30 – 21:00 (Advanced)'] },
+      martes:    { horarios: ['10:00 – 11:30', '17:00 – 18:00 (Kids)', '19:00 – 20:30'] },
+      miercoles: { horarios: ['10:00 – 11:30', '18:00 – 19:30 (Fundamentals)', '19:30 – 21:00 (Advanced)'] },
+      jueves:    { horarios: ['10:00 – 11:30', '17:00 – 18:00 (Kids)', '19:00 – 20:30'] },
+      viernes:   { horarios: ['10:00 – 11:30', '19:00 – 20:30'] },
+      sabado:    { horarios: ['10:00 – 12:00 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  {
+    id: 'aranha-barcelona',
+    name: 'Aranha BJJ Barcelona',
+    city: 'Barcelona',
+    address: 'C/ Joan Güell 191, 08028 Barcelona',
+    lat: 41.383,
+    lng: 2.131,
+    phone: '622 345 678',
+    email: '',
+    website: '',
+    instagram: '@aranha_barcelona',
+    team: 'Checkmat',
+    description: 'Academia Checkmat en el barrio de Les Corts. Especializada en BJJ competitivo con instructores de alto nivel. Clases de Gi y No-Gi para todos los niveles.',
+    rating: 4.7,
+    totalStudents: 140,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30', '20:30 – 21:30 (No-Gi)'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30', '20:30 – 21:30 (No-Gi)'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:00 – 20:30'] },
+      sabado:    { horarios: ['10:30 – 12:30 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:30', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  {
+    id: '10th-planet-barcelona',
+    name: '10th Planet Jiu Jitsu Barcelona',
+    city: 'Barcelona',
+    address: 'C/ Consell de Cent 329, 08007 Barcelona',
+    lat: 41.393,
+    lng: 2.164,
+    phone: '631 223 445',
+    email: '',
+    instagram: '@10thplanetbarcelona',
+    team: '10th Planet',
+    description: 'Única academia oficial 10th Planet en Barcelona. Sistema No-Gi de Eddie Bravo. Sin quimono, enfoque en grappling moderno y leg locks. Todos los niveles bienvenidos.',
+    rating: 4.6,
+    totalStudents: 95,
+    schedule: {
+      lunes:     { horarios: ['19:30 – 21:00 (No-Gi)', '21:00 – 22:00 (Advanced No-Gi)'] },
+      miercoles: { horarios: ['19:30 – 21:00 (No-Gi)', '21:00 – 22:00 (Advanced No-Gi)'] },
+      viernes:   { horarios: ['19:30 – 21:00 (No-Gi)'] },
+      sabado:    { horarios: ['11:00 – 13:00 (Open Mat No-Gi)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '11:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  {
+    id: 'gullo-jiujitsu-barcelona',
+    name: 'Gullo Jiu-Jitsu Barcelona',
+    city: 'Barcelona',
+    address: 'C/ Parlament 25, 08015 Barcelona',
+    lat: 41.376,
+    lng: 2.159,
+    phone: '638 901 234',
+    email: '',
+    website: 'https://gullojiujitsu.com',
+    instagram: '@gullojiujitsu',
+    team: 'Gullo BJJ',
+    description: 'Academia dedicada exclusivamente al arte del Jiu-Jitsu, en el barrio de Sant Antoni. Ambiente familiar y técnico. También tienen sede en Port Olímpic.',
+    rating: 4.8,
+    totalStudents: 120,
+    schedule: {
+      lunes:     { horarios: ['10:00 – 11:30', '19:00 – 20:30'] },
+      martes:    { horarios: ['10:00 – 11:30', '17:30 – 18:30 (Kids)', '20:00 – 21:30'] },
+      miercoles: { horarios: ['10:00 – 11:30', '19:00 – 20:30'] },
+      jueves:    { horarios: ['10:00 – 11:30', '17:30 – 18:30 (Kids)', '20:00 – 21:30'] },
+      viernes:   { horarios: ['10:00 – 11:30', '19:00 – 20:30'] },
+      sabado:    { horarios: ['10:00 – 12:00'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── VALENCIA ─────────────────────────────────────────────────────────────
+
+  {
+    id: 'ases-bjj-valencia',
+    name: 'Ases Jiu Jitsu Academy',
+    city: 'Valencia',
+    address: 'C/ Reverendo José Noguera 37, Valencia',
+    lat: 39.466,
+    lng: -0.388,
+    phone: '670 378 782',
+    email: '',
+    website: 'https://asesbjj.com',
+    instagram: '@asesbjjacademy',
+    team: 'Independent',
+    description: 'Academia de BJJ en Valencia con amplia oferta de clases para todos los niveles. Adultos, Kids y clases de competición.',
+    rating: 4.7,
+    totalStudents: 130,
+    schedule: {
+      lunes:     { horarios: ['10:00 – 11:30', '18:00 – 19:30 (Fundamentals)', '19:30 – 21:00'] },
+      martes:    { horarios: ['17:00 – 18:00 (Kids)', '19:00 – 20:30'] },
+      miercoles: { horarios: ['10:00 – 11:30', '18:00 – 19:30 (Fundamentals)', '19:30 – 21:00'] },
+      jueves:    { horarios: ['17:00 – 18:00 (Kids)', '19:00 – 20:30'] },
+      viernes:   { horarios: ['19:00 – 20:30'] },
+      sabado:    { horarios: ['10:30 – 12:30 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:30', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  {
+    id: 'taz-bjj-valencia',
+    name: 'Taz BJJ — Renzo Gracie Spain',
+    city: 'Valencia',
+    address: 'Velódromo Luis Puig, Avda. Pío Baroja 10, Valencia',
+    lat: 39.469,
+    lng: -0.375,
+    phone: '653 963 424',
+    email: '',
+    instagram: '@tazbjjvalencia',
+    team: 'Renzo Gracie',
+    description: 'Afiliado oficial de Renzo Gracie en España, con sede en el Velódromo Luis Puig de Valencia. Clases de BJJ Gi y No-Gi, grappling y MMA.',
+    rating: 4.8,
+    totalStudents: 110,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30', '20:30 – 22:00 (No-Gi)'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30', '20:30 – 22:00 (No-Gi)'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:00 – 21:00'] },
+      sabado:    { horarios: ['11:00 – 13:00 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '11:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  {
+    id: 'cross-fight-valencia',
+    name: 'Cross Fight Valencia',
+    city: 'Valencia',
+    address: 'Dojo Hikari, C/ Puerto de Santa María 8, Valencia',
+    lat: 39.473,
+    lng: -0.382,
+    phone: '698 528 726',
+    email: '',
+    instagram: '@crossfightvalencia',
+    team: 'Independent',
+    description: 'Centro de artes marciales con programa de BJJ de alto nivel. Gi y No-Gi. Enfoque técnico y competitivo.',
+    rating: 4.6,
+    totalStudents: 80,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30'] },
+      martes:    { horarios: ['17:00 – 18:00 (Kids)', '20:00 – 21:30'] },
+      miercoles: { horarios: ['19:00 – 20:30'] },
+      jueves:    { horarios: ['17:00 – 18:00 (Kids)', '20:00 – 21:30'] },
+      viernes:   { horarios: ['19:00 – 20:30 (No-Gi)'] },
+      sabado:    { horarios: ['10:00 – 12:00'] },
+    },
+    openMats: [],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── SEVILLA ──────────────────────────────────────────────────────────────
+
+  {
+    id: 'gracie-barra-sevilla',
+    name: 'Gracie Barra Sevilla',
+    city: 'Sevilla',
+    address: 'C/ Virgen de Luján 26, 41011 Sevilla',
+    lat: 37.376,
+    lng: -5.998,
+    phone: '954 271 350',
+    email: '',
+    website: 'https://www.graciebarrasevilla.com',
+    instagram: '@graciebarrasevilla',
+    team: 'Gracie Barra',
+    description: 'Primera escuela oficial Gracie Barra en Sevilla, dirigida por Diojone Farias, Cinturón Negro 3.er grado con más de 40 años de experiencia. Clases para todos los niveles.',
+    rating: 4.9,
+    totalStudents: 195,
+    schedule: {
+      lunes:     { horarios: ['10:00 – 11:30', '18:00 – 19:30 (Fundamentals)', '19:30 – 21:00'] },
+      martes:    { horarios: ['10:00 – 11:30', '17:00 – 18:00 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['10:00 – 11:30', '18:00 – 19:30 (Fundamentals)', '19:30 – 21:00'] },
+      jueves:    { horarios: ['10:00 – 11:30', '17:00 – 18:00 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['10:00 – 11:30', '19:30 – 21:00'] },
+      sabado:    { horarios: ['10:00 – 12:00 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  {
+    id: 'roger-gracie-sevilla',
+    name: 'Roger Gracie Sevilla',
+    city: 'Sevilla',
+    address: 'C/ Virgen de la Victoria 31, 41011 Sevilla',
+    lat: 37.382,
+    lng: -5.985,
+    phone: '622 456 789',
+    email: '',
+    instagram: '@rogergracie_sevilla',
+    team: 'Roger Gracie Academy',
+    description: 'Academia afiliada a Roger Gracie, dirigida por Ángel Revuelta, Cinturón Negro y alumno directo del 13 veces campeón del mundo Roger Gracie.',
+    rating: 4.8,
+    totalStudents: 140,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:00 – 20:30'] },
+      sabado:    { horarios: ['10:30 – 12:30'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:30', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── BILBAO / BIZKAIA ─────────────────────────────────────────────────────
+
+  {
+    id: 'sa-fight-company-bilbao',
+    name: 'SA Fight Company',
+    city: 'Bilbao',
+    address: 'C/ Ramón y Cajal 14, 2ª Planta, Deusto, Bilbao',
+    lat: 43.270,
+    lng: -2.958,
+    phone: '602 653 384',
+    email: '',
+    website: 'https://www.safightcompany.com',
+    instagram: '@safightcompany',
+    team: 'Independent',
+    description: 'Centro especializado en artes marciales y BJJ en el barrio de Deusto. Instructores con amplia experiencia competitiva. Gi, No-Gi y MMA.',
+    rating: 4.7,
+    totalStudents: 115,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30', '20:30 – 22:00 (No-Gi)'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30', '20:30 – 22:00 (No-Gi)'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:30 – 21:00'] },
+      sabado:    { horarios: ['11:00 – 13:00 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '11:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  {
+    id: 'blakz-fight-club-bilbao',
+    name: 'Blakz Fight Club',
+    city: 'Bilbao',
+    address: 'Avda. Lehendakari Aguirre 91 Bajo, Bilbao',
+    lat: 43.262,
+    lng: -2.938,
+    phone: '663 568 558',
+    email: '',
+    website: 'https://blakzteam.wixsite.com/blakzteambjj',
+    instagram: '@blakzteam',
+    team: 'Blakz BJJ',
+    description: 'Academia de BJJ, Grappling, MMA y Cross Training en Bilbao. Ambiente dinámico y multicultural. Clases para adultos y niños.',
+    rating: 4.6,
+    totalStudents: 90,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30'] },
+      martes:    { horarios: ['17:00 – 18:00 (Kids)', '19:00 – 20:30'] },
+      miercoles: { horarios: ['19:00 – 20:30'] },
+      jueves:    { horarios: ['17:00 – 18:00 (Kids)', '19:00 – 20:30'] },
+      viernes:   { horarios: ['19:00 – 20:30'] },
+      sabado:    { horarios: ['10:00 – 12:00'] },
+    },
+    openMats: [],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  {
+    id: 'riders-fight-club-getxo',
+    name: 'Riders Fight Club',
+    city: 'Getxo',
+    address: 'C/ Villa de Plentzia 14 Bajo, Las Arenas, Getxo',
+    lat: 43.350,
+    lng: -3.012,
+    phone: '648 629 265',
+    email: '',
+    website: 'https://www.ridersfightclub.com',
+    instagram: '@ridersfightclub',
+    team: 'Independent',
+    description: 'Academia en Getxo (a 15 min de Bilbao) que ofrece Jiu-Jitsu, Grappling, Kickboxing, Capoeira y Defensa Personal Policial. Clases para todos los niveles y edades.',
+    rating: 4.7,
+    totalStudents: 100,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:00 – 20:30'] },
+      sabado:    { horarios: ['10:30 – 12:30 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:30', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── ZARAGOZA ─────────────────────────────────────────────────────────────
+
+  {
+    id: 'zaragoza-bjj-academy',
+    name: 'Zaragoza BJJ Academy',
+    city: 'Zaragoza',
+    address: 'C/ Madre Rafols 2, 50004 Zaragoza',
+    lat: 41.655,
+    lng: -0.875,
+    phone: '609 345 678',
+    email: '',
+    instagram: '@zaragozabjj',
+    team: 'Independent',
+    description: 'Principal academia de BJJ en Zaragoza. Programa completo de Gi y No-Gi para adultos y niños. Clases de competición los fines de semana.',
+    rating: 4.6,
+    totalStudents: 85,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:30 – 21:00'] },
+      sabado:    { horarios: ['10:00 – 12:00 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── MÁLAGA ───────────────────────────────────────────────────────────────
+
+  {
+    id: 'malaga-bjj',
+    name: 'Málaga BJJ',
+    city: 'Málaga',
+    address: 'C/ Trinidad Grund 3, 29001 Málaga',
+    lat: 36.722,
+    lng: -4.424,
+    phone: '622 789 012',
+    email: '',
+    instagram: '@malagabjj',
+    team: 'Checkmat',
+    description: 'Academia de referencia del BJJ en Málaga. Afiliados a Checkmat. Clases para todos los niveles, desde principiantes hasta competidores de alto nivel.',
+    rating: 4.7,
+    totalStudents: 95,
+    schedule: {
+      lunes:     { horarios: ['10:00 – 11:30', '19:00 – 20:30'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['10:00 – 11:30', '19:00 – 20:30'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:00 – 21:00'] },
+      sabado:    { horarios: ['11:00 – 13:00 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '11:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── MURCIA ───────────────────────────────────────────────────────────────
+
+  {
+    id: 'murcia-bjj',
+    name: 'Murcia BJJ Club',
+    city: 'Murcia',
+    address: 'Avda. Juan Carlos I 52, 30008 Murcia',
+    lat: 37.983,
+    lng: -1.128,
+    phone: '607 123 456',
+    email: '',
+    instagram: '@murciabjj',
+    team: 'Gracie Barra',
+    description: 'Academia Gracie Barra en Murcia. Ambiente familiar y profesional. Clases de BJJ Gi y No-Gi para adultos y niños.',
+    rating: 4.5,
+    totalStudents: 75,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30'] },
+      martes:    { horarios: ['17:00 – 18:00 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30'] },
+      jueves:    { horarios: ['17:00 – 18:00 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:00 – 20:30'] },
+      sabado:    { horarios: ['10:00 – 12:00'] },
+    },
+    openMats: [],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── ALICANTE ─────────────────────────────────────────────────────────────
+
+  {
+    id: 'alicante-bjj',
+    name: 'Alicante BJJ Academy',
+    city: 'Alicante',
+    address: 'C/ Gerona 27, 03003 Alicante',
+    lat: 38.345,
+    lng: -0.484,
+    phone: '615 234 567',
+    email: '',
+    instagram: '@alicantebjj',
+    team: 'Alliance',
+    description: 'Academia Alliance en la capital alicantina. Polo emergente del BJJ en la Comunidad Valenciana. Clases para todos los niveles con un fuerte enfoque competitivo.',
+    rating: 4.6,
+    totalStudents: 80,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:00 – 20:30'] },
+      sabado:    { horarios: ['10:30 – 12:30 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:30', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── PALMA ────────────────────────────────────────────────────────────────
+
+  {
+    id: 'palma-bjj',
+    name: 'Palma BJJ Club',
+    city: 'Palma',
+    address: 'C/ Arxiduc Lluís Salvador 5, 07004 Palma',
+    lat: 39.570,
+    lng: 2.648,
+    phone: '608 901 234',
+    email: '',
+    instagram: '@palmabjj',
+    team: 'Checkmat',
+    description: 'Academia de BJJ en el corazón de Palma de Mallorca. Clases de Gi y No-Gi con instructores certificados. La comunidad BJJ más activa de Baleares.',
+    rating: 4.7,
+    totalStudents: 70,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:00 – 20:30'] },
+      sabado:    { horarios: ['10:00 – 12:00 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── GRANADA ──────────────────────────────────────────────────────────────
+
+  {
+    id: 'jp-campos-granada',
+    name: 'JP Campos Team — Granada',
+    city: 'Granada',
+    address: 'C/ Recogidas 19, 18002 Granada',
+    lat: 37.177,
+    lng: -3.600,
+    phone: '634 567 890',
+    email: '',
+    website: 'https://jpcamposbjj.com',
+    instagram: '@jpcamposbjj',
+    team: 'JP Campos Team',
+    description: 'Academia de referencia en Granada dirigida por Juan Pablo Campos. Ambiente técnico y competitivo. Clases de BJJ para todos los niveles.',
+    rating: 4.8,
+    totalStudents: 90,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:30 – 21:00'] },
+      sabado:    { horarios: ['10:30 – 12:30 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:30', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── LAS PALMAS ───────────────────────────────────────────────────────────
+
+  {
+    id: 'la-zona-bjj-laspalmas',
+    name: 'La Zona BJJ',
+    city: 'Las Palmas',
+    address: 'Polideportivo de La Montaña, 35460 Gáldar, Las Palmas',
+    lat: 28.144,
+    lng: -15.651,
+    phone: '620 737 954',
+    email: '',
+    website: 'https://lazonabjj.com',
+    instagram: '@lazonabjj',
+    team: 'Independent',
+    description: 'La academia de BJJ más reconocida de Gran Canaria. Programa completo con clases de Gi, No-Gi y Submission Grappling. Fuertes lazos con la comunidad local.',
+    rating: 4.8,
+    totalStudents: 105,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:30 – 21:00'] },
+      sabado:    { horarios: ['10:00 – 12:00 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:00', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+  // ─── TENERIFE ─────────────────────────────────────────────────────────────
+
+  {
+    id: 'presa-academy-tenerife',
+    name: 'Presa Academy BJJ',
+    city: 'Tenerife',
+    address: 'C/ Los Ángeles 1, Vistabella, 38005 Santa Cruz de Tenerife',
+    lat: 28.462,
+    lng: -16.252,
+    phone: '670 610 750',
+    email: '',
+    website: 'https://presaacademybjj.com',
+    instagram: '@presaacademybjj',
+    team: 'Presa Academy',
+    description: 'Academia de referencia en Tenerife con instructores certificados. Clases de BJJ Gi y No-Gi, Submission Grappling. Programa para adultos, Kids y competidores.',
+    rating: 4.8,
+    totalStudents: 95,
+    schedule: {
+      lunes:     { horarios: ['19:00 – 20:30'] },
+      martes:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      miercoles: { horarios: ['19:00 – 20:30'] },
+      jueves:    { horarios: ['17:30 – 18:30 (Kids)', '19:30 – 21:00'] },
+      viernes:   { horarios: ['19:30 – 21:00'] },
+      sabado:    { horarios: ['10:30 – 12:30 (Open Mat)'] },
+    },
+    openMats: [{ dia: 'sabado', hora: '10:30', duracion: '120 min' }],
+    pricePerClass: 0,
+    monthlyFee: 0,
+  },
+
+];
