@@ -7,3 +7,5 @@ backend/prisma/dev.db-journal
 .env
 .env.local
 *.local
+.claude/
+CLAUDE.md
