@@ -1,4 +1,6 @@
-import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { supabase } from '../lib/supabase';
+import type { User } from '@supabase/supabase-js';
 
 export interface AuthUser {
   id: string;
@@ -23,64 +25,57 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
+function mapUser(supabaseUser: User): AuthUser {
+  const meta = supabaseUser.user_metadata ?? {};
+  return {
+    id: supabaseUser.id,
+    email: supabaseUser.email ?? '',
+    name: meta.name ?? supabaseUser.email ?? '',
+    role: meta.role ?? 'user',
+    gymId: meta.gym_id ?? null,
+  };
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
-  const [token, setToken] = useState<string | null>(() => localStorage.getItem('bjj_token'));
+  const [token, setToken] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchMe = useCallback(async (t: string) => {
-    try {
-      const res = await fetch('/api/auth/me', {
-        headers: { Authorization: `Bearer ${t}` },
-      });
-      if (!res.ok) throw new Error('invalid');
-      const data = await res.json();
-      setUser(data);
-    } catch {
-      localStorage.removeItem('bjj_token');
-      setToken(null);
-      setUser(null);
-    }
+  useEffect(() => {
+    // Warm up from existing session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) {
+        setUser(mapUser(session.user));
+        setToken(session.access_token);
+      }
+      setLoading(false);
+    });
+
+    // Keep in sync with Supabase auth state changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session ? mapUser(session.user) : null);
+      setToken(session?.access_token ?? null);
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
 
-  useEffect(() => {
-    if (token) {
-      fetchMe(token).finally(() => setLoading(false));
-    } else {
-      setLoading(false);
-    }
-  }, [token, fetchMe]);
-
   const login = async (email: string, password: string) => {
-    const res = await fetch('/api/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error ?? 'Error al iniciar sesión');
-    localStorage.setItem('bjj_token', data.token);
-    setToken(data.token);
-    setUser(data.user);
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) throw new Error(error.message);
   };
 
   const register = async (name: string, email: string, password: string) => {
-    const res = await fetch('/api/auth/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password }),
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { data: { name, role: 'user' } },
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error ?? 'Error al registrarse');
-    localStorage.setItem('bjj_token', data.token);
-    setToken(data.token);
-    setUser(data.user);
+    if (error) throw new Error(error.message);
   };
 
-  const logout = () => {
-    localStorage.removeItem('bjj_token');
-    setToken(null);
-    setUser(null);
+  const logout = async () => {
+    await supabase.auth.signOut();
   };
 
   return (
