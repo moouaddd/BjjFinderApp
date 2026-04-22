@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import eventsRouter from './routes/events';
@@ -7,7 +8,7 @@ import authRouter from './routes/auth';
 import claimsRouter from './routes/claims';
 import organizersRouter from './routes/organizers';
 import seoRouter from './routes/seo';
-import { loadGyms } from './data/gymsLoader';
+import { initGyms } from './data/gymsLoader';
 
 const app = express();
 const PORT = process.env.PORT ?? 3001;
@@ -30,7 +31,7 @@ app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-app.listen(PORT, () => {
-  loadGyms();
+app.listen(PORT, async () => {
+  await initGyms();
   console.log(`\n🥋 BJJ Backend corriendo en http://localhost:${PORT}\n`);
 });

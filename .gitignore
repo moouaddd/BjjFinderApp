@@ -6,6 +6,7 @@ backend/prisma/dev.db
 backend/prisma/dev.db-journal
 .env
 .env.local
+.env.migration
 *.local
 .claude/
 CLAUDE.md

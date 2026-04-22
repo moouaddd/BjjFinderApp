@@ -1,6 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-import { parse } from 'csv-parse/sync';
+import { createClient } from '@supabase/supabase-js';
 
 export interface GymRecord {
   id: string;
@@ -17,6 +15,13 @@ export interface GymRecord {
   ratingCount: number | null;
 }
 
+// ── Supabase client ─────────────────────────────────────────────────────────
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_KEY!,
+);
+
+// ── Helpers ─────────────────────────────────────────────────────────────────
 function slugify(text: string): string {
   return text
     .toLowerCase()
@@ -26,39 +31,40 @@ function slugify(text: string): string {
     .replace(/^-|-$/g, '');
 }
 
-function nullIfEmpty(val: string): string | null {
-  const trimmed = val?.trim();
-  return trimmed && trimmed.length > 0 ? trimmed : null;
-}
-
+// ── In-memory cache ──────────────────────────────────────────────────────────
 let _cache: GymRecord[] | null = null;
 
-export function loadGyms(): GymRecord[] {
-  if (_cache) return _cache;
+async function fetchFromSupabase(): Promise<GymRecord[]> {
+  const PAGE = 1000;
+  const rows: Record<string, unknown>[] = [];
+  let from = 0;
 
-  const csvPath = path.resolve(__dirname, '../../../data/gyms_export.csv');
-  const raw = fs.readFileSync(csvPath, 'utf-8');
+  while (true) {
+    const { data, error } = await supabase
+      .from('gyms')
+      .select('name,city,address,latitude,longitude,phone,email,website,rating,rating_count')
+      .range(from, from + PAGE - 1)
+      .order('city', { ascending: true })
+      .order('name', { ascending: true });
 
-  const rows = parse(raw, {
-    columns: true,
-    skip_empty_lines: true,
-    trim: true,
-    relax_quotes: true,
-  }) as Record<string, string>[];
+    if (error) throw new Error(`Supabase error: ${error.message}`);
+    if (!data || data.length === 0) break;
+    rows.push(...(data as Record<string, unknown>[]));
+    if (data.length < PAGE) break;
+    from += PAGE;
+  }
 
   const seen = new Set<string>();
   const gyms: GymRecord[] = [];
 
-  for (let i = 0; i < rows.length; i++) {
-    const row = rows[i];
-    const name = row.name?.trim();
+  for (const row of rows) {
+    const name = (row.name as string)?.trim();
     if (!name) continue;
 
-    const lat = parseFloat(row.lat);
-    const lng = parseFloat(row.lng);
-    if (isNaN(lat) || isNaN(lng)) continue;
+    const lat = row.latitude as number | null;
+    const lng = row.longitude as number | null;
+    if (lat == null || lng == null || isNaN(lat) || isNaN(lng)) continue;
 
-    // Deduplicate by name + lat + lng
     const key = `${name}|${lat.toFixed(5)}|${lng.toFixed(5)}`;
     if (seen.has(key)) continue;
     seen.add(key);
@@ -70,30 +76,51 @@ export function loadGyms(): GymRecord[] {
       id = `${baseSlug}-${suffix++}`;
     }
 
-    const ratingRaw = parseFloat(row.rating ?? '');
-    const ratingCountRaw = parseInt(row.rating_count ?? '', 10);
+    const ratingRaw = row.rating as number | null;
+    const ratingCountRaw = row.rating_count as number | null;
 
     gyms.push({
       id,
       name,
-      city: row.city?.trim() ?? '',
-      country: row.country?.trim() ?? 'ES',
+      city:       (row.city as string)?.trim() ?? '',
+      country:    'ES',
       lat,
       lng,
-      phone: nullIfEmpty(row.phone),
-      email: nullIfEmpty(row.email),
-      website: nullIfEmpty(row.website),
-      address: nullIfEmpty(row.address),
-      rating: isNaN(ratingRaw) || ratingRaw === 0 ? null : Math.round(ratingRaw * 10) / 10,
-      ratingCount: isNaN(ratingCountRaw) || ratingCountRaw === 0 ? null : ratingCountRaw,
+      phone:      (row.phone as string) || null,
+      email:      (row.email as string) || null,
+      website:    (row.website as string) || null,
+      address:    (row.address as string) || null,
+      rating:     ratingRaw && ratingRaw > 0 ? Math.round(ratingRaw * 10) / 10 : null,
+      ratingCount: ratingCountRaw && ratingCountRaw > 0 ? ratingCountRaw : null,
     });
   }
 
-  gyms.sort((a, b) => a.city.localeCompare(b.city, 'es') || a.name.localeCompare(b.name, 'es'));
-
-  _cache = gyms;
-  console.log(`  Loaded ${gyms.length} gyms from CSV`);
   return gyms;
+}
+
+// ── Public API ───────────────────────────────────────────────────────────────
+
+/** Loads gyms from Supabase and warms the cache. Call once at startup. */
+export async function initGyms(): Promise<void> {
+  const gyms = await fetchFromSupabase();
+  _cache = gyms;
+  console.log(`  ✅ Loaded ${gyms.length} gyms from Supabase`);
+
+  // Refresh cache every 10 minutes so Supabase edits are reflected without restart
+  setInterval(async () => {
+    try {
+      _cache = await fetchFromSupabase();
+      console.log(`  🔄 Gyms cache refreshed (${_cache.length} records)`);
+    } catch (err) {
+      console.error('  ⚠️  Failed to refresh gyms cache:', err);
+    }
+  }, 10 * 60 * 1000);
+}
+
+/** Returns the in-memory gym cache synchronously. Requires initGyms() to have been called first. */
+export function loadGyms(): GymRecord[] {
+  if (!_cache) throw new Error('Gyms cache not initialised — await initGyms() at startup');
+  return _cache;
 }
 
 export function getGymById(id: string): GymRecord | undefined {
