@@ -36,15 +36,17 @@ router.patch('/:id/openmat', requireAuth, async (req: Request, res: Response) =>
     }
   }
 
-  const data: Parameters<typeof prisma.gymProfile.upsert>[0]['create'] = {
+  const nullIfEmpty = (v: string | undefined): string | null | undefined =>
+    v === undefined ? undefined : v.trim() === '' ? null : v;
+  const data = {
     gymId,
-    ...(openMatFriday !== undefined && { openMatFriday }),
-    ...(openMatFridayTime !== undefined && { openMatFridayTime }),
-    ...(openMatFridayDuration !== undefined && { openMatFridayDuration }),
-    ...(openMatSaturday !== undefined && { openMatSaturday }),
-    ...(openMatSaturdayTime !== undefined && { openMatSaturdayTime }),
-    ...(openMatSaturdayDuration !== undefined && { openMatSaturdayDuration }),
-    ...(openMatNotes !== undefined && { openMatNotes }),
+    ...(openMatFriday !== undefined && { openMatFriday: Boolean(openMatFriday) }),
+    ...(openMatFridayTime !== undefined && { openMatFridayTime: nullIfEmpty(String(openMatFridayTime)) }),
+    ...(openMatFridayDuration !== undefined && { openMatFridayDuration: nullIfEmpty(String(openMatFridayDuration)) }),
+    ...(openMatSaturday !== undefined && { openMatSaturday: Boolean(openMatSaturday) }),
+    ...(openMatSaturdayTime !== undefined && { openMatSaturdayTime: nullIfEmpty(String(openMatSaturdayTime)) }),
+    ...(openMatSaturdayDuration !== undefined && { openMatSaturdayDuration: nullIfEmpty(String(openMatSaturdayDuration)) }),
+    ...(openMatNotes !== undefined && { openMatNotes: nullIfEmpty(String(openMatNotes)) }),
   };
 
   const profile = await prisma.gymProfile.upsert({ where: { gymId }, create: data, update: data });

@@ -5,6 +5,7 @@ import { api } from '../services/api';
 import type { GymRecord } from '../services/api';
 import type { CommunityEvent } from '../data/events';
 import { categoryLabels, categoryColors, modalityLabels } from '../data/events';
+import GymDetailModal from '../components/GymDetailModal';
 
 function toSlug(city: string): string {
   return city
@@ -43,32 +44,44 @@ export default function CityOpenMats() {
   const [events, setEvents] = useState<CommunityEvent[]>([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [selectedGym, setSelectedGym] = useState<GymRecord | null>(null);
 
   const fetchData = useCallback(async () => {
     if (!citySlug) return;
     setLoading(true);
     try {
-      const [gymsRes, eventsRes, cityData] = await Promise.all([
+      // Critical: gyms + events
+      const [gymsRes, eventsRes] = await Promise.all([
         api.gyms.list({ limit: 600 }),
         api.events.list(),
-        api.seo.city(citySlug),
       ]);
 
-      const cityGyms = gymsRes.data.filter(
-        (g) => toSlug(g.city) === citySlug && (g.openMatFriday || g.openMatSaturday),
-      );
-
-      if (cityGyms.length === 0 && cityData.count === 0) {
+      const cityExists = gymsRes.data.some((g) => toSlug(g.city) === citySlug);
+      if (!cityExists) {
         setNotFound(true);
         return;
       }
 
-      setContent({
-        city: cityData.city,
-        count: cityData.count,
-        intro: cityData.intro,
-        bestRated: cityData.bestRated,
-      });
+      const cityGyms = gymsRes.data.filter(
+        (g) => toSlug(g.city) === citySlug && (g.openMatFriday || g.openMatSaturday),
+      );
+      const cityName = gymsRes.data.find((g) => toSlug(g.city) === citySlug)!.city;
+
+      // Optional: SEO content
+      let cityInfo: CityContent;
+      try {
+        const cityData = await api.seo.city(citySlug);
+        cityInfo = { city: cityData.city, count: cityData.count, intro: cityData.intro, bestRated: cityData.bestRated };
+      } catch {
+        cityInfo = {
+          city: cityName,
+          count: gymsRes.data.filter((g) => toSlug(g.city) === citySlug).length,
+          intro: `Sesiones de open mat de Brazilian Jiu-Jitsu en ${cityName}. Entrena con la comunidad BJJ local.`,
+          bestRated: null,
+        };
+      }
+
+      setContent(cityInfo);
 
       setGymSlots(
         cityGyms.map((g) => {
@@ -79,15 +92,11 @@ export default function CityOpenMats() {
         }),
       );
 
-      setEvents(
-        eventsRes.filter(
-          (e) => e.type === 'openmat' && toSlug(e.city) === citySlug,
-        ),
-      );
+      setEvents(eventsRes.filter((e) => e.type === 'openmat' && toSlug(e.city) === citySlug));
     } catch {
       setNotFound(true);
     } finally {
-      setLoading(false));
+      setLoading(false);
     }
   }, [citySlug]);
 
@@ -164,7 +173,11 @@ export default function CityOpenMats() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {gymSlots.map(({ gym, slots }) => (
-              <div key={gym.id} className="bg-dark-700 border border-white/8 rounded-2xl overflow-hidden">
+              <div
+                key={gym.id}
+                onClick={() => setSelectedGym(gym)}
+                className="bg-dark-700 border border-white/8 rounded-2xl overflow-hidden cursor-pointer hover:border-gold-500/30 transition-colors"
+              >
                 <div className="h-1 w-full bg-gradient-to-r from-gold-600 to-gold-400" />
                 <div className="p-5">
                   <div className="flex items-start justify-between gap-2 mb-3">
@@ -203,11 +216,21 @@ export default function CityOpenMats() {
                   </div>
                   <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/5">
                     {gym.phone ? (
-                      <a href={`tel:${gym.phone.replace(/\s/g, '')}`} className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gold-400 transition-colors">
+                      <a
+                        href={`tel:${gym.phone.replace(/\s/g, '')}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gold-400 transition-colors"
+                      >
                         <Phone size={12} /> {gym.phone}
                       </a>
                     ) : gym.website ? (
-                      <a href={gym.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gold-400 transition-colors">
+                      <a
+                        href={gym.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gold-400 transition-colors"
+                      >
                         <Globe size={12} /> Sitio web
                       </a>
                     ) : <span />}
@@ -286,6 +309,10 @@ export default function CityOpenMats() {
           ← Ver open mats de todas las ciudades
         </Link>
       </div>
+
+      {selectedGym && (
+        <GymDetailModal gym={selectedGym} onClose={() => setSelectedGym(null)} />
+      )}
     </div>
   );
 }

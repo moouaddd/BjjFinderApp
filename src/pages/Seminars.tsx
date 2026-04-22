@@ -216,7 +216,6 @@ function CommunityCard({ event }: { event: CommunityEvent }) {
 
 export default function Seminars() {
   const [typeFilter, setTypeFilter] = useState<EventType | 'all'>('all');
-  const [cityFilter, setCityFilter] = useState('');
   const [payingFor, setPayingFor] = useState<Seminar | null>(null);
   const [communityEvents, setCommunityEvents] = useState<CommunityEvent[]>([]);
   const [loadingEvents, setLoadingEvents] = useState(true);
@@ -234,22 +233,9 @@ export default function Seminars() {
 
   useEffect(() => { fetchCommunityEvents(); }, [fetchCommunityEvents]);
 
-  // Combined city list from both sources
-  const staticCities = [...new Set(seminars.map((s) => s.city))];
-  const communityCities = [...new Set(communityEvents.map((e) => e.city))];
-  const cities = [...new Set([...staticCities, ...communityCities])].sort((a, b) => a.localeCompare(b, 'es'));
+  const filteredStatic = seminars.filter((s) => typeFilter === 'all' || s.type === typeFilter);
 
-  const filteredStatic = seminars.filter((s) => {
-    const matchType = typeFilter === 'all' || s.type === typeFilter;
-    const matchCity = !cityFilter || s.city === cityFilter;
-    return matchType && matchCity;
-  });
-
-  const filteredCommunity = communityEvents.filter((e) => {
-    const matchType = typeFilter === 'all' || e.type === typeFilter;
-    const matchCity = !cityFilter || e.city === cityFilter;
-    return matchType && matchCity;
-  });
+  const filteredCommunity = communityEvents.filter((e) => typeFilter === 'all' || e.type === typeFilter);
 
   const total = filteredStatic.length + filteredCommunity.length;
 
@@ -296,16 +282,6 @@ export default function Seminars() {
               </button>
             ))}
           </div>
-          <div className="flex gap-2 flex-wrap">
-            <button onClick={() => setCityFilter('')} className={`px-3 py-2 rounded-lg text-xs font-medium border transition-all ${!cityFilter ? 'bg-gold-500/15 text-gold-400 border-gold-500/30' : 'text-gray-400 border-white/10 hover:text-white'}`}>
-              Todas las ciudades
-            </button>
-            {cities.map((c) => (
-              <button key={c} onClick={() => setCityFilter(c === cityFilter ? '' : c)} className={`px-3 py-2 rounded-lg text-xs font-medium border transition-all ${cityFilter === c ? 'bg-gold-500/15 text-gold-400 border-gold-500/30' : 'text-gray-400 border-white/10 hover:text-white'}`}>
-                {c}
-              </button>
-            ))}
-          </div>
           <p className="text-gray-600 text-sm ml-auto">
             <span className="text-white font-semibold">{total}</span> evento{total !== 1 ? 's' : ''}
           </p>
@@ -314,7 +290,7 @@ export default function Seminars() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
 
-        {/* Static seminars */}
+        {/* Featured seminars — shown when data is available */}
         {filteredStatic.length > 0 && (
           <section>
             <div className="flex items-center gap-2 mb-5">

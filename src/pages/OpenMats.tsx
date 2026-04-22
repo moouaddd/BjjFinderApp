@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { MapPin, Clock, Phone, ChevronDown, Calendar, Users, Globe, Loader2, Info } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { api, type GymRecord } from '../services/api';
 import type { CommunityEvent } from '../data/events';
 import { categoryLabels, categoryColors, modalityLabels } from '../data/events';
-import CityBanner from '../components/CityBanner';
+import GymDetailModal from '../components/GymDetailModal';
 
 function toSlug(city: string): string {
   return city.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -38,20 +38,26 @@ function gymToSlots(gym: GymRecord): OpenMatSlot[] {
 }
 
 export default function OpenMats() {
-  const [dayFilter, setDayFilter] = useState<DayFilter>('sabado');
+  const navigate = useNavigate();
+  const [dayFilter, setDayFilter] = useState<DayFilter>('todos');
   const [cityFilter, setCityFilter] = useState('');
   const [events, setEvents] = useState<CommunityEvent[]>([]);
   const [apiGyms, setApiGyms] = useState<GymRecord[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedGym, setSelectedGym] = useState<GymRecord | null>(null);
+
+  const [allCitiesList, setAllCitiesList] = useState<string[]>([]);
 
   const fetchData = useCallback(async () => {
     try {
-      const [eventsData, gymsData] = await Promise.all([
+      const [eventsData, gymsData, citiesData] = await Promise.all([
         api.events.list(),
         api.gyms.list({ limit: 600 }),
+        api.gyms.cities(),
       ]);
       setEvents(eventsData.filter((e) => e.type === 'openmat'));
       setApiGyms(gymsData.data.filter((g) => g.openMatFriday || g.openMatSaturday));
+      setAllCitiesList(citiesData.cities);
     } catch {
       // show empty state
     } finally {
@@ -61,10 +67,10 @@ export default function OpenMats() {
 
   useEffect(() => { fetchData(); }, [fetchData]);
 
-  // City list from both sources
-  const gymCities = [...new Set(apiGyms.map((g) => g.city))];
-  const eventCities = [...new Set(events.map((e) => e.city))];
-  const allCities = [...new Set([...gymCities, ...eventCities])].sort((a, b) => a.localeCompare(b, 'es'));
+  // All cities for dropdown (from full gym list, sorted)
+  const allCities = allCitiesList.length > 0
+    ? allCitiesList
+    : [...new Set([...apiGyms.map((g) => g.city), ...events.map((e) => e.city)])].sort((a, b) => a.localeCompare(b, 'es'));
 
   // Filtered gym results (owner-confirmed weekly open mats)
   const gymResults = apiGyms
@@ -136,7 +142,14 @@ export default function OpenMats() {
           <div className="relative">
             <select
               value={cityFilter}
-              onChange={(e) => setCityFilter(e.target.value)}
+              onChange={(e) => {
+                const city = e.target.value;
+                if (city) {
+                  navigate(`/horarios/${toSlug(city)}bjj`);
+                } else {
+                  setCityFilter('');
+                }
+              }}
               className="appearance-none bg-dark-700 border border-white/10 rounded-lg pl-3 pr-8 py-2 text-sm text-white outline-none focus:border-gold-500/50 transition-colors cursor-pointer"
             >
               <option value="">Todas las ciudades</option>
@@ -155,8 +168,6 @@ export default function OpenMats() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
 
-        {cityFilter && <CityBanner city={cityFilter} />}
-
         {/* === SECTION 1: Weekly gym open mats (owner-confirmed) === */}
         {gymResults.length > 0 && (
           <section>
@@ -174,7 +185,8 @@ export default function OpenMats() {
               {gymResults.map(({ gym, slots }) => (
                 <div
                   key={gym.id}
-                  className="bg-dark-700 border border-white/8 rounded-2xl overflow-hidden card-hover animate-fadeInUp"
+                  onClick={() => setSelectedGym(gym)}
+                  className="bg-dark-700 border border-white/8 rounded-2xl overflow-hidden card-hover animate-fadeInUp cursor-pointer hover:border-gold-500/30 transition-colors"
                 >
                   <div className="h-1 w-full bg-gradient-to-r from-gold-600 to-gold-400" />
 
@@ -189,9 +201,12 @@ export default function OpenMats() {
                         </div>
                         <div className="flex items-center gap-1.5 mt-1 text-gray-500 text-xs">
                           <MapPin size={11} className="text-gold-500/70 shrink-0" />
-                          <Link to={`/bjj-${toSlug(gym.city)}`} className="text-gold-400/70 hover:text-gold-400 transition-colors shrink-0">
+                          <button
+                            onClick={(e) => { e.stopPropagation(); navigate(`/horarios/${toSlug(gym.city)}bjj`); }}
+                            className="text-gold-400/70 hover:text-gold-400 transition-colors shrink-0"
+                          >
                             {gym.city}
-                          </Link>
+                          </button>
                           {gym.address && <span className="truncate">· {gym.address}</span>}
                         </div>
                       </div>
@@ -224,6 +239,7 @@ export default function OpenMats() {
                       {gym.phone ? (
                         <a
                           href={`tel:${gym.phone.replace(/\s/g, '')}`}
+                          onClick={(e) => e.stopPropagation()}
                           className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gold-400 transition-colors"
                         >
                           <Phone size={12} />
@@ -234,6 +250,7 @@ export default function OpenMats() {
                           href={gym.website}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gold-400 transition-colors"
                         >
                           <Globe size={12} />
@@ -242,7 +259,7 @@ export default function OpenMats() {
                       ) : (
                         <span className="text-xs text-gray-700">—</span>
                       )}
-                      <span className="text-xs text-gray-600">
+                      <span className="text-xs text-gray-600 flex items-center gap-1">
                         {gym.isVerified ? 'Confirmado por el propietario' : 'Sin verificar'}
                       </span>
                     </div>
@@ -288,7 +305,13 @@ export default function OpenMats() {
                         <h3 className="text-white font-bold text-sm leading-tight">{event.title}</h3>
                         <div className="flex items-center gap-1.5 mt-1 text-gray-500 text-xs">
                           <MapPin size={11} className="text-gold-500/70 shrink-0" />
-                          <span className="truncate">{event.gym} · {event.city}</span>
+                          <span className="truncate">{event.gym} · </span>
+                          <button
+                            onClick={() => navigate(`/horarios/${toSlug(event.city)}bjj`)}
+                            className="text-gold-400/70 hover:text-gold-400 transition-colors shrink-0"
+                          >
+                            {event.city}
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -357,6 +380,11 @@ export default function OpenMats() {
           </div>
         )}
       </div>
+
+      {/* Gym detail modal */}
+      {selectedGym && (
+        <GymDetailModal gym={selectedGym} onClose={() => setSelectedGym(null)} />
+      )}
     </div>
   );
 }

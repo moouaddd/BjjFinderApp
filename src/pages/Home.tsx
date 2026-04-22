@@ -1,13 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { MapPin, Phone, Mail, Globe, Star, Search, Loader2, AlertCircle, ChevronDown, CheckCircle, Users } from 'lucide-react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { api, type GymRecord } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import CityBanner from '../components/CityBanner';
-
-function toSlug(city: string): string {
-  return city.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
+import GymDetailModal from '../components/GymDetailModal';
 
 function OpenMatBadge({ day, verified }: { day: string; verified: boolean }) {
   return (
@@ -22,7 +19,7 @@ function OpenMatBadge({ day, verified }: { day: string; verified: boolean }) {
   );
 }
 
-function GymCard({ gym }: { gym: GymRecord }) {
+function GymCard({ gym, onSelect }: { gym: GymRecord; onSelect: (g: GymRecord) => void }) {
   const { user } = useAuth();
   const navigate = useNavigate();
   const [claiming, setClaiming] = useState(false);
@@ -36,7 +33,7 @@ function GymCard({ gym }: { gym: GymRecord }) {
       await api.gyms.claim(gym.id, 'Solicito reclamar esta academia como propietario.');
       setClaimed(true);
     } catch {
-      // already claimed or error — ignore for now
+      // already claimed or error
     } finally {
       setClaiming(false);
     }
@@ -45,22 +42,20 @@ function GymCard({ gym }: { gym: GymRecord }) {
   const hasOpenMat = gym.openMatFriday || gym.openMatSaturday;
 
   return (
-    <div className="bg-dark-700 border border-white/8 rounded-2xl overflow-hidden card-hover animate-fadeInUp flex flex-col">
+    <div
+      onClick={() => onSelect(gym)}
+      className="bg-dark-700 border border-white/8 rounded-2xl overflow-hidden card-hover animate-fadeInUp flex flex-col cursor-pointer hover:border-gold-500/30 transition-colors"
+    >
       <div className="p-5 flex-1">
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1 flex-wrap">
-              <Link
-                to={`/bjj-${toSlug(gym.city)}`}
-                onClick={(e) => e.stopPropagation()}
-                className="text-xs font-medium bg-gold-500/15 text-gold-400 border border-gold-500/20 px-2 py-0.5 rounded-full hover:bg-gold-500/25 transition-colors"
-              >
+              <span className="text-xs font-medium bg-gold-500/15 text-gold-400 border border-gold-500/20 px-2 py-0.5 rounded-full">
                 {gym.city}
-              </Link>
+              </span>
               {gym.isVerified && (
                 <span className="flex items-center gap-1 text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
-                  <CheckCircle size={9} />
-                  Verificada
+                  <CheckCircle size={9} /> Verificada
                 </span>
               )}
               {gym.rating && (
@@ -80,7 +75,6 @@ function GymCard({ gym }: { gym: GymRecord }) {
           </div>
         </div>
 
-        {/* Open Mat badges */}
         {hasOpenMat && (
           <div className="flex flex-wrap gap-1.5 mb-3">
             {gym.openMatFriday && <OpenMatBadge day="Viernes" verified={gym.isVerified} />}
@@ -94,24 +88,23 @@ function GymCard({ gym }: { gym: GymRecord }) {
 
         <div className="flex flex-wrap gap-3">
           {gym.phone && (
-            <a href={`tel:${gym.phone.replace(/\s/g, '')}`} className="flex items-center gap-1.5 text-gray-500 hover:text-gold-400 text-xs transition-colors">
+            <a href={`tel:${gym.phone.replace(/\s/g, '')}`} onClick={(e) => e.stopPropagation()} className="flex items-center gap-1.5 text-gray-500 hover:text-gold-400 text-xs transition-colors">
               <Phone size={12} />{gym.phone}
             </a>
           )}
           {gym.email && (
-            <a href={`mailto:${gym.email}`} className="flex items-center gap-1.5 text-gray-500 hover:text-gold-400 text-xs transition-colors">
+            <a href={`mailto:${gym.email}`} onClick={(e) => e.stopPropagation()} className="flex items-center gap-1.5 text-gray-500 hover:text-gold-400 text-xs transition-colors">
               <Mail size={12} /><span className="truncate max-w-[160px]">{gym.email}</span>
             </a>
           )}
           {gym.website && (
-            <a href={gym.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-gray-500 hover:text-gold-400 text-xs transition-colors">
+            <a href={gym.website} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="flex items-center gap-1.5 text-gray-500 hover:text-gold-400 text-xs transition-colors">
               <Globe size={12} />Sitio web
             </a>
           )}
         </div>
       </div>
 
-      {/* Price row */}
       {(gym.pricePerClass != null || gym.monthlyFee != null) && (
         <div className="px-5 pb-2 flex flex-wrap gap-3">
           {gym.pricePerClass != null && (
@@ -123,18 +116,16 @@ function GymCard({ gym }: { gym: GymRecord }) {
         </div>
       )}
 
-      {/* Claim footer */}
       <div className="px-5 pb-4 pt-3 border-t border-white/5">
         {gym.claimedByOwner ? (
           <span className="flex items-center gap-1.5 text-[10px] text-emerald-500/60 font-medium">
-            <Users size={10} />
-            Gestionada por el propietario
+            <Users size={10} /> Gestionada por el propietario
           </span>
         ) : claimed ? (
           <span className="text-[10px] text-gold-400">Solicitud enviada ✓</span>
         ) : (
           <button
-            onClick={handleClaim}
+            onClick={(e) => { e.stopPropagation(); handleClaim(e); }}
             disabled={claiming}
             className="text-[10px] text-gray-600 hover:text-gold-400 transition-colors disabled:opacity-50"
           >
@@ -153,6 +144,7 @@ export default function Home() {
   const [search, setSearch] = useState('');
   const [cityFilter, setCityFilter] = useState('');
   const [cities, setCities] = useState<string[]>([]);
+  const [selectedGym, setSelectedGym] = useState<GymRecord | null>(null);
 
   const fetchGyms = useCallback(async () => {
     setLoading(true);
@@ -175,8 +167,7 @@ export default function Home() {
 
   const filtered = gyms.filter((g) => {
     const matchCity = !cityFilter || g.city === cityFilter;
-    const matchSearch =
-      !search ||
+    const matchSearch = !search ||
       g.name.toLowerCase().includes(search.toLowerCase()) ||
       g.city.toLowerCase().includes(search.toLowerCase());
     return matchCity && matchSearch;
@@ -243,6 +234,10 @@ export default function Home() {
         </div>
       </div>
 
+      {selectedGym && (
+        <GymDetailModal gym={selectedGym} onClose={() => setSelectedGym(null)} />
+      )}
+
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {loading ? (
@@ -254,10 +249,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center py-24 gap-4 text-gray-500">
             <AlertCircle size={36} className="text-red-400" />
             <p className="text-sm text-red-400">{error}</p>
-            <button
-              onClick={fetchGyms}
-              className="px-4 py-2 bg-gold-500 hover:bg-gold-400 text-black font-bold text-sm rounded-xl transition-all"
-            >
+            <button onClick={fetchGyms} className="px-4 py-2 bg-gold-500 hover:bg-gold-400 text-black font-bold text-sm rounded-xl transition-all">
               Reintentar
             </button>
           </div>
@@ -281,7 +273,7 @@ export default function Home() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
                 {filtered.map((gym) => (
-                  <GymCard key={gym.id} gym={gym} />
+                  <GymCard key={gym.id} gym={gym} onSelect={setSelectedGym} />
                 ))}
               </div>
             )}

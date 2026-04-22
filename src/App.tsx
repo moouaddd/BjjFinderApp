@@ -14,6 +14,7 @@ import OrganizerDashboard from './pages/OrganizerDashboard';
 import AdminPanel from './pages/AdminPanel';
 import CityPage from './pages/CityPage';
 import CityIndex from './pages/CityIndex';
+import CityOpenMats from './pages/CityOpenMats';
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
               <Route path="/admin" element={<AdminPanel />} />
               <Route path="/academias-bjj-espana" element={<CityIndex />} />
               <Route path="/bjj-:ciudad" element={<CityPage />} />
+              <Route path="/horarios/:slug" element={<CityOpenMats />} />
             </Routes>
           </main>
         </div>

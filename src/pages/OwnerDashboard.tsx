@@ -147,10 +147,17 @@ export default function OwnerDashboard() {
   const saveOpenMat = flash(async () => {
     if (!gym) return;
     await api.gyms.updateOpenMat(gym.id, {
-      openMatFriday: friday, openMatFridayTime: fridayTime, openMatFridayDuration: fridayDuration,
-      openMatSaturday: saturday, openMatSaturdayTime: saturdayTime, openMatSaturdayDuration: saturdayDuration,
-      openMatNotes,
+      openMatFriday: friday,
+      openMatFridayTime: fridayTime || undefined,
+      openMatFridayDuration: fridayDuration || undefined,
+      openMatSaturday: saturday,
+      openMatSaturdayTime: saturdayTime || undefined,
+      openMatSaturdayDuration: saturdayDuration || undefined,
+      openMatNotes: openMatNotes || undefined,
     });
+    // Refetch so local gym state reflects the saved open mat data
+    const updated = await api.gyms.get(gym.id);
+    setGym(updated);
   });
 
   const saveProfile = flash(async () => {
