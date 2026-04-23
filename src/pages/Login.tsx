@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Eye, EyeOff, Loader2 } from 'lucide-react';
+import { Eye, EyeOff, Loader2, KeyRound } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { supabase } from '../lib/supabase';
 
-type Mode = 'login' | 'register';
+type Mode = 'login' | 'register' | 'reset';
 
 function GoogleIcon() {
   return (
@@ -30,6 +31,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,10 +40,18 @@ export default function Login() {
     try {
       if (mode === 'login') {
         await login(email, password);
-      } else {
+        navigate(from, { replace: true });
+      } else if (mode === 'register') {
         await register(name, email, password);
+        navigate(from, { replace: true });
+      } else {
+        // reset password
+        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+          redirectTo: `${window.location.origin}/login`,
+        });
+        if (error) throw new Error(error.message);
+        setSuccess('Te hemos enviado un email para restablecer tu contraseña.');
       }
-      navigate(from, { replace: true });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error desconocido');
     } finally {
@@ -54,13 +64,72 @@ export default function Login() {
     setGoogleLoading(true);
     try {
       await signInWithGoogle();
-      // Supabase redirige a Google — la página se recargar al volver
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error con Google');
       setGoogleLoading(false);
     }
   };
 
+  // ── Reset password view ──────────────────────────────────────────────────
+  if (mode === 'reset') {
+    return (
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <div className="w-full max-w-md">
+          <div className="text-center mb-8">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-gold-500/30">
+              <KeyRound size={22} className="text-black" />
+            </div>
+            <h1 className="text-white font-black text-2xl">Recuperar contraseña</h1>
+            <p className="text-gray-500 text-sm mt-1">Te enviamos un enlace a tu email</p>
+          </div>
+
+          <div className="bg-dark-800 border border-white/8 rounded-2xl p-6">
+            {success ? (
+              <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl px-4 py-4 text-emerald-400 text-sm text-center">
+                {success}
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="text-xs text-gray-400 mb-1.5 block">Tu email</label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="academia@ejemplo.com"
+                    required
+                    className="w-full bg-dark-700 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white placeholder-gray-600 outline-none focus:border-gold-500/50 transition-colors"
+                  />
+                </div>
+                {error && (
+                  <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-3 py-2.5 text-red-400 text-sm">
+                    {error}
+                  </div>
+                )}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-3 bg-gold-500 hover:bg-gold-400 disabled:opacity-50 text-black font-bold rounded-xl transition-all flex items-center justify-center gap-2"
+                >
+                  {loading && <Loader2 size={16} className="animate-spin" />}
+                  Enviar enlace
+                </button>
+              </form>
+            )}
+          </div>
+
+          <button
+            onClick={() => { setMode('login'); setError(null); setSuccess(null); }}
+            className="w-full text-center text-xs text-gray-500 hover:text-gray-300 mt-4 transition-colors"
+          >
+            ← Volver al inicio de sesión
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Main login / register view ───────────────────────────────────────────
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-md">
@@ -78,26 +147,9 @@ export default function Login() {
         </div>
 
         <div className="bg-dark-800 border border-white/8 rounded-2xl p-6">
-
-          {/* Google OAuth */}
-          <button
-            onClick={handleGoogle}
-            disabled={googleLoading || loading}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl bg-white hover:bg-gray-50 disabled:opacity-60 text-gray-800 font-semibold text-sm transition-all mb-4"
-          >
-            {googleLoading ? <Loader2 size={16} className="animate-spin" /> : <GoogleIcon />}
-            Continuar con Google
-          </button>
-
-          <div className="flex items-center gap-3 mb-4">
-            <div className="flex-1 h-px bg-white/8" />
-            <span className="text-gray-600 text-xs">o con email</span>
-            <div className="flex-1 h-px bg-white/8" />
-          </div>
-
           {/* Mode toggle */}
           <div className="flex bg-dark-900 rounded-xl p-1 mb-6">
-            {(['login', 'register'] as Mode[]).map((m) => (
+            {(['login', 'register'] as const).map((m) => (
               <button
                 key={m}
                 onClick={() => { setMode(m); setError(null); }}
@@ -138,7 +190,18 @@ export default function Login() {
             </div>
 
             <div>
-              <label className="text-xs text-gray-400 mb-1.5 block">Contraseña</label>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="text-xs text-gray-400">Contraseña</label>
+                {mode === 'login' && (
+                  <button
+                    type="button"
+                    onClick={() => { setMode('reset'); setError(null); }}
+                    className="text-xs text-gray-500 hover:text-gold-400 transition-colors"
+                  >
+                    ¿Olvidaste tu contraseña?
+                  </button>
+                )}
+              </div>
               <div className="relative">
                 <input
                   type={showPw ? 'text' : 'password'}
@@ -173,11 +236,25 @@ export default function Login() {
               {mode === 'login' ? 'Iniciar sesión' : 'Crear cuenta'}
             </button>
           </form>
+
+          {/* Divider */}
+          <div className="flex items-center gap-3 my-4">
+            <div className="flex-1 h-px bg-white/8" />
+            <span className="text-gray-600 text-xs">o continúa con</span>
+            <div className="flex-1 h-px bg-white/8" />
+          </div>
+
+          {/* Google button — below inputs */}
+          <button
+            onClick={handleGoogle}
+            disabled={googleLoading || loading}
+            className="w-full flex items-center justify-center gap-3 px-4 py-2.5 rounded-xl bg-white hover:bg-gray-100 disabled:opacity-60 text-gray-800 font-semibold text-sm transition-all"
+          >
+            {googleLoading ? <Loader2 size={16} className="animate-spin text-gray-600" /> : <GoogleIcon />}
+            Google
+          </button>
         </div>
 
-        <p className="text-center text-xs text-gray-600 mt-4">
-          Admin demo: admin@bjjspain.com / admin123
-        </p>
       </div>
     </div>
   );
