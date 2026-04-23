@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup, useMap, Marker } from 'react-leaflet';
-import { MapPin, Phone, Globe, Star, X, Loader2, LocateFixed } from 'lucide-react';
+import { MapPin, Phone, Globe, Star, X, Loader2, LocateFixed, PlusCircle } from 'lucide-react';
 import { api, type GymRecord } from '../services/api';
+import AddGymModal from '../components/AddGymModal';
 import L from 'leaflet';
 
 function MapFlyTo({ lat, lng }: { lat: number; lng: number }) {
@@ -84,6 +85,7 @@ export default function MapPage() {
   const [userPos, setUserPos] = useState<{ lat: number; lng: number } | null>(null);
   const [locating, setLocating] = useState(false);
   const [locError, setLocError] = useState<string | null>(null);
+  const [showAddGym, setShowAddGym] = useState(false);
 
   const fetchGyms = useCallback(async () => {
     try {
@@ -143,6 +145,13 @@ export default function MapPage() {
           >
             {locating ? <Loader2 size={13} className="animate-spin" /> : <LocateFixed size={13} />}
             {userPos ? 'Mi ubicación' : 'Activar ubicación'}
+          </button>
+          <button
+            onClick={() => setShowAddGym(true)}
+            className="flex items-center gap-2 text-xs bg-gold-500/10 hover:bg-gold-500/20 border border-gold-500/30 text-gold-400 rounded-lg px-3 py-2 transition-all"
+          >
+            <PlusCircle size={13} />
+            Añadir gimnasio
           </button>
           <div className="flex items-center gap-2 text-xs text-gray-500 bg-dark-700 border border-white/8 rounded-lg px-3 py-2">
             <span className="w-3 h-3 rounded-full bg-gold-500 pulse-gold inline-block" />
@@ -209,6 +218,8 @@ export default function MapPage() {
         {selectedGym && (
           <GymPopup gym={selectedGym} onClose={() => { setSelectedGym(null); setFlyTarget(null); }} />
         )}
+
+        {showAddGym && <AddGymModal onClose={() => setShowAddGym(false)} />}
 
         {!selectedGym && !loading && (
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-dark-800/90 border border-white/10 backdrop-blur-sm rounded-full px-5 py-2.5 text-xs text-gray-400 pointer-events-none z-[500]">

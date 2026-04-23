@@ -153,6 +153,7 @@ export const api = {
       let query = supabase
         .from('gyms')
         .select('*', { count: 'exact' })
+        .or('is_verified.is.null,is_verified.eq.true')
         .order('city', { ascending: true })
         .order('name', { ascending: true })
         .limit(limit);
@@ -209,6 +210,33 @@ export const api = {
 
     delete: async (_gymId: string): Promise<void> => {
       throw new Error('La eliminación de academias estará disponible próximamente.');
+    },
+
+    // Admin: pending gym submissions
+    getPending: async (): Promise<GymRecord[]> => {
+      const { data, error } = await supabase
+        .from('gyms')
+        .select('*')
+        .eq('is_verified', false)
+        .order('created_at', { ascending: false });
+      if (error) supabaseError(error);
+      return (data ?? []).map(rowToGym);
+    },
+
+    approve: async (gymId: string): Promise<void> => {
+      const { error } = await supabase
+        .from('gyms')
+        .update({ is_verified: true })
+        .eq('id', gymId);
+      if (error) supabaseError(error);
+    },
+
+    reject: async (gymId: string): Promise<void> => {
+      const { error } = await supabase
+        .from('gyms')
+        .delete()
+        .eq('id', gymId);
+      if (error) supabaseError(error);
     },
   },
 
@@ -387,9 +415,10 @@ export const api = {
     rejectClaim: async (_id: string): Promise<{ ok: boolean }> => ({ ok: false }),
 
     getStats: async () => {
-      const [eventsRes, instructorsRes] = await Promise.allSettled([
+      const [eventsRes, instructorsRes, pendingGymsRes] = await Promise.allSettled([
         supabase.from('community_events').select('*', { count: 'exact', head: true }),
         supabase.from('instructors').select('*', { count: 'exact', head: true }),
+        supabase.from('gyms').select('*', { count: 'exact', head: true }).eq('is_verified', false),
       ]);
       return {
         users: 0,
@@ -397,6 +426,7 @@ export const api = {
         approvedClaims: 0,
         claimedGyms: 0,
         pendingOrganizers: 0,
+        pendingGyms: pendingGymsRes.status === 'fulfilled' ? (pendingGymsRes.value.count ?? 0) : 0,
         events: eventsRes.status === 'fulfilled' ? (eventsRes.value.count ?? 0) : 0,
         instructors: instructorsRes.status === 'fulfilled' ? (instructorsRes.value.count ?? 0) : 0,
       };

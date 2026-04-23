@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
-import { MapPin, Phone, Mail, Globe, Star, Search, Loader2, AlertCircle, ChevronDown, CheckCircle, Users } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe, Star, Search, Loader2, AlertCircle, ChevronDown, CheckCircle, Users, PlusCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { api, type GymRecord } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import CityBanner from '../components/CityBanner';
 import GymDetailModal from '../components/GymDetailModal';
+import AddGymModal from '../components/AddGymModal';
 
 function OpenMatBadge({ day, verified }: { day: string; verified: boolean }) {
   return (
@@ -145,6 +146,7 @@ export default function Home() {
   const [cityFilter, setCityFilter] = useState('');
   const [cities, setCities] = useState<string[]>([]);
   const [selectedGym, setSelectedGym] = useState<GymRecord | null>(null);
+  const [showAddGym, setShowAddGym] = useState(false);
 
   const fetchGyms = useCallback(async () => {
     setLoading(true);
@@ -201,6 +203,13 @@ export default function Home() {
                 <> <span className="text-gold-400 font-semibold">{gyms.length} academias</span> y creciendo.</>
               )}
             </p>
+            <button
+              onClick={() => setShowAddGym(true)}
+              className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 bg-gold-500/10 hover:bg-gold-500/20 border border-gold-500/30 text-gold-400 font-semibold text-sm rounded-xl transition-all"
+            >
+              <PlusCircle size={16} />
+              ¿No encuentras tu academia? Añádela
+            </button>
           </div>
         </div>
       </div>
@@ -237,6 +246,7 @@ export default function Home() {
       {selectedGym && (
         <GymDetailModal gym={selectedGym} onClose={() => setSelectedGym(null)} />
       )}
+      {showAddGym && <AddGymModal onClose={() => setShowAddGym(false)} />}
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

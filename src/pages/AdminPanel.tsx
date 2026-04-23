@@ -21,6 +21,7 @@ interface Stats {
   approvedClaims: number;
   claimedGyms: number;
   pendingOrganizers: number;
+  pendingGyms?: number;
 }
 
 export default function AdminPanel() {
@@ -38,6 +39,10 @@ export default function AdminPanel() {
   const [deletingEvent, setDeletingEvent] = useState<string | null>(null);
   const [eventSearch, setEventSearch] = useState('');
 
+  // Pending gym submissions
+  const [pendingGyms, setPendingGyms] = useState<GymRecord[]>([]);
+  const [processingGym, setProcessingGym] = useState<string | null>(null);
+
   // Gyms management
   const [gymSearch, setGymSearch] = useState('');
   const [gymResults, setGymResults] = useState<GymRecord[]>([]);
@@ -46,22 +51,36 @@ export default function AdminPanel() {
 
   const fetchData = useCallback(async () => {
     try {
-      const [c, s, orgs, evts] = await Promise.all([
+      const [c, s, orgs, evts, pending] = await Promise.all([
         api.admin.getClaims(),
         api.admin.getStats(),
         api.admin.getOrganizerRequests(),
         api.events.list(),
+        api.gyms.getPending(),
       ]);
       setClaims(c as Claim[]);
       setStats(s);
       setOrgRequests(orgs);
       setAllEvents(evts);
+      setPendingGyms(pending);
     } catch {
       // handled below
     } finally {
       setLoading(false);
     }
   }, []);
+
+  const handleGymAction = async (gymId: string, action: 'approve' | 'reject') => {
+    if (action === 'reject' && !confirm('¿Rechazar y eliminar este gimnasio?')) return;
+    setProcessingGym(gymId);
+    try {
+      if (action === 'approve') await api.gyms.approve(gymId);
+      else await api.gyms.reject(gymId);
+      setPendingGyms((prev) => prev.filter((g) => g.id !== gymId));
+    } finally {
+      setProcessingGym(null);
+    }
+  };
 
   const handleDeleteEvent = async (id: string) => {
     if (!confirm('¿Eliminar este evento?')) return;
@@ -339,6 +358,60 @@ export default function AdminPanel() {
             </div>
           </div>
         )}
+
+        {/* ── PENDING GYM SUBMISSIONS ── */}
+        <div>
+          <h2 className="text-white font-bold text-base mb-4 flex items-center gap-2">
+            <Building2 size={16} className="text-gold-400" />
+            Gimnasios pendientes de aprobación
+            {pendingGyms.length > 0 && (
+              <span className="bg-gold-400/15 text-gold-400 text-xs font-bold px-2 py-0.5 rounded-full">{pendingGyms.length}</span>
+            )}
+          </h2>
+
+          {pendingGyms.length === 0 ? (
+            <div className="bg-dark-700 border border-white/8 rounded-2xl p-8 text-center text-gray-600">
+              <CheckCircle size={32} className="mx-auto mb-2 text-emerald-500/40" />
+              <p className="text-sm">No hay gimnasios pendientes de revisión</p>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {pendingGyms.map((gym) => (
+                <div key={gym.id} className="bg-dark-700 border border-gold-500/20 rounded-2xl p-5">
+                  <div className="flex items-start justify-between gap-4 flex-wrap">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-white font-bold text-sm">{gym.name}</p>
+                      <p className="text-gold-400 text-xs mb-1">{gym.city}</p>
+                      {gym.address && <p className="text-gray-500 text-xs">{gym.address}</p>}
+                      {gym.phone && <p className="text-gray-500 text-xs">{gym.phone}</p>}
+                      {gym.website && (
+                        <a href={gym.website} target="_blank" rel="noopener noreferrer" className="text-blue-400 text-xs hover:underline">{gym.website}</a>
+                      )}
+                    </div>
+                    <div className="flex gap-2 shrink-0">
+                      <button
+                        onClick={() => handleGymAction(gym.id, 'reject')}
+                        disabled={processingGym === gym.id}
+                        className="flex items-center gap-1.5 px-3 py-2 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 text-xs font-semibold rounded-xl transition-all disabled:opacity-50"
+                      >
+                        {processingGym === gym.id ? <Loader2 size={12} className="animate-spin" /> : <XCircle size={12} />}
+                        Rechazar
+                      </button>
+                      <button
+                        onClick={() => handleGymAction(gym.id, 'approve')}
+                        disabled={processingGym === gym.id}
+                        className="flex items-center gap-1.5 px-3 py-2 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-xs font-semibold rounded-xl transition-all disabled:opacity-50"
+                      >
+                        {processingGym === gym.id ? <Loader2 size={12} className="animate-spin" /> : <CheckCircle size={12} />}
+                        Aprobar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
 
         {/* ── EVENTS MANAGEMENT ── */}
         <div>
