@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
-import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaflet';
-import { MapPin, Phone, Globe, Star, X, Loader2 } from 'lucide-react';
+import { MapContainer, TileLayer, CircleMarker, Popup, useMap, Marker } from 'react-leaflet';
+import { MapPin, Phone, Globe, Star, X, Loader2, LocateFixed } from 'lucide-react';
 import { api, type GymRecord } from '../services/api';
+import L from 'leaflet';
 
 function MapFlyTo({ lat, lng }: { lat: number; lng: number }) {
   const map = useMap();
@@ -10,6 +11,13 @@ function MapFlyTo({ lat, lng }: { lat: number; lng: number }) {
   }, [lat, lng, map]);
   return null;
 }
+
+const userIcon = L.divIcon({
+  className: '',
+  html: `<div style="width:16px;height:16px;border-radius:50%;background:#3b82f6;border:3px solid #fff;box-shadow:0 0 0 3px rgba(59,130,246,0.4)"></div>`,
+  iconSize: [16, 16],
+  iconAnchor: [8, 8],
+});
 
 function GymPopup({ gym, onClose }: { gym: GymRecord; onClose: () => void }) {
   return (
@@ -73,6 +81,9 @@ export default function MapPage() {
   const [loading, setLoading] = useState(true);
   const [selectedGym, setSelectedGym] = useState<GymRecord | null>(null);
   const [flyTarget, setFlyTarget] = useState<{ lat: number; lng: number } | null>(null);
+  const [userPos, setUserPos] = useState<{ lat: number; lng: number } | null>(null);
+  const [locating, setLocating] = useState(false);
+  const [locError, setLocError] = useState<string | null>(null);
 
   const fetchGyms = useCallback(async () => {
     try {
@@ -92,6 +103,28 @@ export default function MapPage() {
     setFlyTarget({ lat: gym.lat, lng: gym.lng });
   };
 
+  const handleLocate = () => {
+    if (!navigator.geolocation) {
+      setLocError('Tu navegador no soporta geolocalización');
+      return;
+    }
+    setLocating(true);
+    setLocError(null);
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        const pos = { lat: coords.latitude, lng: coords.longitude };
+        setUserPos(pos);
+        setFlyTarget(pos);
+        setLocating(false);
+      },
+      () => {
+        setLocError('No se pudo obtener tu ubicación');
+        setLocating(false);
+      },
+      { timeout: 10000 }
+    );
+  };
+
   return (
     <div className="flex flex-col" style={{ height: 'calc(100vh - 64px)' }}>
       {/* Header */}
@@ -102,11 +135,27 @@ export default function MapPage() {
             {loading ? 'Cargando...' : `${gyms.length} academias en España`} · Haz clic en un punto para ver info
           </p>
         </div>
-        <div className="flex items-center gap-2 text-xs text-gray-500 bg-dark-700 border border-white/8 rounded-lg px-3 py-2">
-          <span className="w-3 h-3 rounded-full bg-gold-500 pulse-gold inline-block" />
-          Academia BJJ
+        <div className="flex items-center gap-3">
+          <button
+            onClick={handleLocate}
+            disabled={locating}
+            className="flex items-center gap-2 text-xs bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-400 rounded-lg px-3 py-2 transition-all disabled:opacity-50"
+          >
+            {locating ? <Loader2 size={13} className="animate-spin" /> : <LocateFixed size={13} />}
+            {userPos ? 'Mi ubicación' : 'Activar ubicación'}
+          </button>
+          <div className="flex items-center gap-2 text-xs text-gray-500 bg-dark-700 border border-white/8 rounded-lg px-3 py-2">
+            <span className="w-3 h-3 rounded-full bg-gold-500 pulse-gold inline-block" />
+            Academia BJJ
+          </div>
         </div>
       </div>
+
+      {locError && (
+        <div className="bg-red-500/10 border-b border-red-500/20 px-4 py-2 text-red-400 text-xs text-center shrink-0">
+          {locError}
+        </div>
+      )}
 
       {/* Map */}
       <div className="flex-1 relative" style={{ minHeight: 0 }}>
@@ -128,6 +177,10 @@ export default function MapPage() {
           />
 
           {flyTarget && <MapFlyTo lat={flyTarget.lat} lng={flyTarget.lng} />}
+
+          {userPos && (
+            <Marker position={[userPos.lat, userPos.lng]} icon={userIcon} />
+          )}
 
           {gyms.map((gym) => (
             <CircleMarker
