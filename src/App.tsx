@@ -15,6 +15,7 @@ import AdminPanel from './pages/AdminPanel';
 import CityPage from './pages/CityPage';
 import CityIndex from './pages/CityIndex';
 import CityOpenMats from './pages/CityOpenMats';
+import AuthCallback from './pages/AuthCallback';
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
               <Route path="/academias-bjj-espana" element={<CityIndex />} />
               <Route path="/bjj-:ciudad" element={<CityPage />} />
               <Route path="/horarios/:slug" element={<CityOpenMats />} />
+              <Route path="/auth/callback" element={<AuthCallback />} />
             </Routes>
           </main>
         </div>
