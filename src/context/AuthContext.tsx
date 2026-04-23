@@ -1,12 +1,13 @@
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import { supabase } from '../lib/supabase';
-import type { User } from '@supabase/supabase-js';
+import type { Session } from '@supabase/supabase-js';
 
 export interface AuthUser {
   id: string;
   email: string;
   name: string;
-  role: 'admin' | 'gym_owner' | 'organizer' | 'user';
+  role: 'admin' | 'owner' | 'organizer' | 'user';
+  avatarUrl: string | null;
   gymId?: string | null;
 }
 
@@ -16,6 +17,7 @@ interface AuthContextType {
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
   register: (name: string, email: string, password: string) => Promise<void>;
+  signInWithGoogle: () => Promise<void>;
   logout: () => void;
   isAdmin: boolean;
   isOwner: boolean;
@@ -25,40 +27,71 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-function mapUser(supabaseUser: User): AuthUser {
-  const meta = supabaseUser.user_metadata ?? {};
+// ── Profile loader ────────────────────────────────────────────────────────────
+
+interface ProfileRow { role: string; name: string | null; avatar_url: string | null }
+
+async function fetchProfile(userId: string, retries = 4): Promise<ProfileRow | null> {
+  const { data } = await supabase
+    .from('profiles')
+    .select('role, name, avatar_url')
+    .eq('id', userId)
+    .single();
+
+  // Trigger may not have run yet right after OAuth redirect — retry briefly
+  if (!data && retries > 0) {
+    await new Promise((r) => setTimeout(r, 400));
+    return fetchProfile(userId, retries - 1);
+  }
+  return data as ProfileRow | null;
+}
+
+function buildUser(session: Session, profile: ProfileRow | null): AuthUser {
+  const meta = session.user.user_metadata ?? {};
   return {
-    id: supabaseUser.id,
-    email: supabaseUser.email ?? '',
-    name: meta.name ?? supabaseUser.email ?? '',
-    role: meta.role ?? 'user',
-    gymId: meta.gym_id ?? null,
+    id:        session.user.id,
+    email:     session.user.email ?? '',
+    name:      profile?.name ?? meta.name ?? meta.full_name ?? session.user.email ?? '',
+    role:      (profile?.role ?? 'user') as AuthUser['role'],
+    avatarUrl: profile?.avatar_url ?? meta.avatar_url ?? null,
+    gymId:     meta.gym_id ?? null,
   };
 }
 
+// ── Provider ──────────────────────────────────────────────────────────────────
+
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<AuthUser | null>(null);
-  const [token, setToken] = useState<string | null>(null);
+  const [user, setUser]     = useState<AuthUser | null>(null);
+  const [token, setToken]   = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Warm up from existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
       if (session) {
-        setUser(mapUser(session.user));
+        const profile = await fetchProfile(session.user.id);
+        setUser(buildUser(session, profile));
         setToken(session.access_token);
       }
       setLoading(false);
     });
 
-    // Keep in sync with Supabase auth state changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session ? mapUser(session.user) : null);
-      setToken(session?.access_token ?? null);
+    // React to login / logout / token refresh
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
+      if (session) {
+        const profile = await fetchProfile(session.user.id);
+        setUser(buildUser(session, profile));
+        setToken(session.access_token);
+      } else {
+        setUser(null);
+        setToken(null);
+      }
     });
 
     return () => subscription.unsubscribe();
   }, []);
+
+  // ── Auth actions ─────────────────────────────────────────────────────────
 
   const login = async (email: string, password: string) => {
     const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -69,7 +102,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const { error } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { name, role: 'user' } },
+      options: { data: { name } },
+    });
+    if (error) throw new Error(error.message);
+  };
+
+  const signInWithGoogle = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: window.location.origin },
     });
     if (error) throw new Error(error.message);
   };
@@ -81,11 +122,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   return (
     <AuthContext.Provider value={{
       user, token, loading,
-      login, register, logout,
-      isAdmin: user?.role === 'admin',
-      isOwner: user?.role === 'gym_owner',
-      isOrganizer: user?.role === 'organizer',
-      canPublishEvents: ['organizer', 'gym_owner', 'admin'].includes(user?.role ?? ''),
+      login, register, signInWithGoogle, logout,
+      isAdmin:           user?.role === 'admin',
+      isOwner:           user?.role === 'owner',
+      isOrganizer:       user?.role === 'organizer',
+      canPublishEvents:  ['organizer', 'owner', 'admin'].includes(user?.role ?? ''),
     }}>
       {children}
     </AuthContext.Provider>

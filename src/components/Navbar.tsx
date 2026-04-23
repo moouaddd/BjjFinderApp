@@ -68,9 +68,13 @@ export default function Navbar() {
                   onClick={() => setUserMenuOpen(!userMenuOpen)}
                   className="flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-700 border border-white/10 hover:border-white/20 transition-all"
                 >
-                  <div className="w-6 h-6 rounded-full bg-gold-500/20 flex items-center justify-center">
-                    <span className="text-gold-400 text-xs font-bold">{user.name[0].toUpperCase()}</span>
-                  </div>
+                  {user.avatarUrl ? (
+                    <img src={user.avatarUrl} alt="" className="w-6 h-6 rounded-full object-cover" />
+                  ) : (
+                    <div className="w-6 h-6 rounded-full bg-gold-500/20 flex items-center justify-center">
+                      <span className="text-gold-400 text-xs font-bold">{user.name[0]?.toUpperCase()}</span>
+                    </div>
+                  )}
                   <span className="text-white text-xs font-medium max-w-[100px] truncate">{user.name}</span>
                   <ChevronDown size={12} className="text-gray-400" />
                 </button>
