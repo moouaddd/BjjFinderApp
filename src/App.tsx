@@ -23,7 +23,7 @@ export default function App() {
       <AuthProvider>
         <div className="min-h-screen bg-dark-900">
           <Navbar />
-          <main className="pt-16">
+          <main className="pt-16" style={{ paddingTop: 'calc(4rem + env(safe-area-inset-top))' }}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/mapa" element={<MapPage />} />
