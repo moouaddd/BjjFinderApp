@@ -108,11 +108,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const signInWithGoogle = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
-    });
-    if (error) throw new Error(error.message);
+    const isNative = !!(window as unknown as { Capacitor?: { isNative?: boolean } }).Capacitor?.isNative;
+
+    const redirectTo = isNative
+      ? 'com.bjjspain.finder://auth/callback'
+      : `${window.location.origin}/auth/callback`;
+
+    if (isNative) {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo, skipBrowserRedirect: true },
+      });
+      if (error) throw new Error(error.message);
+      if (data.url) {
+        const { Browser } = await import('@capacitor/browser');
+        await Browser.open({ url: data.url });
+      }
+    } else {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo },
+      });
+      if (error) throw new Error(error.message);
+    }
   };
 
   const logout = async () => {

@@ -153,7 +153,7 @@ export const api = {
       let query = supabase
         .from('gyms')
         .select('*', { count: 'exact' })
-        .or('is_verified.is.null,is_verified.eq.true')
+        .eq('is_verified', true)
         .order('city', { ascending: true })
         .order('name', { ascending: true })
         .limit(limit);
