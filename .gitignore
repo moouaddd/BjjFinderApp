@@ -10,3 +10,14 @@ backend/prisma/dev.db-journal
 *.local
 .claude/
 CLAUDE.md
+
+# Android build artifacts
+android/.gradle/
+android/app/build/
+android/build/
+android/.idea/
+
+# iOS build artifacts
+ios/App/Pods/
+ios/App/App.xcworkspace/xcuserdata/
+ios/DerivedData/
