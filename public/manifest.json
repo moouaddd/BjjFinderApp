@@ -1,0 +1,18 @@
+{
+  "name": "BJJ España — Dojo Finder",
+  "short_name": "BJJ España",
+  "description": "Encuentra academias de Brazilian Jiu-Jitsu en España",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#f5c842",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/bjj-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
